@@ -1,0 +1,21 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+vendor/
+.venv/
+__pycache__/
+*.pyc
+.runtime/
+output/
+coverage/
+playwright-report/
+test-results/
+*.log
+
+# 판매용 패키지와 개발용 산출물은 별도 릴리스에서 관리합니다.
+releases/
+dist/
+
+# 도안·선정 에셋·그 원장에는 포괄적인 이미지 ignore를 적용하지 않습니다.
