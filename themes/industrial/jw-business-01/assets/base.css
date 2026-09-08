@@ -1,0 +1,6 @@
+/* Installation proof styles. Product design tokens await the selected visual direction. */
+#jw-site { font-family: system-ui, sans-serif; line-height: 1.6; color: CanvasText; background: Canvas; }
+#jw-header, #jw-content, #jw-footer { max-width: 72rem; margin-inline: auto; padding: 1rem; }
+#jw-site img { max-width: 100%; height: auto; }
+#jw-primary-navigation, #jw-footer-navigation { display: flex; flex-wrap: wrap; gap: 1rem; }
+#jw-site a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }

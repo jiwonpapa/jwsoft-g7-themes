@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "layout_name": "errors/maintenance",
+  "extends": "_user_base",
+  "data_sources": [],
+  "slots": {
+    "content": [
+      {
+        "type": "basic",
+        "name": "H1",
+        "text": "$t:user.errors.maintenance"
+      },
+      {
+        "type": "basic",
+        "name": "A",
+        "text": "$t:user.home",
+        "props": {
+          "href": "/"
+        }
+      }
+    ]
+  }
+}

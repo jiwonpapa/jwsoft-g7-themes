@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "layout_name": "_user_base",
+  "meta": {
+    "is_base": true
+  },
+  "data_sources": [],
+  "components": [
+    {
+      "type": "basic",
+      "name": "Div",
+      "id": "jw-site",
+      "children": [
+        {
+          "type": "basic",
+          "name": "Header",
+          "id": "jw-header",
+          "children": [
+            {
+              "type": "basic",
+              "name": "A",
+              "id": "jw-home-link",
+              "text": "$t:user.home",
+              "props": {
+                "href": "/"
+              }
+            },
+            {
+              "type": "basic",
+              "name": "Nav",
+              "id": "jw-primary-navigation",
+              "props": {
+                "aria-label": "$t:user.navigation"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "name": "Main",
+          "id": "jw-content",
+          "children": [],
+          "slot": "content"
+        },
+        {
+          "type": "basic",
+          "name": "Footer",
+          "id": "jw-footer",
+          "children": [
+            {
+              "type": "basic",
+              "name": "Nav",
+              "id": "jw-footer-navigation",
+              "props": {
+                "aria-label": "$t:user.footer"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

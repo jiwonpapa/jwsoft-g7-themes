@@ -1,0 +1,16 @@
+{
+  "user": {
+    "home": "Home",
+    "navigation": "Main navigation",
+    "footer": "Footer navigation",
+    "errors": {
+      "401": "Sign in required",
+      "403": "Access denied",
+      "404": "Page not found",
+      "500": "Unable to process request",
+      "503": "Please try again later",
+      "maintenance": "Under maintenance"
+    },
+    "content": "Content"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "maxItems": 1000,
+  "items": {
+    "$ref": "#/$defs/node"
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^jwld-[a-z0-9-]+$",
+          "maxLength": 160
+        },
+        "type": {
+          "const": "basic"
+        },
+        "name": {
+          "enum": [
+            "Div",
+            "A",
+            "Span",
+            "H2"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 500,
+          "pattern": "^(?![\\s\\S]*\\{\\{)[\\s\\S]*$"
+        },
+        "props": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "href": {
+              "type": "string",
+              "pattern": "^/(?!/)",
+              "maxLength": 2048
+            }
+          }
+        },
+        "children": {
+          "type": "array",
+          "maxItems": 1000,
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "name"
+      ]
+    }
+  }
+}

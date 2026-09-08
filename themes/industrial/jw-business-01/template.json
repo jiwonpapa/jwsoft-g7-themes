@@ -1,0 +1,68 @@
+{
+  "identifier": "jwsoft-business01",
+  "vendor": "jwsoft",
+  "name": {
+    "ko": "JW BUSINESS 01",
+    "en": "JW BUSINESS 01"
+  },
+  "version": "0.1.0",
+  "description": {
+    "ko": "분야별 레이아웃 데이터 연결용 기업 템플릿 기본 구조",
+    "en": "Business template structure for layout data packs"
+  },
+  "type": "user",
+  "locales": [
+    "ko",
+    "en"
+  ],
+  "author": {
+    "name": "JW SOFT"
+  },
+  "g7_version": ">=7.0.10",
+  "dependencies": {
+    "modules": {
+      "sirsoft-board": ">=1.1.1",
+      "sirsoft-page": ">=1.1.1",
+      "sirsoft-ecommerce": ">=1.2.1"
+    },
+    "plugins": {}
+  },
+  "assets": {
+    "js": [
+      "dist/js/components.iife.js"
+    ],
+    "css": [
+      "dist/css/components.css"
+    ]
+  },
+  "components": {
+    "basic": [
+      "div",
+      "a",
+      "h1",
+      "h2",
+      "p",
+      "span",
+      "img",
+      "nav",
+      "main",
+      "footer",
+      "header"
+    ],
+    "composite": [
+      "html-content"
+    ],
+    "layout": []
+  },
+  "error_config": {
+    "layouts": {
+      "401": "errors/401",
+      "403": "errors/403",
+      "404": "errors/404",
+      "500": "errors/500",
+      "503": "errors/503",
+      "maintenance": "errors/maintenance"
+    }
+  },
+  "externals": []
+}
