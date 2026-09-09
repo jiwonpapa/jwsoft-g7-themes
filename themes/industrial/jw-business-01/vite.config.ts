@@ -1,5 +1,7 @@
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 export default defineConfig({
+  plugins: [tailwindcss()],
   define: { 'process.env.NODE_ENV': JSON.stringify('production') },
   build: {
     lib: { entry: 'src/index.ts', name: 'JwsoftBusiness01', formats: ['iife'] },

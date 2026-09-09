@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "layout_name": "home",
+  "data_sources": [],
+  "components": [
+    {
+      "type": "basic",
+      "name": "Div",
+      "id": "jw-site",
+      "children": [
+        { "type": "basic", "name": "H1", "text": "$t:user.home" }
+      ]
+    }
+  ]
+}

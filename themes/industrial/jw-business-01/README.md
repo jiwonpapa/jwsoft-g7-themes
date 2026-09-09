@@ -14,12 +14,16 @@ G7 설치 식별자는 **jwsoft-business01**, 버전은 0.1.0입니다. 기획 �
 
 ## 검사와 개발
 
-```sh
-npm ci
-npm run typecheck
-npm test
-npm run build
+저장소 루트에서 중앙 하네스를 실행합니다.
+
+```text
+python3 -m tools.theme_harness setup themes/industrial/jw-business-01
+python3 -m tools.theme_harness check themes/industrial/jw-business-01
+python3 -m tools.theme_harness build themes/industrial/jw-business-01
+python3 -m tools.theme_harness package themes/industrial/jw-business-01
 ```
+
+중앙 스택은 Tailwind 4를 `jw` prefix와 Preflight 미사용 조건으로 빌드합니다. 현재 테마는 `tailwind`, `sanitize-html`, `contract-tests` 기능을 채택했습니다. 생성된 설치 ZIP은 `releases/jwsoft-business01-0.1.0.zip`입니다.
 
 실제 G7 설치 디렉터리 이름은 `templates/_bundled/jwsoft-business01`입니다. 개발 소스를 복사할 때 node_modules·개발 기획서를 제외하고, `dist`·`components.json`·`template.json`·`routes.json`·`layouts`·`lang`·계약/라이선스를 포함합니다.
 

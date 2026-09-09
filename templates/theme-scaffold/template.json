@@ -1,0 +1,28 @@
+{
+  "identifier": "__THEME_IDENTIFIER__",
+  "vendor": "jwsoft",
+  "name": {
+    "ko": "__THEME_NAME__",
+    "en": "__THEME_NAME__"
+  },
+  "version": "0.1.0",
+  "description": {
+    "ko": "JW SOFT G7 테마",
+    "en": "JW SOFT G7 theme"
+  },
+  "type": "user",
+  "locales": ["ko", "en"],
+  "author": { "name": "JW SOFT" },
+  "g7_version": ">=7.0.10",
+  "dependencies": { "modules": {}, "plugins": {} },
+  "assets": {
+    "js": ["dist/js/components.iife.js"],
+    "css": ["dist/css/components.css"]
+  },
+  "components": {
+    "basic": ["div", "h1"],
+    "composite": [],
+    "layout": []
+  },
+  "externals": []
+}

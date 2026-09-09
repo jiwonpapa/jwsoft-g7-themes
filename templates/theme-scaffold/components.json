@@ -1,0 +1,22 @@
+{
+  "templateId": "__THEME_IDENTIFIER__",
+  "version": "0.1.0",
+  "components": {
+    "basic": [
+      {
+        "name": "Div",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": { "className": { "type": "string", "required": false } }
+      },
+      {
+        "name": "H1",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": { "className": { "type": "string", "required": false } }
+      }
+    ],
+    "composite": [],
+    "layout": []
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "schemaVersion": "1.0.0",
+  "stackVersion": "1.0.0",
+  "themeIdentifier": "__THEME_IDENTIFIER__",
+  "themeVersion": "0.1.0",
+  "features": [__FEATURES__]
+}

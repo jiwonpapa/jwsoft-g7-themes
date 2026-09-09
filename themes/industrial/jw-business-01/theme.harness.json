@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0.0",
+  "stackVersion": "1.0.0",
+  "themeIdentifier": "jwsoft-business01",
+  "themeVersion": "0.1.0",
+  "features": [
+    "tailwind",
+    "sanitize-html",
+    "contract-tests"
+  ]
+}

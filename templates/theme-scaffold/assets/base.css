@@ -1,0 +1,13 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(jw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(jw);
+
+:root {
+  --jw-color-background: Canvas;
+  --jw-color-foreground: CanvasText;
+}
+
+#jw-site {
+  background: var(--jw-color-background);
+  color: var(--jw-color-foreground);
+}

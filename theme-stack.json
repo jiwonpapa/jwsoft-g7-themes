@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0.0",
+  "stackVersion": "1.0.0",
+  "packageManager": "npm@11.19.0",
+  "toolchain": {
+    "pythonMinimum": "3.11.0",
+    "nodeMinimum": "22.12.0"
+  },
+  "hostRuntime": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "requiredScripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "baseDevDependencies": {
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "typescript": "5.9.3",
+    "vite": "7.1.12",
+    "vitest": "4.1.8"
+  },
+  "features": {
+    "tailwind": {
+      "status": "approved",
+      "dependencies": {},
+      "devDependencies": {
+        "@tailwindcss/vite": "4.1.16",
+        "tailwindcss": "4.1.16"
+      },
+      "notices": [
+        {
+          "package": "tailwindcss",
+          "version": "4.1.16",
+          "license": "MIT",
+          "target": "Tailwind-CSS-4.1.16-MIT.txt",
+          "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+        }
+      ]
+    },
+    "sanitize-html": {
+      "status": "approved",
+      "dependencies": {
+        "dompurify": "3.4.15"
+      },
+      "devDependencies": {},
+      "notices": [
+        {
+          "package": "dompurify",
+          "version": "3.4.15",
+          "license": "(MPL-2.0 OR Apache-2.0)",
+          "target": "DOMPurify-3.4.15-LICENSE.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ]
+    },
+    "contract-tests": {
+      "status": "approved",
+      "dependencies": {},
+      "devDependencies": {
+        "ajv": "8.20.0",
+        "jsdom": "26.1.0"
+      },
+      "notices": []
+    },
+    "icons": {
+      "status": "approved",
+      "dependencies": {
+        "lucide-react": "1.43.0"
+      },
+      "devDependencies": {},
+      "notices": [
+        {
+          "package": "lucide-react",
+          "version": "1.43.0",
+          "license": "ISC",
+          "target": "Lucide-1.43.0-ISC.txt"
+        }
+      ]
+    },
+    "carousel": {
+      "status": "approved",
+      "dependencies": {
+        "embla-carousel-react": "8.6.0"
+      },
+      "devDependencies": {},
+      "notices": [
+        {
+          "package": "embla-carousel-react",
+          "version": "8.6.0",
+          "license": "MIT",
+          "target": "Embla-Carousel-8.6.0-MIT.txt",
+          "fallback": "tools/theme_harness/license_catalog/Embla-Carousel-8.6.0-MIT.txt",
+          "sha256": "992490064b90ec94c302fe5f29dcc14cb44145857064e46f9ffe6c8f511c1093"
+        }
+      ]
+    },
+    "carousel-autoplay": {
+      "status": "approved",
+      "requires": ["carousel"],
+      "dependencies": {
+        "embla-carousel-autoplay": "8.6.0"
+      },
+      "devDependencies": {},
+      "notices": []
+    },
+    "carousel-fade": {
+      "status": "approved",
+      "requires": ["carousel"],
+      "dependencies": {
+        "embla-carousel-fade": "8.6.0"
+      },
+      "devDependencies": {},
+      "notices": []
+    },
+    "motion": {
+      "status": "approved",
+      "dependencies": {
+        "motion": "13.2.0"
+      },
+      "devDependencies": {},
+      "notices": [
+        {
+          "package": "motion",
+          "version": "13.2.0",
+          "license": "MIT",
+          "target": "Motion-13.2.0-MIT.txt"
+        }
+      ]
+    },
+    "lightbox": {
+      "status": "approved",
+      "dependencies": {
+        "photoswipe": "5.4.4"
+      },
+      "devDependencies": {},
+      "notices": [
+        {
+          "package": "photoswipe",
+          "version": "5.4.4",
+          "license": "MIT",
+          "target": "PhotoSwipe-5.4.4-MIT.txt"
+        }
+      ]
+    },
+    "masonry": {
+      "status": "approved",
+      "dependencies": {
+        "masonry-layout": "4.2.2"
+      },
+      "devDependencies": {},
+      "notices": [
+        {
+          "package": "masonry-layout",
+          "version": "4.2.2",
+          "license": "MIT",
+          "target": "Masonry-4.2.2-MIT.txt",
+          "fallback": "tools/theme_harness/license_catalog/Masonry-4.2.2-MIT.txt",
+          "sha256": "e7714de7d585676a05faa148a238a8baae4ab1be4e8aa1d4dd0f9cf6a63f0988"
+        }
+      ]
+    },
+    "interactive-ui": {
+      "status": "probe-required",
+      "dependencies": {},
+      "devDependencies": {},
+      "notices": []
+    }
+  },
+  "runtimeInclude": [
+    "components.json",
+    "contracts",
+    "dist",
+    "editor-spec.json",
+    "lang",
+    "layout-data.json",
+    "layouts",
+    "licenses",
+    "routes.json",
+    "template.json",
+    "THIRD-PARTY-NOTICES.md"
+  ]
+}

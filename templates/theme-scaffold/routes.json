@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "routes": [
+    { "path": "/", "layout": "home", "auth_required": false }
+  ]
+}

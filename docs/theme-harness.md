@@ -1,0 +1,54 @@
+# JW Theme Harness
+
+상태: Python 하네스 1차 구현. `JW BUSINESS 01`의 설정·검사·빌드·설치 ZIP 생성까지 연결했습니다.
+
+## 목적과 기준 파일
+
+- `theme-stack.json`: 허용 기능, 정확한 npm 버전, 필수 script, 라이선스 고지, 런타임 포함 경로의 중앙 기준입니다.
+- `themes/*/*/theme.harness.json`: 테마 식별자·버전·채택 기능만 선언합니다.
+- `templates/theme-scaffold`: 새 테마가 시작할 최소 G7 manifest·Tailwind·TypeScript·검사 구조입니다.
+- `tools/theme_harness`: 셸 없이 위 기준을 적용하는 Python 모듈입니다.
+
+테마의 `package.json`과 lockfile을 개별 기준으로 삼지 않습니다. 모든 테마는 `tailwind`를 포함해야 하며, 중앙 스택에 없는 패키지나 검증 전 기능은 `setup`에서 거부합니다. 현재 `interactive-ui`는 G7 ReactDOM 호환 실증 전이므로 선택할 수 없습니다.
+
+## 명령
+
+저장소 루트에서 실행합니다.
+
+```text
+python3 -m tools.theme_harness init \
+  --category industrial \
+  --slug jw-sample-01 \
+  --identifier jwsoft-sample01 \
+  --name "JW SAMPLE 01" \
+  --features tailwind,icons
+
+python3 -m tools.theme_harness setup themes/industrial/jw-sample-01
+python3 -m tools.theme_harness check themes/industrial/jw-sample-01
+python3 -m tools.theme_harness build themes/industrial/jw-sample-01
+python3 -m tools.theme_harness package themes/industrial/jw-sample-01
+```
+
+`init`는 비어 있는 새 경로만 생성하고 기본적으로 npm 설치까지 실행합니다. 네트워크 설치를 미룰 때만 `--skip-install`을 사용합니다. `setup`은 `package.json`을 중앙 값으로 맞추고 lockfile·라이선스 원문·제3자 고지를 갱신합니다.
+
+`build`는 일반 검사 후 TypeScript, 테마 단위 시험, Vite 빌드를 차례로 실행하고 소스·중앙 스택·산출물 해시를 기록합니다. `package`는 이 빌드를 다시 확인한 뒤 `releases/<identifier>-<version>.zip`을 만듭니다. 다른 위치가 필요하면 `--output-dir`을 지정합니다.
+
+## 현재 강제 항목
+
+- manifest 식별자·버전·자산 경로 일치
+- 중앙 스택과 `package.json`·lockfile의 정확한 버전 일치
+- Python 3.11 이상, Node 22.12 이상, npm 11.19.0 도구 조건
+- 검증 상태가 `approved`인 기능만 사용
+- Tailwind 4의 `jw` prefix, theme/utilities 한정 import, 전역 Preflight 금지
+- 런타임 소스의 CDN·원격 import 금지와 `template.json` externals 금지
+- 선택 기능의 실제 설치 패키지 버전·라이선스 메타데이터와 동봉 원문 해시 확인
+- `.sh`·`.bash`·`.zsh`는 주석·`set -euo pipefail` 외 단일 `exec` 진입점만 허용
+- 최신 중앙 스택·소스로 생성한 빌드인지와 배포 자산 해시 확인
+- ZIP에는 G7 런타임 manifest·layout·언어·계약·빌드 자산·선택 라이선스만 포함
+- ZIP 내부 `JW-THEME-MANIFEST.json`에 각 파일 SHA-256 기록
+
+패키지는 파일 순서와 ZIP 시간을 고정해 같은 입력에서 같은 결과가 나오도록 생성합니다. `src`, `tests`, `node_modules`, npm 설정, 하네스 설정, 원본 CSS와 내부 빌드 상태는 설치 ZIP에 넣지 않습니다.
+
+## 현재 경계
+
+이 하네스는 테마 제작·정적 계약·빌드·패키징을 담당합니다. 실제 G7 설치·활성화, 편집·저장·Undo, 브라우저 조작, 레이아웃 데이터 설치 모듈은 각 프로젝트의 별도 통합 검사 대상입니다. 이 1차 구현에는 CI와 G7 브라우저 자동화가 포함되지 않았습니다.

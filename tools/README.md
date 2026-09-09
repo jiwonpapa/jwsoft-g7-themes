@@ -1,6 +1,15 @@
 # 제작 도구 작업 공간
 
-현재 실행 가능한 제작 하네스·빌드 스크립트·CI는 없습니다.
-향후 Python으로 변경 범위 선택·검사·패키징을 제어하고 Node/Vite로 필요한 프런트엔드 빌드를 실행합니다.
-셸은 짧은 실행 진입점만 담당합니다. 기존 Page Builder의 큰 하네스를 그대로 복사하지 않습니다.
-구현 시 [검증 정책](../docs/verification-policy.md)의 문서·이미지 분류와 성공 재사용부터 필요한 만큼 적용합니다.
+실행 가능한 제작 하네스는 `tools.theme_harness` Python 모듈입니다. 중앙 스택 고정, 새 테마 생성, 의존성 준비, 검사, 빌드, 독립 설치 ZIP 생성을 담당합니다.
+
+```text
+python3 -m tools.theme_harness init --category industrial --slug sample --identifier jwsoft-sample --name "JW SAMPLE"
+python3 -m tools.theme_harness setup themes/industrial/sample
+python3 -m tools.theme_harness check themes/industrial/sample
+python3 -m tools.theme_harness build themes/industrial/sample
+python3 -m tools.theme_harness package themes/industrial/sample
+```
+
+명령·설정·강제 규칙은 [테마 하네스](../docs/theme-harness.md), 변경 범위 선택 원칙은 [검증 정책](../docs/verification-policy.md)을 따릅니다.
+
+하네스 업무 로직을 `.sh`·`.bash`·`.zsh`에 작성하지 않습니다. 셸 파일이 꼭 필요하면 단일 `exec` 명령만 전달할 수 있고, 하네스 검사가 저장소 전체에서 이를 강제합니다.
