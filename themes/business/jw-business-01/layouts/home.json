@@ -22,7 +22,17 @@
       }
     }
   },
-  "data_sources": [],
+  "data_sources": [
+    {
+      "id": "latest_insights",
+      "type": "api",
+      "endpoint": "/api/modules/sirsoft-board/boards/resources/posts",
+      "method": "GET",
+      "auto_fetch": true,
+      "auth_mode": "optional",
+      "loading_strategy": "non-blocking"
+    }
+  ],
   "slots": {
     "content": [
       {
@@ -93,8 +103,19 @@
                           "className": "jw-button jw-button--primary"
                         },
                         "children": [
-                          {"type": "basic", "name": "Span", "text": "$t:user.homepage.hero.primary_action"},
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.homepage.hero.primary_action"
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "arrow-right",
+                              "className": "jw-icon jw-icon--action"
+                            }
+                          }
                         ]
                       },
                       {
@@ -105,8 +126,19 @@
                           "className": "jw-button jw-button--secondary"
                         },
                         "children": [
-                          {"type": "basic", "name": "Span", "text": "$t:user.homepage.hero.secondary_action"},
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "message", "className": "jw-icon jw-icon--action"}}
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.homepage.hero.secondary_action"
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "message",
+                              "className": "jw-icon jw-icon--action"
+                            }
+                          }
                         ]
                       }
                     ],
@@ -217,7 +249,10 @@
                           {
                             "type": "composite",
                             "name": "ThemeIcon",
-                            "props": {"name": "search", "className": "jw-icon jw-capability__icon"}
+                            "props": {
+                              "name": "search",
+                              "className": "jw-icon jw-capability__icon"
+                            }
                           },
                           {
                             "type": "basic",
@@ -255,7 +290,10 @@
                           {
                             "type": "composite",
                             "name": "ThemeIcon",
-                            "props": {"name": "pencil-ruler", "className": "jw-icon jw-capability__icon"}
+                            "props": {
+                              "name": "pencil-ruler",
+                              "className": "jw-icon jw-capability__icon"
+                            }
                           },
                           {
                             "type": "basic",
@@ -293,7 +331,10 @@
                           {
                             "type": "composite",
                             "name": "ThemeIcon",
-                            "props": {"name": "rocket", "className": "jw-icon jw-capability__icon"}
+                            "props": {
+                              "name": "rocket",
+                              "className": "jw-icon jw-capability__icon"
+                            }
                           },
                           {
                             "type": "basic",
@@ -387,8 +428,19 @@
                           "className": "jw-text-link"
                         },
                         "children": [
-                          {"type": "basic", "name": "Span", "text": "$t:user.homepage.services.action"},
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.homepage.services.action"
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "arrow-right",
+                              "className": "jw-icon jw-icon--action"
+                            }
+                          }
                         ]
                       }
                     ],
@@ -429,7 +481,10 @@
                           {
                             "type": "composite",
                             "name": "ThemeIcon",
-                            "props": {"name": "chart", "className": "jw-icon jw-service__icon"}
+                            "props": {
+                              "name": "chart",
+                              "className": "jw-icon jw-service__icon"
+                            }
                           },
                           {
                             "type": "basic",
@@ -489,7 +544,10 @@
                           {
                             "type": "composite",
                             "name": "ThemeIcon",
-                            "props": {"name": "panels", "className": "jw-icon jw-service__icon"}
+                            "props": {
+                              "name": "panels",
+                              "className": "jw-icon jw-service__icon"
+                            }
                           },
                           {
                             "type": "basic",
@@ -549,7 +607,10 @@
                           {
                             "type": "composite",
                             "name": "ThemeIcon",
-                            "props": {"name": "workflow", "className": "jw-icon jw-service__icon"}
+                            "props": {
+                              "name": "workflow",
+                              "className": "jw-icon jw-service__icon"
+                            }
                           },
                           {
                             "type": "basic",
@@ -671,8 +732,19 @@
                           "className": "jw-text-link jw-case-scene__link"
                         },
                         "children": [
-                          {"type": "basic", "name": "Span", "text": "$t:user.homepage.case.action"},
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.homepage.case.action"
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "arrow-right",
+                              "className": "jw-icon jw-icon--action"
+                            }
+                          }
                         ]
                       }
                     ],
@@ -847,14 +919,14 @@
                     "type": "basic",
                     "name": "A",
                     "props": {
-                      "href": "/board/resources",
+                      "href": "/board/resources/{{insight.id}}",
                       "className": "jw-resource-link"
                     },
                     "children": [
                       {
                         "type": "basic",
                         "name": "Span",
-                        "text": "$t:user.homepage.resources.items.checklist.label",
+                        "text": "{{insight.category}}",
                         "props": {
                           "className": "jw-resource-link__label"
                         }
@@ -862,7 +934,7 @@
                       {
                         "type": "basic",
                         "name": "Span",
-                        "text": "$t:user.homepage.resources.items.checklist.title",
+                        "text": "{{insight.title}}",
                         "props": {
                           "className": "jw-resource-link__title"
                         }
@@ -870,71 +942,16 @@
                       {
                         "type": "composite",
                         "name": "ThemeIcon",
-                        "props": {"name": "arrow-up-right", "className": "jw-icon jw-resource-link__icon"}
+                        "props": {
+                          "name": "arrow-up-right",
+                          "className": "jw-icon jw-resource-link__icon"
+                        }
                       }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "name": "A",
-                    "props": {
-                      "href": "/board/resources",
-                      "className": "jw-resource-link"
-                    },
-                    "children": [
-                      {
-                        "type": "basic",
-                        "name": "Span",
-                        "text": "$t:user.homepage.resources.items.guide.label",
-                        "props": {
-                          "className": "jw-resource-link__label"
-                        }
-                      },
-                      {
-                        "type": "basic",
-                        "name": "Span",
-                        "text": "$t:user.homepage.resources.items.guide.title",
-                        "props": {
-                          "className": "jw-resource-link__title"
-                        }
-                      },
-                      {
-                        "type": "composite",
-                        "name": "ThemeIcon",
-                        "props": {"name": "arrow-up-right", "className": "jw-icon jw-resource-link__icon"}
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "name": "A",
-                    "props": {
-                      "href": "/board/resources",
-                      "className": "jw-resource-link"
-                    },
-                    "children": [
-                      {
-                        "type": "basic",
-                        "name": "Span",
-                        "text": "$t:user.homepage.resources.items.maintenance.label",
-                        "props": {
-                          "className": "jw-resource-link__label"
-                        }
-                      },
-                      {
-                        "type": "basic",
-                        "name": "Span",
-                        "text": "$t:user.homepage.resources.items.maintenance.title",
-                        "props": {
-                          "className": "jw-resource-link__title"
-                        }
-                      },
-                      {
-                        "type": "composite",
-                        "name": "ThemeIcon",
-                        "props": {"name": "arrow-up-right", "className": "jw-icon jw-resource-link__icon"}
-                      }
-                    ]
+                    ],
+                    "iteration": {
+                      "source": "{{(latest_insights?.data?.data ?? []).slice(0, 3)}}",
+                      "item_var": "insight"
+                    }
                   }
                 ],
                 "props": {
@@ -1002,8 +1019,19 @@
                   "className": "jw-button jw-button--primary"
                 },
                 "children": [
-                  {"type": "basic", "name": "Span", "text": "$t:user.homepage.contact.action"},
-                  {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}
+                  {
+                    "type": "basic",
+                    "name": "Span",
+                    "text": "$t:user.homepage.contact.action"
+                  },
+                  {
+                    "type": "composite",
+                    "name": "ThemeIcon",
+                    "props": {
+                      "name": "arrow-right",
+                      "className": "jw-icon jw-icon--action"
+                    }
+                  }
                 ]
               }
             ],

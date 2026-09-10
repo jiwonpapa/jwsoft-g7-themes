@@ -33,8 +33,18 @@
         }
       },
       "errorHandling": {
-        "403": {"handler": "showErrorPage", "params": {"target": "content"}},
-        "404": {"handler": "showErrorPage", "params": {"target": "content"}}
+        "403": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        },
+        "404": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        }
       }
     },
     {
@@ -55,8 +65,18 @@
         "post_id": "{{route.id ?? ''}}"
       },
       "errorHandling": {
-        "403": {"handler": "showErrorPage", "params": {"target": "content"}},
-        "404": {"handler": "showErrorPage", "params": {"target": "content"}}
+        "403": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        },
+        "404": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        }
       }
     }
   ],
@@ -74,13 +94,15 @@
       {
         "type": "basic",
         "name": "Div",
-        "props": {"className": "jw-board-form-page"},
+        "props": {
+          "className": "jw-board-form-page"
+        },
         "children": [
           {
             "type": "basic",
             "name": "Section",
             "props": {
-              "className": "{{route.slug === 'cases' ? 'jw-subpage-hero jw-board-form-hero jw-subpage-hero--media jw-subpage-hero--dark' : route.slug === 'resources' || route.slug === 'notices' || route.slug === 'inquiries' ? 'jw-subpage-hero jw-board-form-hero jw-subpage-hero--media' : 'jw-subpage-hero jw-board-form-hero'}}"
+              "className": "{{route.slug === 'cases' ? 'jw-subpage-hero jw-board-form-hero jw-subpage-hero--media' : route.slug === 'resources' || route.slug === 'notices' || route.slug === 'inquiries' ? 'jw-subpage-hero jw-board-form-hero jw-subpage-hero--media' : 'jw-subpage-hero jw-board-form-hero'}}"
             },
             "children": [
               {
@@ -129,31 +151,36 @@
                 }
               },
               {
-                "type": "basic",
-                "name": "Div",
-                "if": "{{route.slug === 'cases'}}",
-                "props": {"className": "jw-subpage-hero__veil"}
-              },
-              {
                 "type": "composite",
                 "name": "Reveal",
-                "props": {"className": "jw-container jw-subpage-hero__inner", "direction": "up"},
+                "props": {
+                  "className": "jw-container jw-subpage-hero__inner",
+                  "direction": "up"
+                },
                 "children": [
                   {
                     "type": "basic",
                     "name": "Div",
-                    "props": {"className": "jw-breadcrumb"},
+                    "props": {
+                      "className": "jw-breadcrumb"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "A",
                         "text": "$t:user.home",
-                        "props": {"href": "/./", "className": "jw-breadcrumb__link"}
+                        "props": {
+                          "href": "/./",
+                          "className": "jw-breadcrumb__link"
+                        }
                       },
                       {
                         "type": "composite",
                         "name": "ThemeIcon",
-                        "props": {"name": "chevron-right", "className": "jw-icon jw-breadcrumb__separator"}
+                        "props": {
+                          "name": "chevron-right",
+                          "className": "jw-icon jw-breadcrumb__separator"
+                        }
                       },
                       {
                         "type": "basic",
@@ -170,19 +197,25 @@
                     "type": "basic",
                     "name": "P",
                     "text": "$t:user.board.form.eyebrow",
-                    "props": {"className": "jw-eyebrow"}
+                    "props": {
+                      "className": "jw-eyebrow"
+                    }
                   },
                   {
                     "type": "basic",
                     "name": "H1",
                     "text": "{{route.id ? '$t:user.board.form.edit_title' : '$t:user.board.form.write_title'}}",
-                    "props": {"className": "jw-subpage-title"}
+                    "props": {
+                      "className": "jw-subpage-title"
+                    }
                   },
                   {
                     "type": "basic",
                     "name": "P",
                     "text": "$t:user.board.form.description",
-                    "props": {"className": "jw-subpage-lead"}
+                    "props": {
+                      "className": "jw-subpage-lead"
+                    }
                   }
                 ]
               }
@@ -191,35 +224,48 @@
           {
             "type": "basic",
             "name": "Section",
-            "props": {"className": "jw-section jw-board-form-body"},
+            "props": {
+              "className": "jw-section jw-board-form-body"
+            },
             "children": [
               {
                 "type": "composite",
                 "name": "Reveal",
-                "props": {"className": "jw-container jw-board-form-layout", "direction": "up"},
+                "props": {
+                  "className": "jw-container jw-board-form-layout",
+                  "direction": "up"
+                },
                 "children": [
                   {
                     "type": "basic",
                     "name": "Div",
-                    "props": {"className": "jw-board-form-intro"},
+                    "props": {
+                      "className": "jw-board-form-intro"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "P",
                         "text": "{{form_meta?.data?.board?.name ?? '$t:user.board.form.board_fallback'}}",
-                        "props": {"className": "jw-board-form-intro__label"}
+                        "props": {
+                          "className": "jw-board-form-intro__label"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "H2",
                         "text": "$t:user.board.form.intro_title",
-                        "props": {"className": "jw-board-form-intro__title"}
+                        "props": {
+                          "className": "jw-board-form-intro__title"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "P",
                         "text": "$t:user.board.form.intro_copy",
-                        "props": {"className": "jw-board-form-intro__copy"}
+                        "props": {
+                          "className": "jw-board-form-intro__copy"
+                        }
                       }
                     ]
                   },
@@ -227,25 +273,34 @@
                     "type": "basic",
                     "name": "Div",
                     "if": "{{form_meta?.data?.requires_password && !_local.passwordVerified && !form_meta?.data?.board?.user_abilities?.can_manage}}",
-                    "props": {"className": "jw-board-password"},
+                    "props": {
+                      "className": "jw-board-password"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "H2",
                         "text": "$t:user.board.form.password_title",
-                        "props": {"className": "jw-board-password__title"}
+                        "props": {
+                          "className": "jw-board-password__title"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "P",
                         "text": "$t:user.board.form.password_copy",
-                        "props": {"className": "jw-board-password__copy"}
+                        "props": {
+                          "className": "jw-board-password__copy"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "Label",
                         "text": "$t:user.board.form.password_label",
-                        "props": {"htmlFor": "jw-board-verify-password", "className": "jw-field__label"}
+                        "props": {
+                          "htmlFor": "jw-board-verify-password",
+                          "className": "jw-field__label"
+                        }
                       },
                       {
                         "type": "basic",
@@ -261,7 +316,10 @@
                           {
                             "type": "change",
                             "handler": "setState",
-                            "params": {"target": "local", "verifyPassword": "{{$event.target.value}}"}
+                            "params": {
+                              "target": "local",
+                              "verifyPassword": "{{$event.target.value}}"
+                            }
                           }
                         ]
                       },
@@ -270,26 +328,49 @@
                         "name": "P",
                         "if": "{{_local.passwordError}}",
                         "text": "{{_local.passwordError}}",
-                        "props": {"className": "jw-field__error"}
+                        "props": {
+                          "className": "jw-field__error"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "Div",
-                        "props": {"className": "jw-form-actions"},
+                        "props": {
+                          "className": "jw-form-actions"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "Button",
                             "children": [
-                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                              {"type": "basic", "name": "Span", "text": "$t:user.board.form.cancel", "props": {"className": "jw-action-label"}}
+                              {
+                                "type": "composite",
+                                "name": "ThemeIcon",
+                                "props": {
+                                  "name": "arrow-left",
+                                  "className": "jw-icon jw-icon--compact jw-icon--back"
+                                }
+                              },
+                              {
+                                "type": "basic",
+                                "name": "Span",
+                                "text": "$t:user.board.form.cancel",
+                                "props": {
+                                  "className": "jw-action-label"
+                                }
+                              }
                             ],
-                            "props": {"type": "button", "className": "jw-button jw-button--secondary"},
+                            "props": {
+                              "type": "button",
+                              "className": "jw-button jw-button--secondary"
+                            },
                             "actions": [
                               {
                                 "type": "click",
                                 "handler": "navigate",
-                                "params": {"path": "/board/{{route.slug}}/{{route.id}}"}
+                                "params": {
+                                  "path": "/board/{{route.slug}}/{{route.id}}"
+                                }
                               }
                             ]
                           },
@@ -297,8 +378,22 @@
                             "type": "basic",
                             "name": "Button",
                             "children": [
-                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "lock-keyhole", "className": "jw-icon jw-icon--compact"}},
-                              {"type": "basic", "name": "Span", "text": "$t:user.board.form.password_action", "props": {"className": "jw-action-label"}}
+                              {
+                                "type": "composite",
+                                "name": "ThemeIcon",
+                                "props": {
+                                  "name": "lock-keyhole",
+                                  "className": "jw-icon jw-icon--compact"
+                                }
+                              },
+                              {
+                                "type": "basic",
+                                "name": "Span",
+                                "text": "$t:user.board.form.password_action",
+                                "props": {
+                                  "className": "jw-action-label"
+                                }
+                              }
                             ],
                             "props": {
                               "type": "button",
@@ -312,12 +407,21 @@
                                 "actions": [
                                   {
                                     "handler": "setState",
-                                    "params": {"target": "local", "isVerifying": true, "passwordError": ""}
+                                    "params": {
+                                      "target": "local",
+                                      "isVerifying": true,
+                                      "passwordError": ""
+                                    }
                                   },
                                   {
                                     "handler": "apiCall",
                                     "target": "/api/modules/sirsoft-board/boards/{{route.slug}}/posts/{{route.id}}/verify-password-for-modify",
-                                    "params": {"method": "POST", "body": {"password": "{{_local.verifyPassword}}"}},
+                                    "params": {
+                                      "method": "POST",
+                                      "body": {
+                                        "password": "{{_local.verifyPassword}}"
+                                      }
+                                    },
                                     "onSuccess": [
                                       {
                                         "handler": "setState",
@@ -329,8 +433,18 @@
                                           "verifyPassword": ""
                                         }
                                       },
-                                      {"handler": "refetchDataSource", "params": {"dataSourceId": "form_meta"}},
-                                      {"handler": "refetchDataSource", "params": {"dataSourceId": "form_data"}}
+                                      {
+                                        "handler": "refetchDataSource",
+                                        "params": {
+                                          "dataSourceId": "form_meta"
+                                        }
+                                      },
+                                      {
+                                        "handler": "refetchDataSource",
+                                        "params": {
+                                          "dataSourceId": "form_data"
+                                        }
+                                      }
                                     ],
                                     "onError": [
                                       {
@@ -366,18 +480,25 @@
                         "type": "basic",
                         "name": "Div",
                         "if": "{{_local.errors && (typeof _local.errors === 'string' || Object.keys(_local.errors).length > 0)}}",
-                        "props": {"className": "jw-form-errors", "role": "alert"},
+                        "props": {
+                          "className": "jw-form-errors",
+                          "role": "alert"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "H2",
                             "text": "$t:user.board.form.validation_title",
-                            "props": {"className": "jw-form-errors__title"}
+                            "props": {
+                              "className": "jw-form-errors__title"
+                            }
                           },
                           {
                             "type": "basic",
                             "name": "Ul",
-                            "props": {"className": "jw-form-errors__list"},
+                            "props": {
+                              "className": "jw-form-errors__list"
+                            },
                             "iteration": {
                               "source": "typeof _local.errors === 'string' ? [_local.errors] : Object.values(_local.errors ?? {}).flatMap(messages => Array.isArray(messages) ? messages : [messages])",
                               "item_var": "message"
@@ -387,7 +508,9 @@
                                 "type": "basic",
                                 "name": "Li",
                                 "text": "{{message}}",
-                                "props": {"className": "jw-form-errors__item"}
+                                "props": {
+                                  "className": "jw-form-errors__item"
+                                }
                               }
                             ]
                           }
@@ -397,18 +520,25 @@
                         "type": "basic",
                         "name": "Div",
                         "if": "{{form_meta?.data && !_global.currentUser?.uuid && !route.id}}",
-                        "props": {"className": "jw-form-grid"},
+                        "props": {
+                          "className": "jw-form-grid"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "Div",
-                            "props": {"className": "jw-field"},
+                            "props": {
+                              "className": "jw-field"
+                            },
                             "children": [
                               {
                                 "type": "basic",
                                 "name": "Label",
                                 "text": "$t:user.board.form.author_label",
-                                "props": {"htmlFor": "jw-board-author", "className": "jw-field__label"}
+                                "props": {
+                                  "htmlFor": "jw-board-author",
+                                  "className": "jw-field__label"
+                                }
                               },
                               {
                                 "type": "basic",
@@ -418,7 +548,9 @@
                                   "type": "text",
                                   "name": "author_name",
                                   "autoComplete": "name",
-                                  "className": "{{_local.errors?.author_name ? 'jw-field__control jw-field__control--error' : 'jw-field__control'}}"
+                                  "className": "{{_local.errors?.author_name ? 'jw-field__control jw-field__control--error' : 'jw-field__control'}}",
+                                  "required": true,
+                                  "minLength": 1
                                 }
                               },
                               {
@@ -426,20 +558,27 @@
                                 "name": "P",
                                 "if": "{{_local.errors?.author_name}}",
                                 "text": "{{_local.errors.author_name[0] ?? _local.errors.author_name}}",
-                                "props": {"className": "jw-field__error"}
+                                "props": {
+                                  "className": "jw-field__error"
+                                }
                               }
                             ]
                           },
                           {
                             "type": "basic",
                             "name": "Div",
-                            "props": {"className": "jw-field"},
+                            "props": {
+                              "className": "jw-field"
+                            },
                             "children": [
                               {
                                 "type": "basic",
                                 "name": "Label",
                                 "text": "$t:user.board.form.guest_password_label",
-                                "props": {"htmlFor": "jw-board-password", "className": "jw-field__label"}
+                                "props": {
+                                  "htmlFor": "jw-board-password",
+                                  "className": "jw-field__label"
+                                }
                               },
                               {
                                 "type": "basic",
@@ -449,7 +588,9 @@
                                   "type": "password",
                                   "name": "password",
                                   "autoComplete": "new-password",
-                                  "className": "{{_local.errors?.password ? 'jw-field__control jw-field__control--error' : 'jw-field__control'}}"
+                                  "className": "{{_local.errors?.password ? 'jw-field__control jw-field__control--error' : 'jw-field__control'}}",
+                                  "required": true,
+                                  "minLength": 4
                                 }
                               },
                               {
@@ -457,7 +598,81 @@
                                 "name": "P",
                                 "if": "{{_local.errors?.password}}",
                                 "text": "{{_local.errors.password[0] ?? _local.errors.password}}",
-                                "props": {"className": "jw-field__error"}
+                                "props": {
+                                  "className": "jw-field__error"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Div",
+                        "props": {
+                          "className": "jw-form-grid"
+                        },
+                        "if": "{{route.slug === 'inquiries' && !route.id}}",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "Div",
+                            "props": {
+                              "className": "jw-field"
+                            },
+                            "children": [
+                              {
+                                "type": "basic",
+                                "name": "Label",
+                                "props": {
+                                  "className": "jw-field__label",
+                                  "htmlFor": "jw-inquiry-company"
+                                },
+                                "text": "$t:user.board.form.company"
+                              },
+                              {
+                                "type": "basic",
+                                "name": "Input",
+                                "props": {
+                                  "className": "jw-field__control",
+                                  "id": "jw-inquiry-company",
+                                  "name": "company",
+                                  "type": "text",
+                                  "required": false,
+                                  "maxLength": 160,
+                                  "autoComplete": "organization"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "basic",
+                            "name": "Div",
+                            "props": {
+                              "className": "jw-field"
+                            },
+                            "children": [
+                              {
+                                "type": "basic",
+                                "name": "Label",
+                                "props": {
+                                  "className": "jw-field__label",
+                                  "htmlFor": "jw-inquiry-reply_email"
+                                },
+                                "text": "$t:user.board.form.reply_email"
+                              },
+                              {
+                                "type": "basic",
+                                "name": "Input",
+                                "props": {
+                                  "className": "jw-field__control",
+                                  "id": "jw-inquiry-reply_email",
+                                  "name": "reply_email",
+                                  "type": "email",
+                                  "required": true,
+                                  "maxLength": 160,
+                                  "autoComplete": "email"
+                                }
                               }
                             ]
                           }
@@ -467,24 +682,34 @@
                         "type": "basic",
                         "name": "Div",
                         "if": "{{form_meta?.data?.board?.user_abilities?.can_manage || form_meta?.data?.board?.secret_mode === 'enabled' || form_meta?.data?.board?.secret_mode === 'always'}}",
-                        "props": {"className": "jw-form-options"},
+                        "props": {
+                          "className": "jw-form-options"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "Label",
                             "if": "{{form_meta?.data?.board?.user_abilities?.can_manage}}",
-                            "props": {"className": "jw-form-option"},
+                            "props": {
+                              "className": "jw-form-option"
+                            },
                             "children": [
                               {
                                 "type": "basic",
                                 "name": "Input",
-                                "props": {"type": "checkbox", "name": "is_notice", "className": "jw-form-option__control"}
+                                "props": {
+                                  "type": "checkbox",
+                                  "name": "is_notice",
+                                  "className": "jw-form-option__control"
+                                }
                               },
                               {
                                 "type": "basic",
                                 "name": "Span",
                                 "text": "$t:user.board.form.notice_label",
-                                "props": {"className": "jw-form-option__label"}
+                                "props": {
+                                  "className": "jw-form-option__label"
+                                }
                               }
                             ]
                           },
@@ -492,18 +717,26 @@
                             "type": "basic",
                             "name": "Label",
                             "if": "{{form_meta?.data?.board?.secret_mode === 'enabled'}}",
-                            "props": {"className": "jw-form-option"},
+                            "props": {
+                              "className": "jw-form-option"
+                            },
                             "children": [
                               {
                                 "type": "basic",
                                 "name": "Input",
-                                "props": {"type": "checkbox", "name": "is_secret", "className": "jw-form-option__control"}
+                                "props": {
+                                  "type": "checkbox",
+                                  "name": "is_secret",
+                                  "className": "jw-form-option__control"
+                                }
                               },
                               {
                                 "type": "basic",
                                 "name": "Span",
                                 "text": "$t:user.board.form.secret_label",
-                                "props": {"className": "jw-form-option__label"}
+                                "props": {
+                                  "className": "jw-form-option__label"
+                                }
                               }
                             ]
                           },
@@ -511,18 +744,26 @@
                             "type": "basic",
                             "name": "Div",
                             "if": "{{form_meta?.data?.board?.secret_mode === 'always'}}",
-                            "props": {"className": "jw-form-option jw-form-option--fixed"},
+                            "props": {
+                              "className": "jw-form-option jw-form-option--fixed"
+                            },
                             "children": [
                               {
                                 "type": "basic",
                                 "name": "Input",
-                                "props": {"type": "hidden", "name": "is_secret", "value": true}
+                                "props": {
+                                  "type": "hidden",
+                                  "name": "is_secret",
+                                  "value": true
+                                }
                               },
                               {
                                 "type": "basic",
                                 "name": "Span",
                                 "text": "$t:user.board.form.secret_fixed_label",
-                                "props": {"className": "jw-form-option__label"}
+                                "props": {
+                                  "className": "jw-form-option__label"
+                                }
                               }
                             ]
                           }
@@ -532,13 +773,18 @@
                         "type": "basic",
                         "name": "Div",
                         "if": "{{form_meta?.data?.board?.categories?.length > 0}}",
-                        "props": {"className": "jw-field"},
+                        "props": {
+                          "className": "jw-field"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "Label",
                             "text": "$t:user.board.form.category_label",
-                            "props": {"htmlFor": "jw-board-category", "className": "jw-field__label"}
+                            "props": {
+                              "htmlFor": "jw-board-category",
+                              "className": "jw-field__label"
+                            }
                           },
                           {
                             "type": "basic",
@@ -555,13 +801,18 @@
                       {
                         "type": "basic",
                         "name": "Div",
-                        "props": {"className": "jw-field"},
+                        "props": {
+                          "className": "jw-field"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "Label",
                             "text": "$t:user.board.form.title_label",
-                            "props": {"htmlFor": "jw-board-title", "className": "jw-field__label"}
+                            "props": {
+                              "htmlFor": "jw-board-title",
+                              "className": "jw-field__label"
+                            }
                           },
                           {
                             "type": "basic",
@@ -570,7 +821,9 @@
                               "id": "jw-board-title",
                               "type": "text",
                               "name": "title",
-                              "className": "{{_local.errors?.title ? 'jw-field__control jw-field__control--error' : 'jw-field__control'}}"
+                              "className": "{{_local.errors?.title ? 'jw-field__control jw-field__control--error' : 'jw-field__control'}}",
+                              "required": true,
+                              "minLength": 2
                             }
                           },
                           {
@@ -578,20 +831,27 @@
                             "name": "P",
                             "if": "{{_local.errors?.title}}",
                             "text": "{{_local.errors.title[0] ?? _local.errors.title}}",
-                            "props": {"className": "jw-field__error"}
+                            "props": {
+                              "className": "jw-field__error"
+                            }
                           }
                         ]
                       },
                       {
                         "type": "basic",
                         "name": "Div",
-                        "props": {"className": "jw-field"},
+                        "props": {
+                          "className": "jw-field"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "Label",
                             "text": "$t:user.board.form.content_label",
-                            "props": {"htmlFor": "jw-board-content", "className": "jw-field__label"}
+                            "props": {
+                              "htmlFor": "jw-board-content",
+                              "className": "jw-field__label"
+                            }
                           },
                           {
                             "type": "basic",
@@ -600,42 +860,96 @@
                               "id": "jw-board-content",
                               "name": "content",
                               "rows": 12,
-                              "className": "{{_local.errors?.content ? 'jw-field__control jw-field__textarea jw-field__control--error' : 'jw-field__control jw-field__textarea'}}"
+                              "className": "{{_local.errors?.content ? 'jw-field__control jw-field__textarea jw-field__control--error' : 'jw-field__control jw-field__textarea'}}",
+                              "required": true,
+                              "minLength": 2
                             }
                           },
                           {
                             "type": "basic",
                             "name": "P",
                             "text": "$t:user.board.form.content_help",
-                            "props": {"className": "jw-field__help"}
+                            "props": {
+                              "className": "jw-field__help"
+                            }
                           },
                           {
                             "type": "basic",
                             "name": "P",
                             "if": "{{_local.errors?.content}}",
                             "text": "{{_local.errors.content[0] ?? _local.errors.content}}",
-                            "props": {"className": "jw-field__error"}
+                            "props": {
+                              "className": "jw-field__error"
+                            }
                           }
                         ]
                       },
                       {
                         "type": "basic",
                         "name": "Div",
-                        "props": {"className": "jw-form-actions"},
+                        "props": {
+                          "className": "jw-field__help"
+                        },
+                        "if": "{{route.slug === 'inquiries'}}",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "props": {
+                              "className": "jw-field__help"
+                            },
+                            "text": "$t:user.board.form.reply_help"
+                          },
+                          {
+                            "type": "basic",
+                            "name": "A",
+                            "props": {
+                              "className": "jw-text-link",
+                              "href": "/page/privacy"
+                            },
+                            "text": "$t:user.board.form.privacy_link"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Div",
+                        "props": {
+                          "className": "jw-form-actions"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "Button",
                             "children": [
-                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                              {"type": "basic", "name": "Span", "text": "$t:user.board.form.cancel", "props": {"className": "jw-action-label"}}
+                              {
+                                "type": "composite",
+                                "name": "ThemeIcon",
+                                "props": {
+                                  "name": "arrow-left",
+                                  "className": "jw-icon jw-icon--compact jw-icon--back"
+                                }
+                              },
+                              {
+                                "type": "basic",
+                                "name": "Span",
+                                "text": "$t:user.board.form.cancel",
+                                "props": {
+                                  "className": "jw-action-label"
+                                }
+                              }
                             ],
-                            "props": {"type": "button", "className": "jw-button jw-button--secondary"},
+                            "props": {
+                              "type": "button",
+                              "className": "jw-button jw-button--secondary"
+                            },
                             "actions": [
                               {
                                 "type": "click",
                                 "handler": "navigate",
-                                "params": {"path": "{{route.id ? '/board/' + route.slug + '/' + route.id : '/board/' + route.slug}}"}
+                                "params": {
+                                  "path": "{{route.id ? '/board/' + route.slug + '/' + route.id : '/board/' + route.slug}}"
+                                }
                               }
                             ]
                           },
@@ -643,13 +957,28 @@
                             "type": "basic",
                             "name": "Button",
                             "children": [
-                              {"type": "basic", "name": "Span", "text": "{{_local.isSaving ? '$t:user.board.form.saving' : (route.id ? '$t:user.board.form.save' : '$t:user.board.form.submit')}}", "props": {"className": "jw-action-label"}},
-                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "send", "className": "jw-icon jw-icon--compact jw-icon--action"}}
+                              {
+                                "type": "basic",
+                                "name": "Span",
+                                "text": "{{_local.isSaving ? '$t:user.board.form.saving' : (route.id ? '$t:user.board.form.save' : '$t:user.board.form.submit')}}",
+                                "props": {
+                                  "className": "jw-action-label"
+                                }
+                              },
+                              {
+                                "type": "composite",
+                                "name": "ThemeIcon",
+                                "props": {
+                                  "name": "send",
+                                  "className": "jw-icon jw-icon--compact jw-icon--action"
+                                }
+                              }
                             ],
                             "props": {
                               "type": "button",
                               "disabled": "{{_local.isSaving}}",
-                              "className": "jw-button jw-button--primary"
+                              "className": "jw-button jw-button--primary",
+                              "data-jw-submit": "true"
                             },
                             "actions": [
                               {
@@ -658,7 +987,11 @@
                                 "actions": [
                                   {
                                     "handler": "setState",
-                                    "params": {"target": "local", "isSaving": true, "errors": null}
+                                    "params": {
+                                      "target": "local",
+                                      "isSaving": true,
+                                      "errors": null
+                                    }
                                   },
                                   {
                                     "handler": "apiCall",
@@ -666,26 +999,43 @@
                                     "auth_required": true,
                                     "params": {
                                       "method": "{{route.id ? 'PUT' : 'POST'}}",
-                                      "body": "{{Object.assign({}, _local.form, {temp_key: _local.tempKey})}}"
+                                      "body": "{{Object.assign({}, _local.form, {temp_key: _local.tempKey}, route.slug === 'inquiries' && !route.id ? {content_mode: 'text', content: '회사 / Company: ' + (_local.form.company || '-') + '\\n회신 이메일 / Reply email: ' + _local.form.reply_email + '\\n\\n' + _local.form.content} : {})}}",
+                                      "headers": {
+                                        "X-Board-Post-Verify-Token": "{{_local.verificationToken ?? ''}}"
+                                      }
                                     },
                                     "onSuccess": [
                                       {
                                         "handler": "setState",
-                                        "params": {"target": "local", "isSaving": false, "hasChanges": false, "errors": null}
+                                        "params": {
+                                          "target": "local",
+                                          "isSaving": false,
+                                          "hasChanges": false,
+                                          "errors": null
+                                        }
                                       },
                                       {
                                         "handler": "toast",
-                                        "params": {"type": "success", "message": "$t:user.board.form.success"}
+                                        "params": {
+                                          "type": "success",
+                                          "message": "$t:user.board.form.success"
+                                        }
                                       },
                                       {
                                         "handler": "navigate",
-                                        "params": {"path": "/board/{{route.slug}}/{{result?.data?.id}}"}
+                                        "params": {
+                                          "path": "/board/{{route.slug}}/{{result?.data?.id}}{{route.slug === 'inquiries' && !route.id ? '?submitted=1' : ''}}"
+                                        }
                                       }
                                     ],
                                     "onError": [
                                       {
                                         "handler": "setState",
-                                        "params": {"target": "local", "isSaving": false, "errors": "{{error.errors ?? error.message}}"}
+                                        "params": {
+                                          "target": "local",
+                                          "isSaving": false,
+                                          "errors": "{{error.errors ?? error.message}}"
+                                        }
                                       }
                                     ]
                                   }

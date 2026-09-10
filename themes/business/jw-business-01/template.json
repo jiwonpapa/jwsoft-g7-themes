@@ -64,7 +64,8 @@
     ],
     "composite": [
       "html-content",
-      "mobile-menu-button"
+      "mobile-menu-button",
+      "language-switcher"
     ],
     "layout": []
   },

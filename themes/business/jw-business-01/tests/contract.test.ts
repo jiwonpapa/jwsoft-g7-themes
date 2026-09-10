@@ -159,9 +159,22 @@ describe('layout data binding contract', () => {
     const primary = nodes(base, 'jw-primary-navigation')[0];
     const footerNode = nodes(base, 'jw-footer-navigation')[0];
     if (!object(primary) || !object(footerNode) || !Array.isArray(primary['children']) || !Array.isArray(footerNode['children'])) throw new Error('Invalid baseline navigation');
-    const baselinePaths = (items: unknown[]): unknown[] => items.filter(object).map(item => object(item['props']) ? item['props']['href'] : undefined);
+    const baselinePaths = (items: unknown[]): unknown[] => items.filter(object).map(item => {
+      const link = item['name'] === 'A' ? item : Array.isArray(item['children']) ? item['children'].find(child => object(child) && child['name'] === 'A') : undefined;
+      return object(link) && object(link['props']) ? link['props']['href'] : undefined;
+    });
     expect(baselinePaths(primary['children'])).toEqual(navigation.map(node => destinationPath(node['destination'])));
     expect(baselinePaths(footerNode['children'])).toEqual(footer.map(node => destinationPath(node['destination'])));
+    const renderedLinks = objects(primary).filter(node => node['name'] === 'A').map(node => object(node['props']) ? node['props']['href'] : undefined);
+    for (const node of flattenNavigation(navigation)) expect(renderedLinks).toContain(destinationPath(node['destination']));
+  });
+  it('repeats project cards inside one grid instead of repeating the grid', () => {
+    const list = objects(read('layouts/board/index.json')).find(node => object(node['props']) && String(node['props']['className']).includes('jw-post-list--visual'));
+    expect(list).toBeDefined();
+    expect(list).not.toHaveProperty('iteration');
+    const cards = objects(list).filter(node => node['name'] === 'A' && object(node['iteration']));
+    expect(cards).toHaveLength(1);
+    expect(cards[0]?.['iteration']).toMatchObject({ item_var: 'post' });
   });
   it('declares only public routes actually shipped in the native route table', () => {
     const manifest = read('layout-data.json');

@@ -6,9 +6,14 @@
     "seo": {
       "enabled": true,
       "extensions": [
-        {"type": "module", "id": "sirsoft-board"}
+        {
+          "type": "module",
+          "id": "sirsoft-board"
+        }
       ],
-      "data_sources": ["posts"],
+      "data_sources": [
+        "posts"
+      ],
       "page_type": "board",
       "toggle_setting": "$module_settings:sirsoft-board:seo.seo_board",
       "vars": {
@@ -22,7 +27,9 @@
         "type": "website",
         "description": "{{_seo.board.description ?? posts.data.board.description ?? ''}}"
       },
-      "structured_data": {"@type": "ItemList"}
+      "structured_data": {
+        "@type": "ItemList"
+      }
     }
   },
   "data_sources": [
@@ -42,9 +49,24 @@
         "category": "{{query.category ?? ''}}"
       },
       "errorHandling": {
-        "401": {"handler": "showErrorPage", "params": {"target": "content"}},
-        "403": {"handler": "showErrorPage", "params": {"target": "content"}},
-        "404": {"handler": "showErrorPage", "params": {"target": "content"}}
+        "401": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        },
+        "403": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        },
+        "404": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        }
       }
     }
   ],
@@ -54,13 +76,15 @@
         "type": "basic",
         "name": "Div",
         "if": "{{posts?.data?.board}}",
-        "props": {"className": "jw-board"},
+        "props": {
+          "className": "jw-board"
+        },
         "children": [
           {
             "type": "basic",
             "name": "Section",
             "props": {
-              "className": "{{route.slug === 'cases' ? 'jw-subpage-hero jw-board-hero jw-subpage-hero--media jw-subpage-hero--dark' : route.slug === 'resources' || route.slug === 'notices' || route.slug === 'inquiries' ? 'jw-subpage-hero jw-board-hero jw-subpage-hero--media' : 'jw-subpage-hero jw-board-hero'}}"
+              "className": "{{route.slug === 'cases' ? 'jw-subpage-hero jw-board-hero jw-subpage-hero--media' : route.slug === 'resources' || route.slug === 'notices' || route.slug === 'inquiries' ? 'jw-subpage-hero jw-board-hero jw-subpage-hero--media' : 'jw-subpage-hero jw-board-hero'}}"
             },
             "children": [
               {
@@ -109,58 +133,71 @@
                 }
               },
               {
-                "type": "basic",
-                "name": "Div",
-                "if": "{{route.slug === 'cases'}}",
-                "props": {"className": "jw-subpage-hero__veil"}
-              },
-              {
                 "type": "composite",
                 "name": "Reveal",
-                "props": {"className": "jw-container jw-subpage-hero__inner", "direction": "up"},
+                "props": {
+                  "className": "jw-container jw-subpage-hero__inner",
+                  "direction": "up"
+                },
                 "children": [
                   {
                     "type": "basic",
                     "name": "Div",
-                    "props": {"className": "jw-breadcrumb"},
+                    "props": {
+                      "className": "jw-breadcrumb"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "A",
                         "text": "$t:user.home",
-                        "props": {"href": "/./", "className": "jw-breadcrumb__link"}
+                        "props": {
+                          "href": "/./",
+                          "className": "jw-breadcrumb__link"
+                        }
                       },
                       {
                         "type": "composite",
                         "name": "ThemeIcon",
-                        "props": {"name": "chevron-right", "className": "jw-icon jw-breadcrumb__separator"}
+                        "props": {
+                          "name": "chevron-right",
+                          "className": "jw-icon jw-breadcrumb__separator"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "Span",
                         "text": "{{posts.data.board.name}}",
-                        "props": {"className": "jw-breadcrumb__current"}
+                        "props": {
+                          "className": "jw-breadcrumb__current"
+                        }
                       }
                     ]
                   },
                   {
                     "type": "basic",
                     "name": "P",
-                    "text": "$t:user.board.eyebrow",
-                    "props": {"className": "jw-eyebrow"}
+                    "text": "{{route.slug === 'cases' ? '$t:user.board.projects_eyebrow' : route.slug === 'notices' ? '$t:user.board.notices_eyebrow' : '$t:user.board.eyebrow'}}",
+                    "props": {
+                      "className": "jw-eyebrow"
+                    }
                   },
                   {
                     "type": "basic",
                     "name": "H1",
                     "text": "{{posts.data.board.name}}",
-                    "props": {"className": "jw-subpage-title"}
+                    "props": {
+                      "className": "jw-subpage-title"
+                    }
                   },
                   {
                     "type": "basic",
                     "name": "P",
                     "text": "{{posts.data.board.description}}",
                     "if": "{{posts?.data?.board?.description}}",
-                    "props": {"className": "jw-subpage-lead"}
+                    "props": {
+                      "className": "jw-subpage-lead"
+                    }
                   }
                 ]
               }
@@ -169,34 +206,44 @@
           {
             "type": "basic",
             "name": "Section",
-            "props": {"className": "jw-section jw-board-body"},
+            "props": {
+              "className": "jw-section jw-board-body"
+            },
             "children": [
               {
                 "type": "basic",
                 "name": "Div",
-                "props": {"className": "jw-container"},
+                "props": {
+                  "className": "jw-container"
+                },
                 "children": [
                   {
                     "type": "basic",
                     "name": "Div",
-                    "props": {"className": "jw-board-toolbar"},
+                    "props": {
+                      "className": "jw-board-toolbar"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "P",
                         "text": "$t:user.board.list_label",
-                        "props": {"className": "jw-board-toolbar__label"}
+                        "props": {
+                          "className": "jw-board-toolbar__label"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "Div",
                         "if": "{{posts?.data?.pagination?.total_is_exact}}",
-                        "props": {"className": "jw-board-toolbar__count"},
+                        "props": {
+                          "className": "jw-board-toolbar__count"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "Span",
-                            "text": "{{posts.data.pagination.total}}"
+                            "text": "{{posts.data.pagination.total + (posts.data.data ?? []).filter(item => item.is_notice).length}}"
                           },
                           {
                             "type": "basic",
@@ -209,8 +256,22 @@
                         "type": "basic",
                         "name": "A",
                         "children": [
-                          {"type": "basic", "name": "Span", "text": "$t:user.board.write", "props": {"className": "jw-action-label"}},
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "pencil-ruler", "className": "jw-icon jw-icon--compact"}}
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.board.write",
+                            "props": {
+                              "className": "jw-action-label"
+                            }
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "pencil-ruler",
+                              "className": "jw-icon jw-icon--compact"
+                            }
+                          }
                         ],
                         "if": "{{posts?.data?.abilities?.can_write === true}}",
                         "props": {
@@ -227,11 +288,6 @@
                     "props": {
                       "className": "{{route.slug === 'cases' ? 'jw-post-list jw-post-list--visual' : 'jw-post-list'}}"
                     },
-                    "iteration": {
-                      "source": "{{posts?.data?.data ?? []}}",
-                      "item_var": "post",
-                      "index_var": "post_index"
-                    },
                     "children": [
                       {
                         "type": "basic",
@@ -245,7 +301,9 @@
                             "type": "basic",
                             "name": "Div",
                             "if": "{{post.thumbnail}}",
-                            "props": {"className": "jw-post-row__media"},
+                            "props": {
+                              "className": "jw-post-row__media"
+                            },
                             "children": [
                               {
                                 "type": "basic",
@@ -262,25 +320,42 @@
                           {
                             "type": "basic",
                             "name": "Div",
-                            "props": {"className": "jw-post-row__content"},
+                            "props": {
+                              "className": "jw-post-row__content"
+                            },
                             "children": [
                               {
                                 "type": "basic",
                                 "name": "Div",
-                                "props": {"className": "jw-post-row__meta"},
+                                "props": {
+                                  "className": "jw-post-row__meta"
+                                },
                                 "children": [
+                                  {
+                                    "type": "basic",
+                                    "name": "Span",
+                                    "props": {
+                                      "className": "jw-post-row__category"
+                                    },
+                                    "text": "$t:user.board.pinned",
+                                    "if": "{{post.is_notice}}"
+                                  },
                                   {
                                     "type": "basic",
                                     "name": "Span",
                                     "text": "{{post.category}}",
                                     "if": "{{post.category}}",
-                                    "props": {"className": "jw-post-row__category"}
+                                    "props": {
+                                      "className": "jw-post-row__category"
+                                    }
                                   },
                                   {
                                     "type": "basic",
                                     "name": "Span",
                                     "text": "{{post.created_at_formatted ?? post.created_at}}",
-                                    "props": {"className": "jw-post-row__date"}
+                                    "props": {
+                                      "className": "jw-post-row__date"
+                                    }
                                   }
                                 ]
                               },
@@ -288,23 +363,35 @@
                                 "type": "basic",
                                 "name": "H2",
                                 "text": "{{post.title}}",
-                                "props": {"className": "jw-post-row__title"}
+                                "props": {
+                                  "className": "jw-post-row__title"
+                                }
                               },
                               {
                                 "type": "basic",
                                 "name": "P",
                                 "text": "{{post.content_preview}}",
                                 "if": "{{post.content_preview}}",
-                                "props": {"className": "jw-post-row__preview"}
+                                "props": {
+                                  "className": "jw-post-row__preview"
+                                }
                               }
                             ]
                           },
                           {
                             "type": "composite",
                             "name": "ThemeIcon",
-                            "props": {"name": "arrow-up-right", "className": "jw-icon jw-post-row__arrow"}
+                            "props": {
+                              "name": "arrow-up-right",
+                              "className": "jw-icon jw-post-row__arrow"
+                            }
                           }
-                        ]
+                        ],
+                        "iteration": {
+                          "source": "{{posts?.data?.data ?? []}}",
+                          "item_var": "post",
+                          "index_var": "post_index"
+                        }
                       }
                     ]
                   },
@@ -312,19 +399,25 @@
                     "type": "basic",
                     "name": "Div",
                     "if": "{{(posts?.data?.data ?? []).length === 0}}",
-                    "props": {"className": "jw-board-empty"},
+                    "props": {
+                      "className": "jw-board-empty"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "H2",
                         "text": "$t:user.board.empty_title",
-                        "props": {"className": "jw-board-empty__title"}
+                        "props": {
+                          "className": "jw-board-empty__title"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "P",
                         "text": "$t:user.board.empty_copy",
-                        "props": {"className": "jw-board-empty__copy"}
+                        "props": {
+                          "className": "jw-board-empty__copy"
+                        }
                       }
                     ]
                   },
@@ -332,14 +425,31 @@
                     "type": "basic",
                     "name": "Nav",
                     "if": "{{posts?.data?.pagination && (posts.data.pagination.current_page > 1 || posts.data.pagination.has_more_pages)}}",
-                    "props": {"className": "jw-pagination", "aria-label": "$t:user.board.pagination"},
+                    "props": {
+                      "className": "jw-pagination",
+                      "aria-label": "$t:user.board.pagination"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "A",
                         "children": [
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                          {"type": "basic", "name": "Span", "text": "$t:user.board.previous", "props": {"className": "jw-action-label"}}
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "arrow-left",
+                              "className": "jw-icon jw-icon--compact jw-icon--back"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.board.previous",
+                            "props": {
+                              "className": "jw-action-label"
+                            }
+                          }
                         ],
                         "if": "{{posts.data.pagination.current_page > 1}}",
                         "props": {
@@ -351,14 +461,30 @@
                         "type": "basic",
                         "name": "Span",
                         "text": "{{posts.data.pagination.current_page}}",
-                        "props": {"className": "jw-pagination__current"}
+                        "props": {
+                          "className": "jw-pagination__current"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "A",
                         "children": [
-                          {"type": "basic", "name": "Span", "text": "$t:user.board.next", "props": {"className": "jw-action-label"}},
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--compact jw-icon--action"}}
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.board.next",
+                            "props": {
+                              "className": "jw-action-label"
+                            }
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "arrow-right",
+                              "className": "jw-icon jw-icon--compact jw-icon--action"
+                            }
+                          }
                         ],
                         "if": "{{posts.data.pagination.has_more_pages}}",
                         "props": {
@@ -378,33 +504,58 @@
         "type": "basic",
         "name": "Section",
         "if": "{{!posts?.data?.board && !posts?.loading}}",
-        "props": {"className": "jw-empty-state"},
+        "props": {
+          "className": "jw-empty-state"
+        },
         "children": [
           {
             "type": "basic",
             "name": "Div",
-            "props": {"className": "jw-container jw-empty-state__inner"},
+            "props": {
+              "className": "jw-container jw-empty-state__inner"
+            },
             "children": [
               {
                 "type": "basic",
                 "name": "H1",
                 "text": "$t:user.board.not_found_title",
-                "props": {"className": "jw-subpage-title"}
+                "props": {
+                  "className": "jw-subpage-title"
+                }
               },
               {
                 "type": "basic",
                 "name": "P",
                 "text": "$t:user.board.not_found_copy",
-                "props": {"className": "jw-subpage-lead"}
+                "props": {
+                  "className": "jw-subpage-lead"
+                }
               },
               {
                 "type": "basic",
                 "name": "A",
                 "children": [
-                  {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                  {"type": "basic", "name": "Span", "text": "$t:user.page.back_home", "props": {"className": "jw-action-label"}}
+                  {
+                    "type": "composite",
+                    "name": "ThemeIcon",
+                    "props": {
+                      "name": "arrow-left",
+                      "className": "jw-icon jw-icon--compact jw-icon--back"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "Span",
+                    "text": "$t:user.page.back_home",
+                    "props": {
+                      "className": "jw-action-label"
+                    }
+                  }
                 ],
-                "props": {"href": "/./", "className": "jw-button jw-button--primary"}
+                "props": {
+                  "href": "/./",
+                  "className": "jw-button jw-button--primary"
+                }
               }
             ]
           }

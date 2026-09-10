@@ -189,17 +189,30 @@
         "guest_password_label": "Password for editing",
         "notice_label": "Publish as a notice",
         "secret_label": "Publish as a private post",
-        "secret_fixed_label": "This inquiry will be published as a private post",
+        "secret_fixed_label": "The inquiry body is private. Its title appears in the list.",
         "category_label": "Inquiry type",
         "category_placeholder": "Choose a type",
         "title_label": "Subject",
         "content_label": "Details",
-        "content_help": "Do not enter sensitive information such as account passwords.",
+        "content_help": "Describe your current situation and desired outcome. Do not include account passwords or payment details.",
         "cancel": "Cancel",
         "submit": "Submit",
         "save": "Save",
         "saving": "Saving",
-        "success": "Your message has been saved"
+        "success": "Your message has been saved",
+        "company": "Company (optional)",
+        "reply_email": "Reply email (required)",
+        "reply_help": "Our team will review your inquiry and contact you at your reply email. Titles appear in the list; keep contact details in the private body.",
+        "privacy_link": "Privacy notice"
+      },
+      "projects_eyebrow": "PROJECTS",
+      "notices_eyebrow": "NOTICES",
+      "pinned": "Pinned",
+      "receipt": {
+        "title": "Inquiry received",
+        "number": "Reference: ",
+        "copy": "Keep this reference and the link below. Use your password to view or edit the inquiry. Our team will contact you at your reply email.",
+        "link": "View my inquiry"
       }
     },
     "errors": {
@@ -277,6 +290,21 @@
         "image_alt": "Image description"
       }
     },
-    "content": "Content"
+    "content": "Content",
+    "subnavigation": {
+      "company-overview": "Overview",
+      "company-values": "Vision & Values",
+      "company-history": "History",
+      "company-team": "Team",
+      "company-location": "Location",
+      "services-overview": "Services",
+      "services-process": "Process",
+      "insights-resources": "Insights",
+      "insights-notices": "Notices",
+      "insights-faq": "FAQ",
+      "contact-guide": "Contact",
+      "contact-write": "Write Inquiry",
+      "contact-privacy": "Privacy"
+    }
   }
 }

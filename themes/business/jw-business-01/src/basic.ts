@@ -35,7 +35,24 @@ export const Header = basic('header');
 export const Section = basic('section');
 export const Article = basic('article');
 export const Button = basic('button');
-export const Form = basic('form');
+export function Form({ children, editorAttrs, ...props }: BasicProps) {
+  return createElement('form', {
+    ...props, ...editorAttrs,
+    onSubmit: (event) => {
+      event.preventDefault();
+      props.onSubmit?.(event);
+    },
+    onClickCapture: (event) => {
+      if (event.target instanceof Element && event.target.closest('[data-jw-submit]')
+        && !(event.currentTarget as HTMLFormElement).reportValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        return;
+      }
+      props.onClickCapture?.(event);
+    },
+  }, children);
+}
 export const Label = basic('label');
 export const Li = basic('li');
 export const Ul = basic('ul');

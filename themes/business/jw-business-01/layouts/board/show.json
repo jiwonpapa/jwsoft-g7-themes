@@ -6,9 +6,15 @@
     "seo": {
       "enabled": true,
       "extensions": [
-        {"type": "module", "id": "sirsoft-board"}
+        {
+          "type": "module",
+          "id": "sirsoft-board"
+        }
       ],
-      "data_sources": ["post", "navigation"],
+      "data_sources": [
+        "post",
+        "navigation"
+      ],
       "page_type": "post",
       "toggle_setting": "$module_settings:sirsoft-board:seo.seo_post_detail",
       "vars": {
@@ -38,9 +44,24 @@
       "loading_strategy": "blocking",
       "refetchOnMount": true,
       "errorHandling": {
-        "401": {"handler": "showErrorPage", "params": {"target": "content"}},
-        "403": {"handler": "showErrorPage", "params": {"target": "content"}},
-        "404": {"handler": "showErrorPage", "params": {"target": "content"}}
+        "401": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        },
+        "403": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        },
+        "404": {
+          "handler": "showErrorPage",
+          "params": {
+            "target": "content"
+          }
+        }
       }
     },
     {
@@ -60,13 +81,15 @@
         "type": "basic",
         "name": "Div",
         "if": "{{post?.data}}",
-        "props": {"className": "jw-post"},
+        "props": {
+          "className": "jw-post"
+        },
         "children": [
           {
             "type": "basic",
             "name": "Section",
             "props": {
-              "className": "{{route.slug === 'cases' ? 'jw-subpage-hero jw-post-hero jw-subpage-hero--media jw-subpage-hero--dark' : route.slug === 'resources' || route.slug === 'notices' || route.slug === 'inquiries' ? 'jw-subpage-hero jw-post-hero jw-subpage-hero--media' : 'jw-subpage-hero jw-post-hero'}}"
+              "className": "{{route.slug === 'cases' ? 'jw-subpage-hero jw-post-hero jw-subpage-hero--media' : route.slug === 'resources' || route.slug === 'notices' || route.slug === 'inquiries' ? 'jw-subpage-hero jw-post-hero jw-subpage-hero--media' : 'jw-subpage-hero jw-post-hero'}}"
             },
             "children": [
               {
@@ -115,31 +138,36 @@
                 }
               },
               {
-                "type": "basic",
-                "name": "Div",
-                "if": "{{route.slug === 'cases'}}",
-                "props": {"className": "jw-subpage-hero__veil"}
-              },
-              {
                 "type": "composite",
                 "name": "Reveal",
-                "props": {"className": "jw-container jw-subpage-hero__inner", "direction": "up"},
+                "props": {
+                  "className": "jw-container jw-subpage-hero__inner",
+                  "direction": "up"
+                },
                 "children": [
                   {
                     "type": "basic",
                     "name": "Div",
-                    "props": {"className": "jw-breadcrumb"},
+                    "props": {
+                      "className": "jw-breadcrumb"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "A",
                         "text": "$t:user.home",
-                        "props": {"href": "/./", "className": "jw-breadcrumb__link"}
+                        "props": {
+                          "href": "/./",
+                          "className": "jw-breadcrumb__link"
+                        }
                       },
                       {
                         "type": "composite",
                         "name": "ThemeIcon",
-                        "props": {"name": "chevron-right", "className": "jw-icon jw-breadcrumb__separator"}
+                        "props": {
+                          "name": "chevron-right",
+                          "className": "jw-icon jw-breadcrumb__separator"
+                        }
                       },
                       {
                         "type": "basic",
@@ -155,20 +183,26 @@
                   {
                     "type": "basic",
                     "name": "Div",
-                    "props": {"className": "jw-post-hero__meta"},
+                    "props": {
+                      "className": "jw-post-hero__meta"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "Span",
                         "text": "{{post.data.category}}",
                         "if": "{{post?.data?.category}}",
-                        "props": {"className": "jw-post-row__category"}
+                        "props": {
+                          "className": "jw-post-row__category"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "Span",
                         "text": "{{post.data.created_at_formatted ?? post.data.created_at}}",
-                        "props": {"className": "jw-post-row__date"}
+                        "props": {
+                          "className": "jw-post-row__date"
+                        }
                       }
                     ]
                   },
@@ -176,7 +210,9 @@
                     "type": "basic",
                     "name": "H1",
                     "text": "{{post.data.title}}",
-                    "props": {"className": "jw-post-title"}
+                    "props": {
+                      "className": "jw-post-title"
+                    }
                   }
                 ]
               }
@@ -185,18 +221,69 @@
           {
             "type": "basic",
             "name": "Section",
-            "props": {"className": "jw-section jw-post-body"},
+            "props": {
+              "className": "jw-container jw-inquiry-receipt",
+              "role": "status"
+            },
+            "if": "{{route.slug === 'inquiries' && query.submitted === '1'}}",
+            "children": [
+              {
+                "type": "basic",
+                "name": "H2",
+                "props": {
+                  "className": "jw-inquiry-receipt__title"
+                },
+                "text": "$t:user.board.receipt.title"
+              },
+              {
+                "type": "basic",
+                "name": "P",
+                "props": {
+                  "className": "jw-subpage-lead"
+                },
+                "text": "{{$t('user.board.receipt.number') + route.id}}"
+              },
+              {
+                "type": "basic",
+                "name": "P",
+                "props": {
+                  "className": "jw-field__help"
+                },
+                "text": "$t:user.board.receipt.copy"
+              },
+              {
+                "type": "basic",
+                "name": "A",
+                "props": {
+                  "className": "jw-text-link",
+                  "href": "/board/{{route.slug}}/{{route.id}}"
+                },
+                "text": "$t:user.board.receipt.link"
+              }
+            ]
+          },
+          {
+            "type": "basic",
+            "name": "Section",
+            "props": {
+              "className": "jw-section jw-post-body"
+            },
             "children": [
               {
                 "type": "composite",
                 "name": "Reveal",
-                "props": {"className": "jw-container jw-post-body__inner", "direction": "up"},
+                "props": {
+                  "className": "jw-container jw-post-body__inner",
+                  "direction": "up"
+                },
                 "children": [
                   {
                     "type": "basic",
                     "name": "Article",
                     "if": "{{post?.data?.content !== null}}",
-                    "props": {"className": "jw-post-article"},
+                    "props": {
+                      "className": "jw-post-article"
+                    },
                     "children": [
                       {
                         "type": "composite",
@@ -211,18 +298,24 @@
                         "type": "basic",
                         "name": "Div",
                         "if": "{{(post?.data?.attachments ?? []).length > 0}}",
-                        "props": {"className": "jw-attachments"},
+                        "props": {
+                          "className": "jw-attachments"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "H2",
                             "text": "$t:user.page.attachments",
-                            "props": {"className": "jw-attachments__title"}
+                            "props": {
+                              "className": "jw-attachments__title"
+                            }
                           },
                           {
                             "type": "basic",
                             "name": "Div",
-                            "props": {"className": "jw-attachments__list"},
+                            "props": {
+                              "className": "jw-attachments__list"
+                            },
                             "iteration": {
                               "source": "{{post?.data?.attachments ?? []}}",
                               "item_var": "attachment"
@@ -236,8 +329,19 @@
                                   "className": "jw-attachment-link"
                                 },
                                 "children": [
-                                  {"type": "basic", "name": "Span", "text": "{{attachment.original_filename}}"},
-                                  {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-down", "className": "jw-icon jw-attachment-link__icon"}}
+                                  {
+                                    "type": "basic",
+                                    "name": "Span",
+                                    "text": "{{attachment.original_filename}}"
+                                  },
+                                  {
+                                    "type": "composite",
+                                    "name": "ThemeIcon",
+                                    "props": {
+                                      "name": "arrow-down",
+                                      "className": "jw-icon jw-attachment-link__icon"
+                                    }
+                                  }
                                 ]
                               }
                             ]
@@ -251,31 +355,42 @@
                     "name": "Form",
                     "if": "{{post?.data?.content === null && post?.data?.is_guest_post}}",
                     "dataKey": "secretPasswordForm",
-                    "props": {"className": "jw-board-password jw-board-password--read"},
+                    "props": {
+                      "className": "jw-board-password jw-board-password--read"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "P",
                         "text": "$t:user.board.secret.eyebrow",
-                        "props": {"className": "jw-board-password__eyebrow"}
+                        "props": {
+                          "className": "jw-board-password__eyebrow"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "H2",
                         "text": "$t:user.board.secret.title",
-                        "props": {"className": "jw-board-password__title"}
+                        "props": {
+                          "className": "jw-board-password__title"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "P",
                         "text": "$t:user.board.secret.copy",
-                        "props": {"className": "jw-board-password__copy"}
+                        "props": {
+                          "className": "jw-board-password__copy"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "Label",
                         "text": "$t:user.board.secret.password_label",
-                        "props": {"htmlFor": "jw-secret-post-password", "className": "jw-field__label"}
+                        "props": {
+                          "htmlFor": "jw-secret-post-password",
+                          "className": "jw-field__label"
+                        }
                       },
                       {
                         "type": "basic",
@@ -294,7 +409,9 @@
                             "handler": "setState",
                             "params": {
                               "target": "local",
-                              "secretPasswordForm": {"password": "{{$event.target.value}}"}
+                              "secretPasswordForm": {
+                                "password": "{{$event.target.value}}"
+                              }
                             }
                           }
                         ]
@@ -304,19 +421,38 @@
                         "name": "P",
                         "if": "{{_local.secretPasswordError}}",
                         "text": "{{_local.secretPasswordError}}",
-                        "props": {"className": "jw-field__error", "role": "alert"}
+                        "props": {
+                          "className": "jw-field__error",
+                          "role": "alert"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "Div",
-                        "props": {"className": "jw-form-actions"},
+                        "props": {
+                          "className": "jw-form-actions"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "A",
                             "children": [
-                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                              {"type": "basic", "name": "Span", "text": "$t:user.board.back_to_list", "props": {"className": "jw-action-label"}}
+                              {
+                                "type": "composite",
+                                "name": "ThemeIcon",
+                                "props": {
+                                  "name": "arrow-left",
+                                  "className": "jw-icon jw-icon--compact jw-icon--back"
+                                }
+                              },
+                              {
+                                "type": "basic",
+                                "name": "Span",
+                                "text": "$t:user.board.back_to_list",
+                                "props": {
+                                  "className": "jw-action-label"
+                                }
+                              }
                             ],
                             "props": {
                               "href": "/board/{{route.slug}}",
@@ -327,8 +463,22 @@
                             "type": "basic",
                             "name": "Button",
                             "children": [
-                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "lock-keyhole", "className": "jw-icon jw-icon--compact"}},
-                              {"type": "basic", "name": "Span", "text": "$t:user.board.secret.action", "props": {"className": "jw-action-label"}}
+                              {
+                                "type": "composite",
+                                "name": "ThemeIcon",
+                                "props": {
+                                  "name": "lock-keyhole",
+                                  "className": "jw-icon jw-icon--compact"
+                                }
+                              },
+                              {
+                                "type": "basic",
+                                "name": "Span",
+                                "text": "$t:user.board.secret.action",
+                                "props": {
+                                  "className": "jw-action-label"
+                                }
+                              }
                             ],
                             "props": {
                               "type": "submit",
@@ -343,29 +493,44 @@
                       {
                         "type": "submit",
                         "handler": "setState",
-                        "params": {"target": "local", "isVerifyingSecret": true, "secretPasswordError": ""}
+                        "params": {
+                          "target": "local",
+                          "isVerifyingSecret": true,
+                          "secretPasswordError": ""
+                        }
                       },
                       {
                         "type": "submit",
                         "handler": "apiCall",
                         "target": "/api/modules/sirsoft-board/boards/{{route.slug}}/posts/{{route.id}}/verify-password",
                         "auth_mode": "optional",
-                        "params": {"method": "POST", "body": "{{_local.secretPasswordForm}}"},
+                        "params": {
+                          "method": "POST",
+                          "body": "{{_local.secretPasswordForm}}"
+                        },
                         "onSuccess": [
                           {
                             "handler": "updateDataSource",
-                            "params": {"dataSourceId": "post", "data": "{{result}}"}
+                            "params": {
+                              "dataSourceId": "post",
+                              "data": "{{result}}"
+                            }
                           },
                           {
                             "handler": "setState",
-                            "params": {"target": "global", "secretViewToken": "{{result.secret_view_token ?? ''}}"}
+                            "params": {
+                              "target": "global",
+                              "secretViewToken": "{{result.secret_view_token ?? ''}}"
+                            }
                           },
                           {
                             "handler": "setState",
                             "params": {
                               "target": "local",
                               "isVerifyingSecret": false,
-                              "secretPasswordForm": {"password": ""}
+                              "secretPasswordForm": {
+                                "password": ""
+                              }
                             }
                           }
                         ],
@@ -375,7 +540,9 @@
                             "params": {
                               "target": "local",
                               "isVerifyingSecret": false,
-                              "secretPasswordForm": {"password": ""},
+                              "secretPasswordForm": {
+                                "password": ""
+                              },
                               "secretPasswordError": "$t:user.board.secret.error"
                             }
                           }
@@ -387,26 +554,46 @@
                     "type": "basic",
                     "name": "Div",
                     "if": "{{post?.data?.content === null && !post?.data?.is_guest_post}}",
-                    "props": {"className": "jw-board-password jw-board-password--read"},
+                    "props": {
+                      "className": "jw-board-password jw-board-password--read"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "H2",
                         "text": "$t:user.board.secret.restricted_title",
-                        "props": {"className": "jw-board-password__title"}
+                        "props": {
+                          "className": "jw-board-password__title"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "P",
                         "text": "$t:user.board.secret.restricted_copy",
-                        "props": {"className": "jw-board-password__copy"}
+                        "props": {
+                          "className": "jw-board-password__copy"
+                        }
                       },
                       {
                         "type": "basic",
                         "name": "A",
                         "children": [
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                          {"type": "basic", "name": "Span", "text": "$t:user.board.back_to_list", "props": {"className": "jw-action-label"}}
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "arrow-left",
+                              "className": "jw-icon jw-icon--compact jw-icon--back"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.board.back_to_list",
+                            "props": {
+                              "className": "jw-action-label"
+                            }
+                          }
                         ],
                         "props": {
                           "href": "/board/{{route.slug}}",
@@ -419,14 +606,30 @@
                     "type": "basic",
                     "name": "Div",
                     "if": "{{post?.data?.content !== null}}",
-                    "props": {"className": "jw-post-footer"},
+                    "props": {
+                      "className": "jw-post-footer"
+                    },
                     "children": [
                       {
                         "type": "basic",
                         "name": "A",
                         "children": [
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                          {"type": "basic", "name": "Span", "text": "$t:user.board.back_to_list", "props": {"className": "jw-action-label"}}
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "arrow-left",
+                              "className": "jw-icon jw-icon--compact jw-icon--back"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.board.back_to_list",
+                            "props": {
+                              "className": "jw-action-label"
+                            }
+                          }
                         ],
                         "props": {
                           "href": "/board/{{route.slug}}",
@@ -437,8 +640,22 @@
                         "type": "basic",
                         "name": "A",
                         "children": [
-                          {"type": "basic", "name": "Span", "text": "$t:user.board.edit", "props": {"className": "jw-action-label"}},
-                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "pencil-ruler", "className": "jw-icon jw-icon--compact"}}
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "$t:user.board.edit",
+                            "props": {
+                              "className": "jw-action-label"
+                            }
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "pencil-ruler",
+                              "className": "jw-icon jw-icon--compact"
+                            }
+                          }
                         ],
                         "if": "{{!post?.data?.deleted_at && post?.data?.abilities?.can_write && (post?.data?.is_author || post?.data?.is_guest_post || post?.data?.abilities?.can_manage)}}",
                         "props": {
@@ -449,14 +666,31 @@
                       {
                         "type": "basic",
                         "name": "Nav",
-                        "props": {"className": "jw-post-navigation", "aria-label": "$t:user.board.navigation"},
+                        "props": {
+                          "className": "jw-post-navigation",
+                          "aria-label": "$t:user.board.navigation"
+                        },
                         "children": [
                           {
                             "type": "basic",
                             "name": "A",
                             "children": [
-                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                              {"type": "basic", "name": "Span", "text": "$t:user.board.previous_post", "props": {"className": "jw-action-label"}}
+                              {
+                                "type": "composite",
+                                "name": "ThemeIcon",
+                                "props": {
+                                  "name": "arrow-left",
+                                  "className": "jw-icon jw-icon--compact jw-icon--back"
+                                }
+                              },
+                              {
+                                "type": "basic",
+                                "name": "Span",
+                                "text": "$t:user.board.previous_post",
+                                "props": {
+                                  "className": "jw-action-label"
+                                }
+                              }
                             ],
                             "if": "{{navigation?.data?.prev?.id}}",
                             "props": {
@@ -468,8 +702,22 @@
                             "type": "basic",
                             "name": "A",
                             "children": [
-                              {"type": "basic", "name": "Span", "text": "$t:user.board.next_post", "props": {"className": "jw-action-label"}},
-                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--compact jw-icon--action"}}
+                              {
+                                "type": "basic",
+                                "name": "Span",
+                                "text": "$t:user.board.next_post",
+                                "props": {
+                                  "className": "jw-action-label"
+                                }
+                              },
+                              {
+                                "type": "composite",
+                                "name": "ThemeIcon",
+                                "props": {
+                                  "name": "arrow-right",
+                                  "className": "jw-icon jw-icon--compact jw-icon--action"
+                                }
+                              }
                             ],
                             "if": "{{navigation?.data?.next?.id}}",
                             "props": {
@@ -491,33 +739,58 @@
         "type": "basic",
         "name": "Section",
         "if": "{{!post?.data && !post?.loading}}",
-        "props": {"className": "jw-empty-state"},
+        "props": {
+          "className": "jw-empty-state"
+        },
         "children": [
           {
             "type": "basic",
             "name": "Div",
-            "props": {"className": "jw-container jw-empty-state__inner"},
+            "props": {
+              "className": "jw-container jw-empty-state__inner"
+            },
             "children": [
               {
                 "type": "basic",
                 "name": "H1",
                 "text": "$t:user.board.post_not_found_title",
-                "props": {"className": "jw-subpage-title"}
+                "props": {
+                  "className": "jw-subpage-title"
+                }
               },
               {
                 "type": "basic",
                 "name": "P",
                 "text": "$t:user.board.post_not_found_copy",
-                "props": {"className": "jw-subpage-lead"}
+                "props": {
+                  "className": "jw-subpage-lead"
+                }
               },
               {
                 "type": "basic",
                 "name": "A",
                 "children": [
-                  {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
-                  {"type": "basic", "name": "Span", "text": "$t:user.page.back_home", "props": {"className": "jw-action-label"}}
+                  {
+                    "type": "composite",
+                    "name": "ThemeIcon",
+                    "props": {
+                      "name": "arrow-left",
+                      "className": "jw-icon jw-icon--compact jw-icon--back"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "Span",
+                    "text": "$t:user.page.back_home",
+                    "props": {
+                      "className": "jw-action-label"
+                    }
+                  }
                 ],
-                "props": {"href": "/./", "className": "jw-button jw-button--primary"}
+                "props": {
+                  "href": "/./",
+                  "className": "jw-button jw-button--primary"
+                }
               }
             ]
           }

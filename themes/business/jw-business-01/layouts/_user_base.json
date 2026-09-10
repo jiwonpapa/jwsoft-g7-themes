@@ -49,21 +49,120 @@
                   "children": [
                     {
                       "type": "basic",
-                      "name": "A",
-                      "text": "$t:user.navigation_items.company",
+                      "name": "Div",
                       "props": {
-                        "href": "/page/company",
-                        "className": "jw-navigation-link"
-                      }
+                        "className": "jw-menu-group"
+                      },
+                      "children": [
+                        {
+                          "type": "basic",
+                          "name": "A",
+                          "text": "$t:user.navigation_items.company",
+                          "props": {
+                            "href": "/page/company",
+                            "className": "jw-navigation-link"
+                          }
+                        },
+                        {
+                          "type": "basic",
+                          "name": "Div",
+                          "props": {
+                            "className": "jw-submenu"
+                          },
+                          "children": [
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/company",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.company-overview"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/values",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.company-values"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/history",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.company-history"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/team",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.company-team"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/location",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.company-location"
+                            }
+                          ]
+                        }
+                      ]
                     },
                     {
                       "type": "basic",
-                      "name": "A",
-                      "text": "$t:user.navigation_items.services",
+                      "name": "Div",
                       "props": {
-                        "href": "/page/services",
-                        "className": "jw-navigation-link"
-                      }
+                        "className": "jw-menu-group"
+                      },
+                      "children": [
+                        {
+                          "type": "basic",
+                          "name": "A",
+                          "text": "$t:user.navigation_items.services",
+                          "props": {
+                            "href": "/page/services",
+                            "className": "jw-navigation-link"
+                          }
+                        },
+                        {
+                          "type": "basic",
+                          "name": "Div",
+                          "props": {
+                            "className": "jw-submenu"
+                          },
+                          "children": [
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/services",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.services-overview"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/process",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.services-process"
+                            }
+                          ]
+                        }
+                      ]
                     },
                     {
                       "type": "basic",
@@ -76,23 +175,120 @@
                     },
                     {
                       "type": "basic",
-                      "name": "A",
-                      "text": "$t:user.navigation_items.resources",
+                      "name": "Div",
                       "props": {
-                        "href": "/board/resources",
-                        "className": "jw-navigation-link"
-                      }
+                        "className": "jw-menu-group"
+                      },
+                      "children": [
+                        {
+                          "type": "basic",
+                          "name": "A",
+                          "text": "$t:user.navigation_items.resources",
+                          "props": {
+                            "href": "/board/resources",
+                            "className": "jw-navigation-link"
+                          }
+                        },
+                        {
+                          "type": "basic",
+                          "name": "Div",
+                          "props": {
+                            "className": "jw-submenu"
+                          },
+                          "children": [
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/board/resources",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.insights-resources"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/board/notices",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.insights-notices"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/faq",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.insights-faq"
+                            }
+                          ]
+                        }
+                      ]
                     },
                     {
                       "type": "basic",
-                      "name": "A",
-                      "text": "$t:user.navigation_items.contact",
+                      "name": "Div",
                       "props": {
-                        "href": "/board/inquiries/write",
-                        "className": "jw-navigation-link jw-navigation-link--action"
-                      }
+                        "className": "jw-menu-group"
+                      },
+                      "children": [
+                        {
+                          "type": "basic",
+                          "name": "A",
+                          "text": "$t:user.navigation_items.contact",
+                          "props": {
+                            "href": "/board/inquiries/write",
+                            "className": "jw-navigation-link jw-navigation-link--action"
+                          }
+                        },
+                        {
+                          "type": "basic",
+                          "name": "Div",
+                          "props": {
+                            "className": "jw-submenu"
+                          },
+                          "children": [
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/contact",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.contact-guide"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/board/inquiries/write",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.contact-write"
+                            },
+                            {
+                              "type": "basic",
+                              "name": "A",
+                              "props": {
+                                "href": "/page/privacy",
+                                "className": "jw-submenu-link"
+                              },
+                              "text": "$t:user.subnavigation.contact-privacy"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
+                },
+                {
+                  "type": "composite",
+                  "name": "LanguageSwitcher",
+                  "props": {
+                    "locale": "{{$locale}}"
+                  }
                 },
                 {
                   "type": "composite",
