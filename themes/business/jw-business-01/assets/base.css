@@ -19,6 +19,11 @@
     --jw-section-space: clamp(3.5rem, 8vw, 6rem);
     --jw-radius-control: 0.125rem;
     --jw-radius-media: 0;
+    --jw-type-display: clamp(2.25rem, 4.2vw, 3.5rem);
+    --jw-type-section: clamp(1.75rem, 2.9vw, 2.5rem);
+    --jw-type-feature: clamp(2rem, 3.4vw, 3rem);
+    --jw-type-page: clamp(2.25rem, 3.6vw, 3rem);
+    --jw-type-content-title: clamp(1.5rem, 2.2vw, 2rem);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.65;
     color: var(--jw-color-ink);
@@ -234,10 +239,11 @@
 
   .jw-section-title {
     @apply jw:m-0 jw:font-bold;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1.14;
-    letter-spacing: -0.04em;
-    white-space: pre-line;
+    font-size: var(--jw-type-section);
+    line-height: 1.18;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
   }
 
   .jw-eyebrow {
@@ -248,10 +254,11 @@
 
   .jw-display-title {
     @apply jw:m-0 jw:font-bold;
-    font-size: clamp(2.5rem, 6vw, 4.75rem);
-    line-height: 1.08;
-    letter-spacing: -0.045em;
+    font-size: var(--jw-type-display);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
     word-break: keep-all;
+    overflow-wrap: anywhere;
   }
 
   .jw-body-copy {
@@ -387,7 +394,7 @@
   }
 
   .jw-hero__title {
-    white-space: pre-line;
+    max-width: 39rem;
   }
 
   .jw-hero__copy {
@@ -627,7 +634,7 @@
   .jw-case-scene__title {
     max-width: 39rem;
     color: #ffffff;
-    font-size: clamp(2.6rem, 5.6vw, 5rem);
+    font-size: var(--jw-type-feature);
   }
 
   .jw-case-scene__copy {
@@ -831,8 +838,8 @@
 
   .jw-subpage-hero__inner {
     @apply jw:relative jw:z-10 jw:flex jw:flex-col jw:items-start;
-    min-height: clamp(22rem, 42vw, 34rem);
-    padding-block: clamp(3rem, 8vw, 7rem);
+    min-height: clamp(20rem, 32vw, 28rem);
+    padding-block: clamp(2.5rem, 6vw, 5rem);
     animation: jw-page-copy-in 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
@@ -858,17 +865,18 @@
 
   .jw-subpage-hero .jw-eyebrow,
   .jw-post-hero__meta {
-    margin-top: clamp(3rem, 10vw, 7rem);
+    margin-top: clamp(2rem, 6vw, 4rem);
   }
 
   .jw-subpage-title,
   .jw-post-title {
     @apply jw:m-0 jw:font-bold;
-    max-width: 58rem;
-    font-size: clamp(2.75rem, 7vw, 5.75rem);
-    line-height: 1.04;
-    letter-spacing: -0.055em;
+    max-width: 48rem;
+    font-size: var(--jw-type-page);
+    line-height: 1.12;
+    letter-spacing: -0.045em;
     word-break: keep-all;
+    overflow-wrap: anywhere;
   }
 
   .jw-subpage-title {
@@ -933,8 +941,8 @@
   .jw-rich-content h2 {
     @apply jw:font-bold;
     margin: clamp(3rem, 7vw, 5rem) 0 1.25rem;
-    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
-    line-height: 1.18;
+    font-size: var(--jw-type-content-title);
+    line-height: 1.24;
     letter-spacing: -0.04em;
     word-break: keep-all;
   }
@@ -1529,9 +1537,10 @@
     @apply jw:m-0 jw:font-bold;
     max-width: 38rem;
     margin-top: 1rem;
-    font-size: clamp(1.8rem, 3.8vw, 3rem);
-    line-height: 1.15;
+    font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+    line-height: 1.2;
     letter-spacing: -0.04em;
+    word-break: keep-all;
   }
 
   .jw-board-toolbar {
@@ -1885,7 +1894,7 @@
 
   .jw-post-title {
     margin-top: 1.25rem;
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: var(--jw-type-page);
   }
 
   .jw-post-body__inner {
@@ -1952,8 +1961,8 @@
   }
 
   .jw-error-page__title {
-    font-size: clamp(2rem, 4vw, 4rem);
-    line-height: 1.08;
+    font-size: var(--jw-type-page);
+    line-height: 1.12;
     letter-spacing: -0.04em;
     word-break: keep-all;
   }
@@ -2247,7 +2256,7 @@
   }
 
   .jw-hero--editorial .jw-hero__title {
-    font-size: clamp(3rem, 14vw, 4.5rem);
+    font-size: var(--jw-type-display);
   }
 
   .jw-company__layout,
@@ -2269,7 +2278,7 @@
   }
 
   .jw-case-scene__title {
-    font-size: clamp(2.35rem, 12vw, 3.7rem);
+    font-size: var(--jw-type-feature);
   }
 
   .jw-capability {
@@ -2348,7 +2357,7 @@
 
   .jw-subpage-title,
   .jw-post-title {
-    font-size: clamp(2.4rem, 13vw, 4rem);
+    font-size: var(--jw-type-page);
   }
 
   .jw-page-body__layout {

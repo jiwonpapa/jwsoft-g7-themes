@@ -21,7 +21,7 @@
       },
       "hero": {
         "eyebrow": "NOVA WORKS",
-        "title": "복잡한 일을,\n더 나은 흐름으로 바꿉니다",
+        "title": "복잡한 일을, 더 나은 흐름으로 바꿉니다",
         "copy": "사업 전략부터 디지털 서비스 구축과 운영 개선까지, 조직이 실제로 실행할 수 있는 변화를 함께 만듭니다.",
         "primary_action": "사업분야 보기",
         "secondary_action": "프로젝트 문의",
@@ -30,7 +30,7 @@
       },
       "company": {
         "eyebrow": "HOW WE WORK",
-        "title": "해답을 제시하기 전에,\n문제를 정확히 정의합니다",
+        "title": "해답을 제시하기 전에, 문제를 정확히 정의합니다",
         "copy": "현장의 목표와 제약을 함께 확인하고 전략, 구축, 운영이 끊기지 않는 실행 계획을 설계합니다.",
         "items": {
           "strategy": {
@@ -49,7 +49,7 @@
       },
       "services": {
         "eyebrow": "WHAT WE DO",
-        "title": "전략과 실행을 잇는\n세 가지 사업 영역",
+        "title": "전략과 실행을 잇는 세 가지 사업 영역",
         "action": "전체 사업분야 보기",
         "items": {
           "strategy": {
@@ -74,7 +74,7 @@
       },
       "case": {
         "eyebrow": "FEATURED PROJECT",
-        "title": "흩어진 고객 업무를\n하나의 운영 흐름으로 연결했습니다",
+        "title": "흩어진 고객 업무를 하나의 운영 흐름으로 연결했습니다",
         "copy": "접수, 담당자 배정, 진행 공유와 결과 보고가 분리되어 있던 업무를 하나의 협업 흐름으로 재설계한 프로젝트입니다.",
         "action": "프로젝트 보기",
         "image_alt": "통합된 업무 흐름을 고객 담당자에게 설명하는 프로젝트 발표 현장",
@@ -95,7 +95,7 @@
       },
       "resources": {
         "eyebrow": "INSIGHTS",
-        "title": "변화를 시작할 때\n필요한 실무 인사이트",
+        "title": "변화를 시작할 때 필요한 실무 인사이트",
         "items": {
           "checklist": {
             "label": "CHECKLIST",
@@ -113,16 +113,25 @@
       },
       "contact": {
         "eyebrow": "START A PROJECT",
-        "title": "지금 해결해야 할 과제를\n들려주세요",
+        "title": "지금 해결해야 할 과제를 들려주세요",
         "copy": "현재 상황과 목표를 남겨주시면 필요한 검토 범위와 시작 방법을 정리해 안내합니다.",
         "action": "프로젝트 문의하기"
       }
     },
     "page": {
       "title_fallback": "회사 안내",
-      "eyebrow": "ABOUT NOVA WORKS",
-      "context_label": "NOVA WORKS",
-      "context_copy": "전략과 실행, 운영을 하나의 흐름으로 연결합니다.",
+      "eyebrows": {
+        "company": "COMPANY",
+        "services": "SERVICES",
+        "information": "INFORMATION",
+        "contact": "CONTACT"
+      },
+      "contexts": {
+        "company": "회사의 방향과 일하는 방식을 소개합니다.",
+        "services": "제공 영역과 프로젝트 진행 방식을 안내합니다.",
+        "information": "필요한 정보와 이용 기준을 확인합니다.",
+        "contact": "연락 방법과 방문 정보를 안내합니다."
+      },
       "attachments": "첨부자료",
       "cta_eyebrow": "START A PROJECT",
       "cta_title": "지금 해결해야 할 과제를 함께 살펴보겠습니다",

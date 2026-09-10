@@ -28,8 +28,15 @@
 | page gutter | `20px ~ 40px` |
 | section space | `56px ~ 96px` |
 | control radius | `2px` |
+| display title | `36px ~ 56px` |
+| section title | `28px ~ 40px` |
+| featured title | `32px ~ 48px` |
+| subpage/post title | `36px ~ 48px` |
+| content heading | `24px ~ 32px` |
 
 하단 문의 영역은 선택 도안의 남색 면을 그대로 사용하지 않고 흰 표면과 선으로 정리합니다. 컬러는 행동과 작은 강조에 사용합니다.
+
+제목 문구에는 줄바꿈 문자를 넣지 않습니다. 레이아웃 폭과 위 타입 토큰으로 자연스럽게 줄을 바꾸고, 한글은 단어 단위 줄바꿈을 유지합니다.
 
 ## 구현 구조
 

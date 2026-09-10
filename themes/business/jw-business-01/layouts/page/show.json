@@ -147,7 +147,29 @@
                   {
                     "type": "basic",
                     "name": "P",
-                    "text": "$t:user.page.eyebrow",
+                    "text": "$t:user.page.eyebrows.company",
+                    "if": "{{route.slug === 'company' || route.slug === 'values' || route.slug === 'history' || route.slug === 'team'}}",
+                    "props": {"className": "jw-eyebrow"}
+                  },
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.page.eyebrows.services",
+                    "if": "{{route.slug === 'services' || route.slug === 'process'}}",
+                    "props": {"className": "jw-eyebrow"}
+                  },
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.page.eyebrows.information",
+                    "if": "{{route.slug === 'faq' || route.slug === 'privacy'}}",
+                    "props": {"className": "jw-eyebrow"}
+                  },
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.page.eyebrows.contact",
+                    "if": "{{route.slug === 'location' || route.slug === 'contact'}}",
                     "props": {"className": "jw-eyebrow"}
                   },
                   {
@@ -185,21 +207,58 @@
                       {
                         "type": "basic",
                         "name": "P",
-                        "text": "$t:user.page.context_label",
+                        "text": "$t:user.page.eyebrows.company",
+                        "if": "{{route.slug === 'company' || route.slug === 'values' || route.slug === 'history' || route.slug === 'team'}}",
                         "props": {"className": "jw-page-context__label"}
                       },
                       {
                         "type": "basic",
                         "name": "P",
-                        "text": "$t:user.page.context_copy",
+                        "text": "$t:user.page.contexts.company",
+                        "if": "{{route.slug === 'company' || route.slug === 'values' || route.slug === 'history' || route.slug === 'team'}}",
                         "props": {"className": "jw-page-context__copy"}
                       },
                       {
                         "type": "basic",
                         "name": "P",
-                        "text": "{{page.data.updated_at}}",
-                        "if": "{{page?.data?.updated_at}}",
-                        "props": {"className": "jw-page-context__date"}
+                        "text": "$t:user.page.eyebrows.services",
+                        "if": "{{route.slug === 'services' || route.slug === 'process'}}",
+                        "props": {"className": "jw-page-context__label"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.page.contexts.services",
+                        "if": "{{route.slug === 'services' || route.slug === 'process'}}",
+                        "props": {"className": "jw-page-context__copy"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.page.eyebrows.information",
+                        "if": "{{route.slug === 'faq' || route.slug === 'privacy'}}",
+                        "props": {"className": "jw-page-context__label"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.page.contexts.information",
+                        "if": "{{route.slug === 'faq' || route.slug === 'privacy'}}",
+                        "props": {"className": "jw-page-context__copy"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.page.eyebrows.contact",
+                        "if": "{{route.slug === 'location' || route.slug === 'contact'}}",
+                        "props": {"className": "jw-page-context__label"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.page.contexts.contact",
+                        "if": "{{route.slug === 'location' || route.slug === 'contact'}}",
+                        "props": {"className": "jw-page-context__copy"}
                       }
                     ]
                   },

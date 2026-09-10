@@ -21,7 +21,7 @@
       },
       "hero": {
         "eyebrow": "NOVA WORKS",
-        "title": "Turn complex work\ninto a better flow",
+        "title": "Turn complex work into a better flow",
         "copy": "From business strategy and digital delivery to operational improvement, we build changes that teams can put into practice.",
         "primary_action": "Explore services",
         "secondary_action": "Start a project",
@@ -30,7 +30,7 @@
       },
       "company": {
         "eyebrow": "HOW WE WORK",
-        "title": "We define the problem\nbefore proposing the answer",
+        "title": "We define the problem before proposing the answer",
         "copy": "We align goals and constraints, then connect strategy, delivery, and operations in one practical plan.",
         "items": {
           "strategy": {
@@ -49,7 +49,7 @@
       },
       "services": {
         "eyebrow": "WHAT WE DO",
-        "title": "Three practices connecting\nstrategy and execution",
+        "title": "Three practices connecting strategy and execution",
         "action": "Explore all services",
         "items": {
           "strategy": {
@@ -74,7 +74,7 @@
       },
       "case": {
         "eyebrow": "FEATURED PROJECT",
-        "title": "One connected flow\nfor fragmented customer work",
+        "title": "One connected flow for fragmented customer work",
         "copy": "A project redesigning intake, assignment, progress sharing, and reporting as one collaborative workflow.",
         "action": "View projects",
         "image_alt": "A project presentation explaining a unified workflow to client stakeholders",
@@ -95,7 +95,7 @@
       },
       "resources": {
         "eyebrow": "INSIGHTS",
-        "title": "Practical insight\nfor starting change",
+        "title": "Practical insight for starting change",
         "items": {
           "checklist": {
             "label": "CHECKLIST",
@@ -113,16 +113,25 @@
       },
       "contact": {
         "eyebrow": "START A PROJECT",
-        "title": "Tell us what your team\nneeds to solve now",
+        "title": "Tell us what your team needs to solve now",
         "copy": "Share your current situation and goal, and we will outline the right starting point and review scope.",
         "action": "Start a project"
       }
     },
     "page": {
       "title_fallback": "Company information",
-      "eyebrow": "ABOUT NOVA WORKS",
-      "context_label": "NOVA WORKS",
-      "context_copy": "We connect strategy, delivery, and operations in one practical flow.",
+      "eyebrows": {
+        "company": "COMPANY",
+        "services": "SERVICES",
+        "information": "INFORMATION",
+        "contact": "CONTACT"
+      },
+      "contexts": {
+        "company": "Learn about the company, its direction, and how the team works.",
+        "services": "Review the service areas and the way projects are delivered.",
+        "information": "Find practical information and the policies for using this site.",
+        "contact": "Check how to contact the team and visit the office."
+      },
       "attachments": "Attachments",
       "cta_eyebrow": "START A PROJECT",
       "cta_title": "Let us examine the challenge your team needs to solve",
