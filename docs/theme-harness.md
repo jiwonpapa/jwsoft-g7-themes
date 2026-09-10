@@ -1,6 +1,6 @@
 # JW Theme Harness
 
-상태: Python 하네스 1차 구현. `JW BUSINESS 01`의 설정·검사·빌드·설치 ZIP 생성까지 연결했습니다.
+상태: Python 하네스 1차 구현. `JW BUSINESS 01`에 필요한 설정·검사·빌드·설치 ZIP 생성 기능을 연결했습니다. 첫 테마 제작 중 발견되는 요구만 반영하며 범용 하네스 확정을 별도 선행 단계로 두지 않습니다.
 
 ## 목적과 기준 파일
 
@@ -17,16 +17,16 @@
 
 ```text
 python3 -m tools.theme_harness init \
-  --category industrial \
+  --category business \
   --slug jw-sample-01 \
   --identifier jwsoft-sample01 \
   --name "JW SAMPLE 01" \
   --features tailwind,icons
 
-python3 -m tools.theme_harness setup themes/industrial/jw-sample-01
-python3 -m tools.theme_harness check themes/industrial/jw-sample-01
-python3 -m tools.theme_harness build themes/industrial/jw-sample-01
-python3 -m tools.theme_harness package themes/industrial/jw-sample-01
+python3 -m tools.theme_harness setup themes/business/jw-sample-01
+python3 -m tools.theme_harness check themes/business/jw-sample-01
+python3 -m tools.theme_harness build themes/business/jw-sample-01
+python3 -m tools.theme_harness package themes/business/jw-sample-01
 ```
 
 `init`는 비어 있는 새 경로만 생성하고 기본적으로 npm 설치까지 실행합니다. 네트워크 설치를 미룰 때만 `--skip-install`을 사용합니다. `setup`은 `package.json`을 중앙 값으로 맞추고 lockfile·라이선스 원문·제3자 고지를 갱신합니다.
@@ -41,6 +41,7 @@ python3 -m tools.theme_harness package themes/industrial/jw-sample-01
 - 검증 상태가 `approved`인 기능만 사용
 - Tailwind 4의 `jw` prefix, theme/utilities 한정 import, 전역 Preflight 금지
 - 런타임 소스의 CDN·원격 import 금지와 `template.json` externals 금지
+- SEO가 활성화된 레이아웃의 `seo-config.json` 존재와 사용 컴포넌트 전체의 시멘틱 매핑
 - 선택 기능의 실제 설치 패키지 버전·라이선스 메타데이터와 동봉 원문 해시 확인
 - `.sh`·`.bash`·`.zsh`는 주석·`set -euo pipefail` 외 단일 `exec` 진입점만 허용
 - 최신 중앙 스택·소스로 생성한 빌드인지와 배포 자산 해시 확인

@@ -8,7 +8,7 @@ import unittest
 import zipfile
 from pathlib import Path
 
-from tools.theme_harness.checks import _check_shell_policy
+from tools.theme_harness.checks import _check_seo_config, _check_shell_policy
 from tools.theme_harness.errors import HarnessError
 from tools.theme_harness.io import read_json, write_json
 from tools.theme_harness.model import load_context
@@ -67,6 +67,31 @@ class HarnessTest(unittest.TestCase):
         _check_shell_policy(self.repository, issues)
         self.assertEqual(len(issues), 1)
         self.assertIn("단일 exec 명령", issues[0])
+
+    def test_seo_enabled_layout_requires_semantic_component_mapping(self) -> None:
+        theme = self.create_theme()
+        layout_path = theme / "layouts" / "home.json"
+        layout = read_json(layout_path)
+        layout["meta"] = {"seo": {"enabled": True}}
+        write_json(layout_path, layout)
+        context = load_context(theme, repository=self.repository)
+
+        missing_config: list[str] = []
+        _check_seo_config(context, missing_config)
+        self.assertIn("seo-config.json", missing_config[0])
+
+        write_json(theme / "seo-config.json", {"component_map": {"Div": {"tag": "div"}}})
+        missing_component: list[str] = []
+        _check_seo_config(context, missing_component)
+        self.assertIn("H1", missing_component[0])
+
+        write_json(
+            theme / "seo-config.json",
+            {"component_map": {"Div": {"tag": "div"}, "H1": {"tag": "h1"}}},
+        )
+        complete: list[str] = []
+        _check_seo_config(context, complete)
+        self.assertEqual(complete, [])
 
     def test_package_is_deterministic_and_excludes_development_files(self) -> None:
         theme = self.create_theme()

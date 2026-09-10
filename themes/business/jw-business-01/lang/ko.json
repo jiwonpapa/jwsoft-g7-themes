@@ -1,0 +1,255 @@
+{
+  "user": {
+    "home": "홈",
+    "brand": "NOVA WORKS",
+    "navigation": "주 메뉴",
+    "footer": "하단 메뉴",
+    "footer_copy": "전략 · 디지털 · 운영 혁신",
+    "menu_open": "메뉴 열기",
+    "menu_close": "메뉴 닫기",
+    "navigation_items": {
+      "company": "회사소개",
+      "services": "사업분야",
+      "cases": "프로젝트",
+      "resources": "인사이트",
+      "contact": "문의하기"
+    },
+    "homepage": {
+      "seo": {
+        "title": "NOVA WORKS | 기업 운영과 디지털 업무 개선",
+        "description": "사업 전략, 디지털 서비스 구축, 업무 프로세스 개선을 연결하는 가상 B2B 기업 NOVA WORKS의 데모 홈페이지입니다."
+      },
+      "hero": {
+        "eyebrow": "NOVA WORKS",
+        "title": "복잡한 일을,\n더 나은 흐름으로 바꿉니다",
+        "copy": "사업 전략부터 디지털 서비스 구축과 운영 개선까지, 조직이 실제로 실행할 수 있는 변화를 함께 만듭니다.",
+        "primary_action": "사업분야 보기",
+        "secondary_action": "프로젝트 문의",
+        "image_alt": "밝은 사무실에서 업무 과제를 함께 검토하는 기업 프로젝트 팀"
+      },
+      "company": {
+        "eyebrow": "HOW WE WORK",
+        "title": "해답을 제시하기 전에,\n문제를 정확히 정의합니다",
+        "copy": "현장의 목표와 제약을 함께 확인하고 전략, 구축, 운영이 끊기지 않는 실행 계획을 설계합니다.",
+        "items": {
+          "strategy": {
+            "title": "핵심 과제 정의",
+            "copy": "의사결정자와 실무자의 요구를 함께 듣고 지금 해결해야 할 문제와 우선순위를 분명히 합니다."
+          },
+          "execute": {
+            "title": "작동하는 결과물",
+            "copy": "보고서에 머무르지 않고 팀이 직접 사용할 서비스와 업무 흐름으로 구현합니다."
+          },
+          "operate": {
+            "title": "운영 이후 개선",
+            "copy": "도입 뒤 실제 사용 데이터를 살피고 조직에 맞는 운영 기준과 다음 개선안을 정리합니다."
+          }
+        }
+      },
+      "services": {
+        "eyebrow": "WHAT WE DO",
+        "title": "전략과 실행을 잇는\n세 가지 사업 영역",
+        "action": "전체 사업분야 보기",
+        "items": {
+          "strategy": {
+            "category": "BUSINESS STRATEGY",
+            "title": "사업 전략과 서비스 기획",
+            "copy": "시장과 고객, 내부 운영을 함께 살펴 실행 가능한 서비스 방향과 로드맵을 설계합니다.",
+            "image_alt": "사업 계획 자료를 두고 실행 전략을 논의하는 프로젝트 팀"
+          },
+          "digital": {
+            "category": "DIGITAL EXPERIENCE",
+            "title": "디지털 서비스 구축",
+            "copy": "고객과 구성원이 실제로 쓰는 웹·업무 서비스를 일관된 경험과 운영 구조로 만듭니다.",
+            "image_alt": "대형 화면의 디지털 서비스 화면을 함께 검토하는 제품 팀"
+          },
+          "operations": {
+            "category": "OPERATIONS DESIGN",
+            "title": "업무 프로세스 개선",
+            "copy": "흩어진 절차와 도구를 정리해 책임과 정보가 자연스럽게 이어지는 업무 흐름을 설계합니다.",
+            "image_alt": "업무 흐름 카드를 배치하며 운영 절차를 개선하는 팀"
+          }
+        }
+      },
+      "case": {
+        "eyebrow": "FEATURED PROJECT",
+        "title": "흩어진 고객 업무를\n하나의 운영 흐름으로 연결했습니다",
+        "copy": "접수, 담당자 배정, 진행 공유와 결과 보고가 분리되어 있던 업무를 하나의 협업 흐름으로 재설계한 프로젝트입니다.",
+        "action": "프로젝트 보기",
+        "image_alt": "통합된 업무 흐름을 고객 담당자에게 설명하는 프로젝트 발표 현장"
+      },
+      "resources": {
+        "eyebrow": "INSIGHTS",
+        "title": "변화를 시작할 때\n필요한 실무 인사이트",
+        "items": {
+          "checklist": {
+            "label": "CHECKLIST",
+            "title": "프로젝트 시작 전에 확인할 7가지"
+          },
+          "guide": {
+            "label": "GUIDE",
+            "title": "디지털 서비스 범위를 정하는 기준"
+          },
+          "maintenance": {
+            "label": "OPERATIONS",
+            "title": "도입 이후 운영 지표를 설계하는 방법"
+          }
+        }
+      },
+      "contact": {
+        "eyebrow": "START A PROJECT",
+        "title": "지금 해결해야 할 과제를\n들려주세요",
+        "copy": "현재 상황과 목표를 남겨주시면 필요한 검토 범위와 시작 방법을 정리해 안내합니다.",
+        "action": "프로젝트 문의하기"
+      }
+    },
+    "page": {
+      "title_fallback": "회사 안내",
+      "eyebrow": "ABOUT NOVA WORKS",
+      "context_label": "NOVA WORKS",
+      "context_copy": "전략과 실행, 운영을 하나의 흐름으로 연결합니다.",
+      "attachments": "첨부자료",
+      "cta_eyebrow": "START A PROJECT",
+      "cta_title": "지금 해결해야 할 과제를 함께 살펴보겠습니다",
+      "cta_action": "프로젝트 문의하기",
+      "not_found_title": "페이지를 찾을 수 없습니다",
+      "not_found_copy": "주소가 바뀌었거나 아직 공개되지 않은 페이지입니다.",
+      "back_home": "홈으로 돌아가기"
+    },
+    "board": {
+      "eyebrow": "NOVA WORKS JOURNAL",
+      "list_label": "전체 콘텐츠",
+      "items": "건",
+      "empty_title": "등록된 콘텐츠가 없습니다",
+      "empty_copy": "새로운 소식과 프로젝트를 준비하고 있습니다.",
+      "pagination": "목록 페이지 이동",
+      "previous": "이전",
+      "next": "다음",
+      "navigation": "게시글 이동",
+      "previous_post": "이전 글",
+      "next_post": "다음 글",
+      "back_to_list": "목록으로",
+      "write": "글쓰기",
+      "edit": "수정하기",
+      "not_found_title": "게시판을 찾을 수 없습니다",
+      "not_found_copy": "메뉴 연결 또는 게시판 공개 상태를 확인해 주세요.",
+      "post_not_found_title": "게시글을 찾을 수 없습니다",
+      "post_not_found_copy": "삭제되었거나 공개되지 않은 게시글입니다.",
+      "secret": {
+        "eyebrow": "PRIVATE INQUIRY",
+        "title": "작성 비밀번호를 입력해 주세요",
+        "copy": "등록할 때 설정한 비밀번호를 확인하면 문의 내용을 볼 수 있습니다.",
+        "password_label": "작성 비밀번호",
+        "action": "내용 확인하기",
+        "error": "비밀번호가 일치하지 않습니다.",
+        "restricted_title": "비공개 게시글입니다",
+        "restricted_copy": "이 게시글을 볼 수 있는 권한이 없습니다."
+      },
+      "form": {
+        "data_label": "작성 데이터",
+        "meta_label": "게시판 작성 설정",
+        "board_fallback": "문의 게시판",
+        "eyebrow": "CONTACT & WRITE",
+        "write_title": "내용을 남겨주세요",
+        "edit_title": "내용을 수정합니다",
+        "description": "확인에 필요한 내용을 작성해 주시면 담당자가 검토할 수 있습니다.",
+        "intro_title": "과제와 목표를 구체적으로 알려주세요",
+        "intro_copy": "회사명, 현재 상황, 원하는 결과와 일정을 함께 적으면 더 정확하게 검토할 수 있습니다.",
+        "password_title": "작성 비밀번호를 확인합니다",
+        "password_copy": "비회원으로 작성한 글을 수정하려면 등록할 때 설정한 비밀번호가 필요합니다.",
+        "password_label": "작성 비밀번호",
+        "password_action": "확인하기",
+        "password_error": "비밀번호를 확인해 주세요.",
+        "validation_title": "입력 내용을 다시 확인해 주세요",
+        "author_label": "작성자 이름",
+        "guest_password_label": "수정용 비밀번호",
+        "notice_label": "공지글로 등록",
+        "secret_label": "비밀글로 등록",
+        "secret_fixed_label": "이 문의는 비밀글로 안전하게 등록됩니다",
+        "category_label": "문의 유형",
+        "category_placeholder": "유형을 선택해 주세요",
+        "title_label": "제목",
+        "content_label": "내용",
+        "content_help": "개인정보나 계정 비밀번호 같은 민감한 정보는 입력하지 마세요.",
+        "cancel": "취소",
+        "submit": "등록하기",
+        "save": "저장하기",
+        "saving": "저장 중",
+        "success": "내용이 저장되었습니다"
+      }
+    },
+    "errors": {
+      "401": "로그인이 필요합니다",
+      "401_copy": "이 페이지를 보려면 먼저 로그인해 주세요.",
+      "403": "접근 권한이 없습니다",
+      "403_copy": "현재 계정으로는 이 페이지를 이용할 수 없습니다.",
+      "404": "페이지를 찾을 수 없습니다",
+      "404_copy": "주소가 바뀌었거나 요청한 페이지가 아직 공개되지 않았습니다.",
+      "500": "요청을 처리하지 못했습니다",
+      "500_copy": "일시적인 문제가 발생했습니다. 잠시 후 다시 이용해 주세요.",
+      "503": "잠시 후 다시 이용해 주세요",
+      "503_copy": "서비스 연결이 원활하지 않습니다. 현재 페이지를 새로고침해 주세요.",
+      "maintenance": "더 나은 서비스를 위해 점검 중입니다",
+      "maintenance_copy": "점검이 끝나는 대로 다시 이용하실 수 있습니다.",
+      "home_action": "홈으로 돌아가기"
+    },
+    "editor": {
+      "controls": {
+        "header_preset": "헤더 구조",
+        "hero_preset": "히어로 구조",
+        "mobile_menu_preset": "모바일 메뉴",
+        "section_spacing": "섹션 여백",
+        "link_href": "연결 주소",
+        "link_target": "열기 방식",
+        "image_source": "이미지 선택",
+        "image_alt": "대체 텍스트"
+      },
+      "options": {
+        "standard": "기본형",
+        "overlay": "오버레이",
+        "directory": "2단형",
+        "cover": "커버",
+        "split": "분할",
+        "editorial": "에디토리얼",
+        "panel": "패널",
+        "drawer": "드로어",
+        "fullscreen": "전체화면",
+        "compact": "좁게",
+        "default": "기본",
+        "spacious": "넓게",
+        "same_window": "현재 창",
+        "new_window": "새 창"
+      },
+      "components": {
+        "site_header": "사이트 헤더",
+        "hero": "메인 히어로",
+        "primary_navigation": "주 메뉴",
+        "container": "영역",
+        "section": "섹션",
+        "article": "콘텐츠 묶음",
+        "heading_1": "큰 제목",
+        "heading_2": "섹션 제목",
+        "heading_3": "작은 제목",
+        "paragraph": "본문",
+        "short_text": "짧은 글",
+        "link": "링크",
+        "image": "이미지",
+        "published_content": "발행 본문",
+        "mobile_menu_button": "모바일 메뉴 버튼"
+      },
+      "palette": {
+        "content": "JW 콘텐츠"
+      },
+      "defaults": {
+        "page_title": "페이지 제목",
+        "section_title": "새 섹션 제목",
+        "content_title": "콘텐츠 제목",
+        "content_copy": "내용을 입력하세요.",
+        "short_text": "짧은 글",
+        "link_text": "바로가기",
+        "image_alt": "이미지 설명"
+      }
+    },
+    "content": "콘텐츠"
+  }
+}

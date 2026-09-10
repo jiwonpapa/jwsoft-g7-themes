@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "layout_name": "errors/403",
+  "extends": "_user_base",
+  "data_sources": [],
+  "slots": {"content": [{
+    "type": "basic", "name": "Section", "props": {"className": "jw-error-page"},
+    "children": [{
+      "type": "basic", "name": "Div", "props": {"className": "jw-container jw-error-page__inner"},
+      "children": [
+        {"type": "basic", "name": "P", "text": "403", "props": {"className": "jw-error-page__code", "aria-hidden": "true"}},
+        {"type": "basic", "name": "Div", "props": {"className": "jw-error-page__content"}, "children": [
+          {"type": "basic", "name": "P", "text": "NOVA WORKS", "props": {"className": "jw-eyebrow"}},
+          {"type": "basic", "name": "H1", "text": "$t:user.errors.403", "props": {"className": "jw-error-page__title"}},
+          {"type": "basic", "name": "P", "text": "$t:user.errors.403_copy", "props": {"className": "jw-error-page__copy"}},
+          {"type": "basic", "name": "A", "text": "$t:user.errors.home_action", "props": {"href": "/./", "className": "jw-button jw-button--primary"}}
+        ]}
+      ]
+    }]
+  }]}
+}

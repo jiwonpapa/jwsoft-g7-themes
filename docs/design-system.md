@@ -12,6 +12,18 @@
 토큰 원본에서 CSS와 공개 spec의 허용 선택지에 필요한 값을 연결합니다. 두 군데에 수동으로 같은 값을 입력하지 않습니다.
 토큰 생성기는 아직 없습니다. G7 native 원본 저장과 토큰의 개발 시 생성물을 같은 문서로 취급하지 않습니다.
 
+## JSON UI와 CSS 작성 규칙
+
+- JSON UI는 페이지 구조·콘텐츠 필드·데이터 소스·슬롯·시멘틱 클래스만 선언합니다.
+- 공통 동작은 TypeScript/React, 공통 시각 규칙은 테마 CSS가 소유합니다.
+- G7 렌더러가 실제 컴포넌트에 전달하도록 JSON UI의 시멘틱 클래스는 노드 최상위가 아닌 `props.className`에 선언합니다.
+- JSON UI에서 동일한 Tailwind 유틸리티 조합을 반복하지 않습니다. 반복되는 역할은 `jw-` 시멘틱 클래스로 올립니다.
+- 시멘틱 클래스는 `@layer components`에 두고 Tailwind 유틸리티를 `@apply`로 조합합니다.
+- 테마 고유 토큰, 유동 크기, 이미지 비율처럼 일반 CSS가 더 명확한 값은 CSS 변수와 범위 제한 규칙으로 작성합니다.
+- 일회성 레이아웃까지 전부 클래스로 추상화하지 않습니다. 실제 두 번째 사용처가 생기면 공통화 여부를 판단합니다.
+
+초기 공통 이름은 `jw-container`, `jw-section`, `jw-section__header`, `jw-eyebrow`, `jw-display-title`, `jw-body-copy`, `jw-button`, `jw-button--primary`, `jw-button--secondary`, `jw-text-link`, `jw-media`로 시작합니다. 상품별 의미가 없는 색상명·숫자명 클래스는 만들지 않습니다.
+
 ## 시작값 제안
 
 | 항목 | 첫 기업형 후보값 |

@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-09-09",
+  "generator": "OpenAI image_gen",
+  "reference_images_used": false,
+  "assets": [
+    {
+      "file": "01-human-engineering.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "9d1632bae00f5d1bb110fc7d4833d375172e222d75a05e89baa00ec985a3946d"
+    },
+    {
+      "file": "02-monumental-precision.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "85603b5413cd948f26d38f8f9bab7a270e1b35d0266c4f6384db98a2409915e0"
+    },
+    {
+      "file": "03-kinetic-overview.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "71ae9f3b2f5f2aa594cc9c51ac641cace7b7c955f6a1a337e793e42fd9e4576d"
+    }
+  ]
+}

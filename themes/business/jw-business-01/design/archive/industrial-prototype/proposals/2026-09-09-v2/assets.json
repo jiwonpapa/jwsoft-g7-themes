@@ -1,0 +1,39 @@
+{
+  "generation": "built-in image_gen",
+  "selection": null,
+  "assets": [
+    {
+      "id": "01-white-precision",
+      "title": "01 · 화이트 프리시전",
+      "source": "/Users/neojins/.codex/generated_images/01a07eb2-e20f-7bd3-941a-e3fc44c8c786/exec-c21958a9-9415-4ecb-8ec3-a6b4d4626849.png",
+      "file": "01-white-precision.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "046290588441b5e126870facf2e0c6e2de837521a5f9e220868aa982222e30fb"
+    },
+    {
+      "id": "02-type-panorama",
+      "title": "02 · 타이포 파노라마",
+      "source": "/Users/neojins/.codex/generated_images/01a07eb2-e20f-7bd3-941a-e3fc44c8c786/exec-a53ae1b6-b151-4293-9d61-21cb36d988b8.png",
+      "file": "02-type-panorama.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "d81f6a50125fd925024fcf549b4f6e248b4e17265c0cfbec9f5f66d39a3dcb99"
+    },
+    {
+      "id": "03-product-stage",
+      "title": "03 · 제품 스테이지",
+      "source": "/Users/neojins/.codex/generated_images/01a07eb2-e20f-7bd3-941a-e3fc44c8c786/exec-fa25b8b4-fdff-417b-a67a-51fc11c2d3f2.png",
+      "file": "03-product-stage.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "324466e6f8f4eb14f007a6fed9ffdebe458f83e57d07f8d10ca2d358e115114e"
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "version": "1.0.0",
+  "layout_name": "page/show",
+  "extends": "_user_base",
+  "meta": {
+    "title": "{{page?.data?.seo_meta?.title ?? page?.data?.title ?? '$t:user.page.title_fallback'}}",
+    "description": "{{page?.data?.seo_meta?.description ?? ''}}",
+    "keywords": "{{page?.data?.seo_meta?.keywords ?? ''}}",
+    "seo": {
+      "enabled": true,
+      "data_sources": ["page"],
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "og": {
+        "type": "website",
+        "title": "{{page?.data?.title ?? ''}}",
+        "description": "{{page?.data?.seo_meta?.description ?? ''}}",
+        "image": "{{page?.data?.content_thumbnail_url ?? ''}}"
+      },
+      "structured_data": {
+        "@type": "WebPage",
+        "name": "{{page?.data?.title ?? ''}}",
+        "description": "{{page?.data?.seo_meta?.description ?? ''}}",
+        "image": "{{page?.data?.content_thumbnail_url ?? ''}}",
+        "datePublished": "{{page?.data?.created_at ?? ''}}",
+        "dateModified": "{{page?.data?.updated_at ?? ''}}"
+      }
+    }
+  },
+  "data_sources": [
+    {
+      "id": "page",
+      "label_key": "$t:user.content",
+      "type": "api",
+      "endpoint": "/api/modules/sirsoft-page/pages/{{route.slug}}",
+      "method": "GET",
+      "auto_fetch": true,
+      "auth_mode": "optional",
+      "loading_strategy": "blocking",
+      "fallback": {"data": null}
+    }
+  ],
+  "slots": {
+    "content": [
+      {
+        "type": "basic",
+        "name": "Div",
+        "if": "{{page?.data}}",
+        "props": {"className": "jw-subpage"},
+        "children": [
+          {
+            "type": "basic",
+            "name": "Section",
+            "props": {"className": "jw-subpage-hero"},
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "props": {"className": "jw-container jw-subpage-hero__inner"},
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "props": {"className": "jw-breadcrumb"},
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "A",
+                        "text": "$t:user.home",
+                        "props": {"href": "/./", "className": "jw-breadcrumb__link"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Span",
+                        "text": "›",
+                        "props": {"className": "jw-breadcrumb__separator"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Span",
+                        "text": "{{page.data.title}}",
+                        "props": {"className": "jw-breadcrumb__current"}
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.page.eyebrow",
+                    "props": {"className": "jw-eyebrow"}
+                  },
+                  {
+                    "type": "basic",
+                    "name": "H1",
+                    "text": "{{page.data.title}}",
+                    "props": {"className": "jw-subpage-title"}
+                  },
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "{{page.data.seo_meta.description}}",
+                    "if": "{{page?.data?.seo_meta?.description}}",
+                    "props": {"className": "jw-subpage-lead"}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "basic",
+            "name": "Section",
+            "props": {"className": "jw-section jw-page-body"},
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "props": {"className": "jw-container jw-page-body__layout"},
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "props": {"className": "jw-page-context"},
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.page.context_label",
+                        "props": {"className": "jw-page-context__label"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.page.context_copy",
+                        "props": {"className": "jw-page-context__copy"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "{{page.data.updated_at}}",
+                        "if": "{{page?.data?.updated_at}}",
+                        "props": {"className": "jw-page-context__date"}
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "name": "Article",
+                    "props": {"className": "jw-page-article"},
+                    "children": [
+                      {
+                        "type": "composite",
+                        "name": "HtmlContent",
+                        "props": {
+                          "content": "{{page.data.content ?? ''}}",
+                          "isHtml": "{{(page.data.content_mode ?? 'html') === 'html'}}",
+                          "className": "jw-rich-content"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Div",
+                        "if": "{{(page?.data?.attachments ?? []).length > 0}}",
+                        "props": {"className": "jw-attachments"},
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "H2",
+                            "text": "$t:user.page.attachments",
+                            "props": {"className": "jw-attachments__title"}
+                          },
+                          {
+                            "type": "basic",
+                            "name": "Div",
+                            "props": {"className": "jw-attachments__list"},
+                            "iteration": {
+                              "source": "{{page?.data?.attachments ?? []}}",
+                              "item_var": "attachment"
+                            },
+                            "children": [
+                              {
+                                "type": "basic",
+                                "name": "A",
+                                "text": "{{attachment.original_filename}}",
+                                "props": {
+                                  "href": "{{attachment.download_url}}",
+                                  "className": "jw-attachment-link"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "basic",
+            "name": "Section",
+            "if": "{{route?.slug !== 'contact'}}",
+            "props": {"className": "jw-page-cta"},
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "props": {"className": "jw-container jw-page-cta__inner"},
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.page.cta_eyebrow",
+                        "props": {"className": "jw-eyebrow"}
+                      },
+                      {
+                        "type": "basic",
+                        "name": "H2",
+                        "text": "$t:user.page.cta_title",
+                        "props": {"className": "jw-page-cta__title"}
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "name": "A",
+                    "text": "$t:user.page.cta_action",
+                    "props": {"href": "/page/contact", "className": "jw-button jw-button--primary"}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "basic",
+        "name": "Section",
+        "if": "{{!page?.data && !page?.loading}}",
+        "props": {"className": "jw-empty-state"},
+        "children": [
+          {
+            "type": "basic",
+            "name": "Div",
+            "props": {"className": "jw-container jw-empty-state__inner"},
+            "children": [
+              {
+                "type": "basic",
+                "name": "P",
+                "text": "404",
+                "props": {"className": "jw-eyebrow"}
+              },
+              {
+                "type": "basic",
+                "name": "H1",
+                "text": "$t:user.page.not_found_title",
+                "props": {"className": "jw-subpage-title"}
+              },
+              {
+                "type": "basic",
+                "name": "P",
+                "text": "$t:user.page.not_found_copy",
+                "props": {"className": "jw-subpage-lead"}
+              },
+              {
+                "type": "basic",
+                "name": "A",
+                "text": "$t:user.page.back_home",
+                "props": {"href": "/./", "className": "jw-button jw-button--primary"}
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

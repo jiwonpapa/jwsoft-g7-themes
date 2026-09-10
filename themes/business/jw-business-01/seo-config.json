@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "JW BUSINESS 01 검색엔진용 시맨틱 HTML 매핑",
+  "text_props": ["text", "label", "value", "title"],
+  "attr_map": {
+    "className": "class",
+    "htmlFor": "for"
+  },
+  "allowed_attrs": [
+    "class", "id", "href", "src", "alt", "title", "name", "type",
+    "placeholder", "for", "target", "rel", "width", "height", "value",
+    "role", "aria-label", "aria-describedby", "autocomplete", "rows"
+  ],
+  "self_closing": ["img", "input", "hr", "br"],
+  "render_modes": {
+    "html_content": {
+      "type": "raw",
+      "source": "$props_source"
+    },
+    "select_options": {
+      "type": "iterate",
+      "source": "$props_source",
+      "item_tag": "option",
+      "item_attrs": {"value": "{value}"},
+      "item_content": "{label}"
+    }
+  },
+  "component_map": {
+    "Div": {"tag": "div"},
+    "A": {"tag": "a"},
+    "H1": {"tag": "h1"},
+    "H2": {"tag": "h2"},
+    "H3": {"tag": "h3"},
+    "P": {"tag": "p"},
+    "Span": {"tag": "span"},
+    "Img": {"tag": "img"},
+    "Nav": {"tag": "nav"},
+    "Main": {"tag": "main"},
+    "Footer": {"tag": "footer"},
+    "Header": {"tag": "header"},
+    "Section": {"tag": "section"},
+    "Article": {"tag": "article"},
+    "Button": {"tag": "button"},
+    "Form": {"tag": "form"},
+    "Label": {"tag": "label"},
+    "Li": {"tag": "li"},
+    "Ul": {"tag": "ul"},
+    "Input": {"tag": "input"},
+    "Textarea": {"tag": "textarea"},
+    "Select": {"tag": "select", "render": "select_options", "props_source": "options"},
+    "SiteHeader": {"tag": "header"},
+    "HeroSection": {"tag": "section"},
+    "PrimaryNavigation": {"tag": "nav"},
+    "HtmlContent": {"tag": "div", "render": "html_content", "props_source": "content"},
+    "MobileMenuButton": {"tag": "button", "skip": true}
+  }
+}

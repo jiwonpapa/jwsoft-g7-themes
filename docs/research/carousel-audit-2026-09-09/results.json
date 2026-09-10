@@ -1,0 +1,125 @@
+{
+  "node": "v26.7.0",
+  "vite": "7.3.6",
+  "minifier": "esbuild",
+  "target": "es2020",
+  "format": "iife",
+  "react": "external",
+  "gzipLevel": 9,
+  "results": [
+    {
+      "name": "embla-react",
+      "files": [
+        {
+          "name": "embla-react.iife.js",
+          "bytes": 19874,
+          "gzip": 8167,
+          "brotli": 7384
+        }
+      ],
+      "total": {
+        "bytes": 19874,
+        "gzip": 8167,
+        "brotli": 7384
+      }
+    },
+    {
+      "name": "embla-autoplay",
+      "files": [
+        {
+          "name": "embla-autoplay.iife.js",
+          "bytes": 22166,
+          "gzip": 8915,
+          "brotli": 8075
+        }
+      ],
+      "total": {
+        "bytes": 22166,
+        "gzip": 8915,
+        "brotli": 8075
+      }
+    },
+    {
+      "name": "embla-autoplay-fade",
+      "files": [
+        {
+          "name": "embla-autoplay-fade.iife.js",
+          "bytes": 25023,
+          "gzip": 9929,
+          "brotli": 8985
+        }
+      ],
+      "total": {
+        "bytes": 25023,
+        "gzip": 9929,
+        "brotli": 8985
+      }
+    },
+    {
+      "name": "swiper-react",
+      "files": [
+        {
+          "name": "swiper-react.iife.js",
+          "bytes": 80386,
+          "gzip": 24876,
+          "brotli": 22122
+        },
+        {
+          "name": "carousel.css",
+          "bytes": 4129,
+          "gzip": 1121,
+          "brotli": 921
+        }
+      ],
+      "total": {
+        "bytes": 84515,
+        "gzip": 25997,
+        "brotli": 23043
+      }
+    },
+    {
+      "name": "swiper-common",
+      "files": [
+        {
+          "name": "swiper-common.iife.js",
+          "bytes": 103308,
+          "gzip": 31513,
+          "brotli": 27929
+        },
+        {
+          "name": "carousel.css",
+          "bytes": 10431,
+          "gzip": 2177,
+          "brotli": 1858
+        }
+      ],
+      "total": {
+        "bytes": 113739,
+        "gzip": 33690,
+        "brotli": 29787
+      }
+    },
+    {
+      "name": "swiper-common-fade",
+      "files": [
+        {
+          "name": "swiper-common-fade.iife.js",
+          "bytes": 106455,
+          "gzip": 32594,
+          "brotli": 28764
+        },
+        {
+          "name": "carousel.css",
+          "bytes": 10695,
+          "gzip": 2225,
+          "brotli": 1904
+        }
+      ],
+      "total": {
+        "bytes": 117150,
+        "gzip": 34819,
+        "brotli": 30668
+      }
+    }
+  ]
+}

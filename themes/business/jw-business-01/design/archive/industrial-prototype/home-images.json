@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-09-09",
+  "generator": "OpenAI built-in imagegen",
+  "derivatives": {
+    "format": "webp",
+    "heroQuality": 82,
+    "catalogQuality": 84,
+    "caseQuality": 82
+  },
+  "assets": [
+    {
+      "id": "home-hero-industrial-conveyor",
+      "runtimePath": "dist/images/home/hero-industrial-conveyor.webp",
+      "sourcePath": "assets/public/images/home/hero-industrial-conveyor.webp",
+      "dimensions": "1904x826",
+      "prompt": "Use case: photorealistic-natural\nAsset type: premium industrial company website hero\nPrimary request: a bright, modern Korean smart-factory interior with a long precision aluminum belt conveyor and compact automation modules, expressing reliable engineering and clean manufacturing\nScene/backdrop: spacious white and light-gray factory, high ceiling, orderly cable management, subtle depth, no visible company branding\nSubject: the conveyor line and machinery occupy the right 55 percent of the frame\nStyle/medium: high-end architectural and industrial photography, physically plausible, editorial realism\nComposition/framing: very wide landscape hero, eye-level 28mm lens, generous uncluttered pale negative space across the left 42 percent for Korean headline copy, strong horizontal leading lines\nLighting/mood: soft daylight, crisp but natural, calm technical confidence\nColor palette: white, pale gray, aluminum silver, restrained navy and blue machine details\nConstraints: no people, no text, no logos, no certification marks, no watermark, no fake control-panel words, no dark background, no orange color cast, no science-fiction machinery"
+    },
+    {
+      "id": "product-conveyor",
+      "runtimePath": "dist/images/home/product-conveyor.webp",
+      "sourcePath": "assets/public/images/home/product-conveyor.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: product-mockup\nAsset type: industrial product catalog card\nPrimary request: a modular aluminum-frame belt conveyor system for small factory automation, shown as a credible sellable industrial product\nScene/backdrop: seamless white to very pale gray studio floor and background\nSubject: one complete straight belt conveyor with adjustable legs, motor housing and safety guards, accurate proportions and practical construction\nStyle/medium: premium commercial industrial product photography, photorealistic\nComposition/framing: 4:3 landscape, three-quarter view, product centered with breathing room, camera at waist height\nLighting/mood: soft large-source studio light, controlled shadow, clean and precise\nColor palette: aluminum silver, charcoal belt, restrained navy-blue details\nConstraints: no people, no text, no logos, no watermark, no floating parts, no impossible mechanics, no colored backdrop"
+    },
+    {
+      "id": "product-vision",
+      "runtimePath": "dist/images/home/product-vision.webp",
+      "sourcePath": "assets/public/images/home/product-vision.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: product-mockup\nAsset type: industrial product catalog card\nPrimary request: a compact machine-vision inspection unit for a manufacturing line, including an aluminum frame, enclosed camera and neutral inspection lighting above a short belt\nScene/backdrop: seamless white to very pale gray studio floor and background\nSubject: one credible compact inspection machine, clean cable routing, modest transparent safety guard\nStyle/medium: premium commercial industrial product photography, photorealistic\nComposition/framing: 4:3 landscape, three-quarter view, centered with generous margin\nLighting/mood: soft studio lighting, crisp material detail, calm technical confidence\nColor palette: aluminum silver, white, charcoal, restrained navy-blue details\nConstraints: no people, no readable interface, no text, no logos, no watermark, no futuristic holograms, no impossible mechanics, no colored backdrop"
+    },
+    {
+      "id": "product-workbench",
+      "runtimePath": "dist/images/home/product-workbench.webp",
+      "sourcePath": "assets/public/images/home/product-workbench.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: product-mockup\nAsset type: industrial product catalog card\nPrimary request: a professional ergonomic industrial workstation made from modular aluminum profile, with height-adjustable work surface, overhead task light, parts bins and tool rail\nScene/backdrop: seamless white to very pale gray studio floor and background\nSubject: one complete credible factory workstation, orderly and ready for assembly work, no loose clutter\nStyle/medium: premium commercial industrial product photography, photorealistic\nComposition/framing: 4:3 landscape, three-quarter view, centered with breathing room\nLighting/mood: soft studio lighting, clean edges and realistic materials\nColor palette: aluminum silver, light worktop, charcoal, restrained navy-blue details\nConstraints: no people, no text, no logos, no watermark, no impossible construction, no colored backdrop"
+    },
+    {
+      "id": "case-packaging-line",
+      "runtimePath": "dist/images/home/case-packaging-line.webp",
+      "sourcePath": "assets/public/images/home/case-packaging-line.webp",
+      "dimensions": "1672x941",
+      "prompt": "Use case: photorealistic-natural\nAsset type: industrial company case-study banner\nPrimary request: a completed packaging-process conveyor installation operating in a bright real factory, with sealed cardboard boxes moving through an orderly transfer and inspection line\nScene/backdrop: clean modern packaging facility, realistic guard rails, sensors and machine spacing, no brand signs\nSubject: the installed conveyor line is the clear focal point, showing a successful engineering project\nStyle/medium: high-end documentary industrial photography, photorealistic and physically plausible\nComposition/framing: wide landscape 16:9, slightly elevated three-quarter angle, strong depth and clear subject separation\nLighting/mood: bright neutral factory light, efficient and trustworthy\nColor palette: white, aluminum silver, kraft cardboard, charcoal, restrained navy-blue equipment details\nConstraints: no people in foreground, no text, no logos, no watermark, no fake safety labels, no dark mood, no orange cast, no science-fiction machinery"
+    }
+  ]
+}

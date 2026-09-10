@@ -182,6 +182,7 @@
     "layouts",
     "licenses",
     "routes.json",
+    "seo-config.json",
     "template.json",
     "THIRD-PARTY-NOTICES.md"
   ]

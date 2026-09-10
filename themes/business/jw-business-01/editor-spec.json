@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "templateId": "jwsoft-business01",
+  "version": "1.0.0",
+  "description": "JW BUSINESS 01의 검증된 구조 프리셋과 제한된 콘텐츠 편집 규칙",
+  "styleSystem": "tailwind",
+  "darkMode": {
+    "strategy": "none"
+  },
+  "controls": {
+    "headerPreset": {
+      "label": "$t:user.editor.controls.header_preset",
+      "widget": "segmented",
+      "group": "jw-header-preset",
+      "options": [
+        {
+          "value": "standard",
+          "label": "$t:user.editor.options.standard",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-site-header--standard"]
+          }
+        },
+        {
+          "value": "overlay",
+          "label": "$t:user.editor.options.overlay",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-site-header--overlay"]
+          }
+        },
+        {
+          "value": "directory",
+          "label": "$t:user.editor.options.directory",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-site-header--directory"]
+          }
+        }
+      ],
+      "groupTokens": [
+        "jw-site-header--standard",
+        "jw-site-header--overlay",
+        "jw-site-header--directory"
+      ]
+    },
+    "heroPreset": {
+      "label": "$t:user.editor.controls.hero_preset",
+      "widget": "segmented",
+      "group": "jw-hero-preset",
+      "options": [
+        {
+          "value": "cover",
+          "label": "$t:user.editor.options.cover",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-hero--cover"]
+          }
+        },
+        {
+          "value": "split",
+          "label": "$t:user.editor.options.split",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-hero--split"]
+          }
+        },
+        {
+          "value": "editorial",
+          "label": "$t:user.editor.options.editorial",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-hero--editorial"]
+          }
+        }
+      ],
+      "groupTokens": [
+        "jw-hero--cover",
+        "jw-hero--split",
+        "jw-hero--editorial"
+      ]
+    },
+    "mobileMenuPreset": {
+      "label": "$t:user.editor.controls.mobile_menu_preset",
+      "widget": "segmented",
+      "group": "jw-mobile-menu-preset",
+      "options": [
+        {
+          "value": "panel",
+          "label": "$t:user.editor.options.panel",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-primary-navigation--panel"]
+          }
+        },
+        {
+          "value": "drawer",
+          "label": "$t:user.editor.options.drawer",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-primary-navigation--drawer"]
+          }
+        },
+        {
+          "value": "fullscreen",
+          "label": "$t:user.editor.options.fullscreen",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-primary-navigation--fullscreen"]
+          }
+        }
+      ],
+      "groupTokens": [
+        "jw-primary-navigation--panel",
+        "jw-primary-navigation--drawer",
+        "jw-primary-navigation--fullscreen"
+      ]
+    },
+    "sectionSpacing": {
+      "label": "$t:user.editor.controls.section_spacing",
+      "widget": "segmented",
+      "group": "jw-section-spacing",
+      "options": [
+        {
+          "value": "compact",
+          "label": "$t:user.editor.options.compact",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-section-spacing--compact"]
+          }
+        },
+        {
+          "value": "standard",
+          "label": "$t:user.editor.options.default",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-section-spacing--standard"]
+          }
+        },
+        {
+          "value": "spacious",
+          "label": "$t:user.editor.options.spacious",
+          "apply": {
+            "type": "classToken",
+            "tokens": ["jw-section-spacing--spacious"]
+          }
+        }
+      ],
+      "groupTokens": [
+        "jw-section-spacing--compact",
+        "jw-section-spacing--standard",
+        "jw-section-spacing--spacious"
+      ]
+    },
+    "linkHref": {
+      "label": "$t:user.editor.controls.link_href",
+      "widget": "text",
+      "apply": {
+        "type": "propValue",
+        "propKey": "href"
+      }
+    },
+    "linkTarget": {
+      "label": "$t:user.editor.controls.link_target",
+      "widget": "select",
+      "apply": {
+        "type": "propValue",
+        "propKey": "target"
+      },
+      "options": [
+        { "value": "_self", "label": "$t:user.editor.options.same_window" },
+        { "value": "_blank", "label": "$t:user.editor.options.new_window" }
+      ]
+    },
+    "imgSrc": {
+      "label": "$t:user.editor.controls.image_source",
+      "widget": "image",
+      "apply": {
+        "type": "propValue",
+        "propKey": "src"
+      }
+    },
+    "imgAlt": {
+      "label": "$t:user.editor.controls.image_alt",
+      "widget": "i18n-text",
+      "apply": {
+        "type": "propValue",
+        "propKey": "alt"
+      }
+    }
+  },
+  "componentCapabilities": {
+    "SiteHeader": {
+      "label": "$t:user.editor.components.site_header",
+      "coreProps": ["id"],
+      "styleControls": ["headerPreset"],
+      "nodeEditor": {
+        "kind": "children",
+        "params": { "childComponent": "Div" }
+      }
+    },
+    "HeroSection": {
+      "label": "$t:user.editor.components.hero",
+      "coreProps": ["id"],
+      "styleControls": ["heroPreset"],
+      "nodeEditor": {
+        "kind": "children",
+        "params": { "childComponent": "Div" }
+      }
+    },
+    "PrimaryNavigation": {
+      "label": "$t:user.editor.components.primary_navigation",
+      "coreProps": ["id"],
+      "styleControls": ["mobileMenuPreset"],
+      "nodeEditor": {
+        "kind": "children",
+        "params": { "childComponent": "A" }
+      }
+    },
+    "Div": {
+      "label": "$t:user.editor.components.container",
+      "coreProps": ["id"],
+      "nodeEditor": {
+        "kind": "children",
+        "params": { "childComponent": "Div" }
+      }
+    },
+    "Section": {
+      "label": "$t:user.editor.components.section",
+      "coreProps": ["id"],
+      "styleControls": ["sectionSpacing"],
+      "nodeEditor": {
+        "kind": "children",
+        "params": { "childComponent": "Div" }
+      }
+    },
+    "Article": {
+      "label": "$t:user.editor.components.article",
+      "coreProps": ["id"],
+      "nodeEditor": {
+        "kind": "children",
+        "params": { "childComponent": "P" }
+      }
+    },
+    "H1": { "label": "$t:user.editor.components.heading_1" },
+    "H2": { "label": "$t:user.editor.components.heading_2" },
+    "H3": { "label": "$t:user.editor.components.heading_3" },
+    "P": { "label": "$t:user.editor.components.paragraph" },
+    "Span": { "label": "$t:user.editor.components.short_text" },
+    "A": {
+      "label": "$t:user.editor.components.link",
+      "propControls": ["linkHref", "linkTarget"],
+      "events": ["onClick"]
+    },
+    "Img": {
+      "label": "$t:user.editor.components.image",
+      "propControls": ["imgSrc", "imgAlt"]
+    },
+    "HtmlContent": {
+      "label": "$t:user.editor.components.published_content",
+      "coreProps": ["id"]
+    },
+    "MobileMenuButton": {
+      "label": "$t:user.editor.components.mobile_menu_button",
+      "coreProps": ["id"]
+    }
+  },
+  "componentPalette": {
+    "groups": [
+      {
+        "label": "$t:user.editor.palette.content",
+        "kind": "design",
+        "components": ["Section", "Article", "Div", "H1", "H2", "H3", "P", "Span", "A", "Img"]
+      }
+    ],
+    "entries": {
+      "Section": {
+        "label": "$t:user.editor.components.section",
+        "requiresDefaultNode": true,
+        "defaultNode": {
+          "type": "basic",
+          "name": "Section",
+          "props": { "className": "jw-section jw-section-spacing--standard" },
+          "children": [
+            {
+              "type": "basic",
+              "name": "Div",
+              "props": { "className": "jw-container" },
+              "children": [
+                { "type": "basic", "name": "H2", "text": "$t:user.editor.defaults.section_title", "props": { "className": "jw-section-title" } }
+              ]
+            }
+          ]
+        }
+      },
+      "Article": {
+        "label": "$t:user.editor.components.article",
+        "requiresDefaultNode": true,
+        "defaultNode": {
+          "type": "basic",
+          "name": "Article",
+          "props": { "className": "jw-content-group" },
+          "children": [
+            { "type": "basic", "name": "H3", "text": "$t:user.editor.defaults.content_title", "props": { "className": "jw-content-group__title" } },
+            { "type": "basic", "name": "P", "text": "$t:user.editor.defaults.content_copy", "props": { "className": "jw-body-copy" } }
+          ]
+        }
+      },
+      "Div": {
+        "label": "$t:user.editor.components.container",
+        "requiresDefaultNode": true,
+        "defaultNode": { "type": "basic", "name": "Div", "props": { "className": "jw-content-group" } }
+      },
+      "H1": {
+        "label": "$t:user.editor.components.heading_1",
+        "requiresDefaultNode": true,
+        "defaultNode": { "type": "basic", "name": "H1", "text": "$t:user.editor.defaults.page_title", "props": { "className": "jw-display-title" } }
+      },
+      "H2": {
+        "label": "$t:user.editor.components.heading_2",
+        "requiresDefaultNode": true,
+        "defaultNode": { "type": "basic", "name": "H2", "text": "$t:user.editor.defaults.section_title", "props": { "className": "jw-section-title" } }
+      },
+      "H3": {
+        "label": "$t:user.editor.components.heading_3",
+        "requiresDefaultNode": true,
+        "defaultNode": { "type": "basic", "name": "H3", "text": "$t:user.editor.defaults.content_title", "props": { "className": "jw-content-group__title" } }
+      },
+      "P": {
+        "label": "$t:user.editor.components.paragraph",
+        "requiresDefaultNode": true,
+        "defaultNode": { "type": "basic", "name": "P", "text": "$t:user.editor.defaults.content_copy", "props": { "className": "jw-body-copy" } }
+      },
+      "Span": {
+        "label": "$t:user.editor.components.short_text",
+        "requiresDefaultNode": true,
+        "defaultNode": { "type": "basic", "name": "Span", "text": "$t:user.editor.defaults.short_text" }
+      },
+      "A": {
+        "label": "$t:user.editor.components.link",
+        "requiresDefaultNode": true,
+        "defaultNode": { "type": "basic", "name": "A", "text": "$t:user.editor.defaults.link_text", "props": { "href": "/./", "className": "jw-text-link" } }
+      },
+      "Img": {
+        "label": "$t:user.editor.components.image",
+        "requiresDefaultNode": true,
+        "defaultNode": {
+          "type": "basic",
+          "name": "Img",
+          "props": {
+            "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fservice-strategy.webp&v=0.1.0",
+            "alt": "$t:user.editor.defaults.image_alt",
+            "className": "jw-media"
+          }
+        }
+      }
+    }
+  },
+  "nesting": {
+    "draggable": [
+      "SiteHeader",
+      "HeroSection",
+      "PrimaryNavigation",
+      "Section",
+      "Article",
+      "Div",
+      "H1",
+      "H2",
+      "H3",
+      "P",
+      "Span",
+      "A",
+      "Img",
+      "HtmlContent",
+      "MobileMenuButton"
+    ],
+    "containers": {
+      "SiteHeader": { "accepts": ["Div", "PrimaryNavigation", "A", "MobileMenuButton"] },
+      "HeroSection": { "accepts": ["Div", "H1", "H2", "H3", "P", "Span", "A", "Img"] },
+      "PrimaryNavigation": { "accepts": ["A", "Div", "Span"] },
+      "Section": { "accepts": ["Div", "Article", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent"] },
+      "Article": { "accepts": ["Div", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent"] },
+      "Div": { "accepts": ["Div", "Section", "Article", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent"] },
+      "P": { "accepts": ["Span", "A"] },
+      "Span": { "accepts": ["Span", "A"] },
+      "A": { "accepts": ["Span", "Img"] }
+    }
+  }
+}

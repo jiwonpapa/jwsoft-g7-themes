@@ -1,0 +1,255 @@
+{
+  "user": {
+    "home": "Home",
+    "brand": "NOVA WORKS",
+    "navigation": "Primary navigation",
+    "footer": "Footer navigation",
+    "footer_copy": "Strategy · Digital · Operations",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu",
+    "navigation_items": {
+      "company": "Company",
+      "services": "Services",
+      "cases": "Projects",
+      "resources": "Insights",
+      "contact": "Contact"
+    },
+    "homepage": {
+      "seo": {
+        "title": "NOVA WORKS | Business Operations and Digital Improvement",
+        "description": "A demo website for NOVA WORKS, a fictional B2B company connecting business strategy, digital delivery, and workflow improvement."
+      },
+      "hero": {
+        "eyebrow": "NOVA WORKS",
+        "title": "Turn complex work\ninto a better flow",
+        "copy": "From business strategy and digital delivery to operational improvement, we build changes that teams can put into practice.",
+        "primary_action": "Explore services",
+        "secondary_action": "Start a project",
+        "image_alt": "A corporate project team reviewing business challenges in a bright office"
+      },
+      "company": {
+        "eyebrow": "HOW WE WORK",
+        "title": "We define the problem\nbefore proposing the answer",
+        "copy": "We align goals and constraints, then connect strategy, delivery, and operations in one practical plan.",
+        "items": {
+          "strategy": {
+            "title": "Define the priority",
+            "copy": "We listen to leaders and practitioners to identify the issue that matters now."
+          },
+          "execute": {
+            "title": "Deliver working outcomes",
+            "copy": "We turn plans into services and workflows that teams can actually use."
+          },
+          "operate": {
+            "title": "Improve after launch",
+            "copy": "We review real use and define operating standards and the next improvement."
+          }
+        }
+      },
+      "services": {
+        "eyebrow": "WHAT WE DO",
+        "title": "Three practices connecting\nstrategy and execution",
+        "action": "Explore all services",
+        "items": {
+          "strategy": {
+            "category": "BUSINESS STRATEGY",
+            "title": "Business strategy and service design",
+            "copy": "We shape practical service direction and roadmaps from market, customer, and operating needs.",
+            "image_alt": "A project team discussing an execution strategy around business plans"
+          },
+          "digital": {
+            "category": "DIGITAL EXPERIENCE",
+            "title": "Digital service delivery",
+            "copy": "We create coherent web and workplace services for customers and internal teams.",
+            "image_alt": "A product team reviewing a digital service on a large display"
+          },
+          "operations": {
+            "category": "OPERATIONS DESIGN",
+            "title": "Workflow improvement",
+            "copy": "We connect scattered procedures and tools into a clear flow of responsibility and information.",
+            "image_alt": "A team arranging workflow cards to improve an operating process"
+          }
+        }
+      },
+      "case": {
+        "eyebrow": "FEATURED PROJECT",
+        "title": "One connected flow\nfor fragmented customer work",
+        "copy": "A project redesigning intake, assignment, progress sharing, and reporting as one collaborative workflow.",
+        "action": "View projects",
+        "image_alt": "A project presentation explaining a unified workflow to client stakeholders"
+      },
+      "resources": {
+        "eyebrow": "INSIGHTS",
+        "title": "Practical insight\nfor starting change",
+        "items": {
+          "checklist": {
+            "label": "CHECKLIST",
+            "title": "Seven questions before a project starts"
+          },
+          "guide": {
+            "label": "GUIDE",
+            "title": "How to define a digital service scope"
+          },
+          "maintenance": {
+            "label": "OPERATIONS",
+            "title": "Designing operating metrics after launch"
+          }
+        }
+      },
+      "contact": {
+        "eyebrow": "START A PROJECT",
+        "title": "Tell us what your team\nneeds to solve now",
+        "copy": "Share your current situation and goal, and we will outline the right starting point and review scope.",
+        "action": "Start a project"
+      }
+    },
+    "page": {
+      "title_fallback": "Company information",
+      "eyebrow": "ABOUT NOVA WORKS",
+      "context_label": "NOVA WORKS",
+      "context_copy": "We connect strategy, delivery, and operations in one practical flow.",
+      "attachments": "Attachments",
+      "cta_eyebrow": "START A PROJECT",
+      "cta_title": "Let us examine the challenge your team needs to solve",
+      "cta_action": "Start a project",
+      "not_found_title": "Page not found",
+      "not_found_copy": "The address may have changed or the page is not public yet.",
+      "back_home": "Back to home"
+    },
+    "board": {
+      "eyebrow": "NOVA WORKS JOURNAL",
+      "list_label": "All content",
+      "items": "items",
+      "empty_title": "No content yet",
+      "empty_copy": "New updates and projects are being prepared.",
+      "pagination": "List pagination",
+      "previous": "Previous",
+      "next": "Next",
+      "navigation": "Post navigation",
+      "previous_post": "Previous post",
+      "next_post": "Next post",
+      "back_to_list": "Back to list",
+      "write": "Write",
+      "edit": "Edit",
+      "not_found_title": "Board not found",
+      "not_found_copy": "Check the menu connection or board visibility.",
+      "post_not_found_title": "Post not found",
+      "post_not_found_copy": "The post was removed or is not public.",
+      "secret": {
+        "eyebrow": "PRIVATE INQUIRY",
+        "title": "Enter the author password",
+        "copy": "Use the password set when the inquiry was submitted to view its details.",
+        "password_label": "Author password",
+        "action": "View inquiry",
+        "error": "The password does not match.",
+        "restricted_title": "This post is private",
+        "restricted_copy": "You do not have permission to view this post."
+      },
+      "form": {
+        "data_label": "Form data",
+        "meta_label": "Board form settings",
+        "board_fallback": "Inquiry board",
+        "eyebrow": "CONTACT & WRITE",
+        "write_title": "Tell us what you need",
+        "edit_title": "Edit your message",
+        "description": "Share the details the team needs to review your request.",
+        "intro_title": "Describe the challenge and the outcome you need",
+        "intro_copy": "Include your organization, current situation, desired result, and schedule for a more useful response.",
+        "password_title": "Verify the author password",
+        "password_copy": "Use the password you set when posting as a guest.",
+        "password_label": "Author password",
+        "password_action": "Verify",
+        "password_error": "Check the password and try again.",
+        "validation_title": "Review the fields below",
+        "author_label": "Your name",
+        "guest_password_label": "Password for editing",
+        "notice_label": "Publish as a notice",
+        "secret_label": "Publish as a private post",
+        "secret_fixed_label": "This inquiry will be published as a private post",
+        "category_label": "Inquiry type",
+        "category_placeholder": "Choose a type",
+        "title_label": "Subject",
+        "content_label": "Details",
+        "content_help": "Do not enter sensitive information such as account passwords.",
+        "cancel": "Cancel",
+        "submit": "Submit",
+        "save": "Save",
+        "saving": "Saving",
+        "success": "Your message has been saved"
+      }
+    },
+    "errors": {
+      "401": "Sign in required",
+      "401_copy": "Please sign in before viewing this page.",
+      "403": "Access denied",
+      "403_copy": "Your current account cannot access this page.",
+      "404": "Page not found",
+      "404_copy": "The address may have changed or the requested page is not public yet.",
+      "500": "Unable to process the request",
+      "500_copy": "A temporary issue occurred. Please try again shortly.",
+      "503": "Please try again shortly",
+      "503_copy": "The service is temporarily unavailable. Please refresh this page shortly.",
+      "maintenance": "Improving the service",
+      "maintenance_copy": "The service will be available again after maintenance.",
+      "home_action": "Return home"
+    },
+    "editor": {
+      "controls": {
+        "header_preset": "Header layout",
+        "hero_preset": "Hero layout",
+        "mobile_menu_preset": "Mobile menu",
+        "section_spacing": "Section spacing",
+        "link_href": "Link address",
+        "link_target": "Open link in",
+        "image_source": "Choose image",
+        "image_alt": "Alternative text"
+      },
+      "options": {
+        "standard": "Standard",
+        "overlay": "Overlay",
+        "directory": "Two row",
+        "cover": "Cover",
+        "split": "Split",
+        "editorial": "Editorial",
+        "panel": "Panel",
+        "drawer": "Drawer",
+        "fullscreen": "Fullscreen",
+        "compact": "Compact",
+        "default": "Default",
+        "spacious": "Spacious",
+        "same_window": "Same window",
+        "new_window": "New window"
+      },
+      "components": {
+        "site_header": "Site header",
+        "hero": "Main hero",
+        "primary_navigation": "Primary navigation",
+        "container": "Container",
+        "section": "Section",
+        "article": "Content group",
+        "heading_1": "Page heading",
+        "heading_2": "Section heading",
+        "heading_3": "Small heading",
+        "paragraph": "Paragraph",
+        "short_text": "Short text",
+        "link": "Link",
+        "image": "Image",
+        "published_content": "Published content",
+        "mobile_menu_button": "Mobile menu button"
+      },
+      "palette": {
+        "content": "JW content"
+      },
+      "defaults": {
+        "page_title": "Page title",
+        "section_title": "New section title",
+        "content_title": "Content title",
+        "content_copy": "Enter content.",
+        "short_text": "Short text",
+        "link_text": "Learn more",
+        "image_alt": "Image description"
+      }
+    },
+    "content": "Content"
+  }
+}

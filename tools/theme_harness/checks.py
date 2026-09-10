@@ -123,6 +123,48 @@ def _check_manifests(context: Context, issues: list[str], *, release: bool) -> N
                 issues.append(f"선언된 배포 자산이 없습니다: {value}")
 
 
+def _component_names(value: Any) -> set[str]:
+    names: set[str] = set()
+    if isinstance(value, list):
+        for item in value:
+            names.update(_component_names(item))
+    elif isinstance(value, dict):
+        if value.get("type") in {"basic", "composite", "layout", "extension_point"}:
+            name = value.get("name")
+            if isinstance(name, str):
+                names.add(name)
+        for item in value.values():
+            names.update(_component_names(item))
+    return names
+
+
+def _check_seo_config(context: Context, issues: list[str]) -> None:
+    layouts_dir = context.theme / "layouts"
+    layouts = [read_json(path) for path in layouts_dir.rglob("*.json")]
+    seo_enabled = any(
+        isinstance(layout.get("meta"), dict)
+        and isinstance(layout["meta"].get("seo"), dict)
+        and layout["meta"]["seo"].get("enabled") is True
+        for layout in layouts
+    )
+    if not seo_enabled:
+        return
+
+    config_path = context.theme / "seo-config.json"
+    if not config_path.is_file():
+        issues.append("SEO가 활성화된 테마에는 seo-config.json이 필요합니다.")
+        return
+    config = read_json(config_path)
+    component_map = config.get("component_map")
+    if not isinstance(component_map, dict):
+        issues.append("seo-config.json component_map이 올바르지 않습니다.")
+        return
+    used = set().union(*(_component_names(layout) for layout in layouts))
+    missing = sorted(name for name in used if name not in component_map)
+    if missing:
+        issues.append("SEO HTML 매핑이 없는 컴포넌트: " + ", ".join(missing))
+
+
 def _check_network_assets(context: Context, issues: list[str]) -> None:
     candidates: list[Path] = []
     for relative in ("assets", "src", "layouts", "lang"):
@@ -198,6 +240,7 @@ def collect_issues(context: Context, *, release: bool = False) -> list[str]:
     _check_shell_policy(context.repository, issues)
     _check_packages(context, issues)
     _check_manifests(context, issues, release=release)
+    _check_seo_config(context, issues)
     _check_network_assets(context, issues)
     _check_tailwind(context, issues)
     _check_licenses(context, issues)

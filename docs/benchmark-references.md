@@ -21,7 +21,7 @@ Master 상품의 재판매 제한·데모 이미지 권리 구분처럼 이용�
 
 - [G7 저장소](https://github.com/gnuboard/g7): `templates/_bundled/sirsoft-basic/template.json`, `components.json`, `editor-spec.json`, `routes.json`, `vite.config.ts`.
 - G7 로컬 조사에서 테마의 React/ReactDOM/jsx-runtime을 외부 공유 인스턴스로 연결하는 IIFE 빌드 구성을 확인했습니다.
-- G7 `app/Console/Commands/Template/UpdateTemplateCommand.php`의 조사 당시 기본값은 `layout-strategy=overwrite`였습니다. 고객 편집본 보존 정책과 실제 업데이트 경로 확인이 필요합니다.
+- G7 `app/Console/Commands/Template/UpdateTemplateCommand.php`의 조사 당시 기본값은 `layout-strategy=overwrite`였습니다. `JW BUSINESS 01` 고객 업데이트는 명시적 `layout-strategy=keep`으로 정했고, 로컬 G7에서 수정된 홈 레이아웃의 내용·잠금 버전 보존을 확인했습니다.
 - [PB 네이티브 컴포넌트 계약](https://github.com/jiwonpapa/g7-page-builder/blob/main/docs/productization/native-components.md): manifest/IIFE export/spec과 실제 편집 자산 로드 연결.
 - [PB 호스트 계약](https://github.com/jiwonpapa/g7-page-builder/blob/main/docs/productization/native-host-contract.md): 조사 당시 NE1~NE3는 로컬 G7 호스트 후보와 검증한 결과이며 stock G7 지원·운영 배포와 구분됐습니다.
 

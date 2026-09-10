@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-09-09",
+  "generator": "OpenAI built-in imagegen",
+  "profile": "general-b2b-corporate",
+  "derivatives": {
+    "format": "webp",
+    "heroQuality": 82,
+    "cardQuality": 84,
+    "caseQuality": 82
+  },
+  "assets": [
+    {
+      "id": "home-hero-corporate-collaboration",
+      "runtimePath": "dist/images/home/hero-corporate-collaboration.webp",
+      "sourcePath": "assets/public/images/home/hero-corporate-collaboration.webp",
+      "dimensions": "1904x826",
+      "prompt": "Use case: photorealistic-natural. Wide homepage hero for a premium Korean general business theme. Modern B2B business solutions team collaborating in a bright contemporary office. Keep the left 42 percent calm and bright for headline copy; place natural working activity on the right. High-end editorial corporate photography, white and soft gray with restrained navy and blue. No logos, readable text, watermark, industrial machinery, handshake pose, or staged smiles."
+    },
+    {
+      "id": "service-strategy",
+      "runtimePath": "dist/images/home/service-strategy.webp",
+      "sourcePath": "assets/public/images/home/service-strategy.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: photorealistic-natural. 4:3 corporate service image of a senior business consultant and two client team members mapping a practical growth strategy in a bright Korean office. Natural working discussion, premium editorial realism, no logos, readable text, watermark, handshake, or camera pose."
+    },
+    {
+      "id": "service-digital",
+      "runtimePath": "dist/images/home/service-digital.webp",
+      "sourcePath": "assets/public/images/home/service-digital.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: photorealistic-natural. 4:3 corporate service image of a product and engineering team reviewing a refined digital service interface in a bright modern studio. Authentic collaboration, restrained white, gray, navy, and blue. No logos, readable UI text, code close-up, watermark, cyberpunk lighting, or stock-photo pose."
+    },
+    {
+      "id": "service-operations",
+      "runtimePath": "dist/images/home/service-operations.webp",
+      "sourcePath": "assets/public/images/home/service-operations.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: photorealistic-natural. 4:3 corporate service image of an operations team improving a customer workflow with physical cards and a simple wall diagram in a refined bright project room. Candid problem-solving, no logos, readable text, watermark, fake statistics, or handshake."
+    },
+    {
+      "id": "case-workflow-unification",
+      "runtimePath": "dist/images/home/case-workflow-unification.webp",
+      "sourcePath": "assets/public/images/home/case-workflow-unification.webp",
+      "dimensions": "1672x941",
+      "prompt": "Use case: photorealistic-natural. Wide 16:9 case-study image of a B2B project review where a consulting team presents a unified business workflow to client leaders in a contemporary boardroom. Bright credible editorial photography; abstract unreadable presentation screen. No logos, readable text, watermark, handshake, celebration, or fake statistics."
+    }
+  ]
+}

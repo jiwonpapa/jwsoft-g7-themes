@@ -1,0 +1,216 @@
+{
+  "version": "1.0.0",
+  "layout_name": "_user_base",
+  "meta": {
+    "is_base": true
+  },
+  "globalHeaders": [
+    {
+      "pattern": "/api/modules/sirsoft-board/*",
+      "headers": {
+        "X-Board-Secret-View-Token": "{{_global.secretViewToken}}"
+      }
+    }
+  ],
+  "data_sources": [],
+  "components": [
+    {
+      "type": "basic",
+      "name": "Div",
+      "id": "jw-site",
+      "children": [
+        {
+          "type": "basic",
+          "name": "SiteHeader",
+          "id": "jw-header",
+          "children": [
+            {
+              "type": "basic",
+              "name": "Div",
+              "children": [
+                {
+                  "type": "basic",
+                  "name": "A",
+                  "id": "jw-home-link",
+                  "text": "$t:user.brand",
+                  "props": {
+                    "href": "/./",
+                    "className": "jw-brand"
+                  }
+                },
+                {
+                  "type": "basic",
+                  "name": "PrimaryNavigation",
+                  "id": "jw-primary-navigation",
+                  "props": {
+                    "aria-label": "$t:user.navigation",
+                    "className": "jw-primary-navigation jw-primary-navigation--panel"
+                  },
+                  "children": [
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.navigation_items.company",
+                      "props": {
+                        "href": "/page/company",
+                        "className": "jw-navigation-link"
+                      }
+                    },
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.navigation_items.services",
+                      "props": {
+                        "href": "/page/services",
+                        "className": "jw-navigation-link"
+                      }
+                    },
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.navigation_items.cases",
+                      "props": {
+                        "href": "/board/cases",
+                        "className": "jw-navigation-link"
+                      }
+                    },
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.navigation_items.resources",
+                      "props": {
+                        "href": "/board/resources",
+                        "className": "jw-navigation-link"
+                      }
+                    },
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.navigation_items.contact",
+                      "props": {
+                        "href": "/page/contact",
+                        "className": "jw-navigation-link jw-navigation-link--action"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "composite",
+                  "name": "MobileMenuButton",
+                  "props": {
+                    "targetId": "jw-primary-navigation",
+                    "label": "$t:user.menu_open",
+                    "closeLabel": "$t:user.menu_close",
+                    "className": "jw-menu-button"
+                  }
+                }
+              ],
+              "props": {
+                "className": "jw-container jw-header-inner"
+              }
+            }
+          ],
+          "props": {
+            "className": "jw-site-header jw-site-header--standard"
+          }
+        },
+        {
+          "type": "basic",
+          "name": "Main",
+          "id": "jw-content",
+          "children": [],
+          "slot": "content",
+          "props": {
+            "className": "jw-main"
+          }
+        },
+        {
+          "type": "basic",
+          "name": "Footer",
+          "id": "jw-footer",
+          "children": [
+            {
+              "type": "basic",
+              "name": "Div",
+              "children": [
+                {
+                  "type": "basic",
+                  "name": "Div",
+                  "children": [
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.brand",
+                      "props": {
+                        "href": "/./",
+                        "className": "jw-brand"
+                      }
+                    },
+                    {
+                      "type": "basic",
+                      "name": "P",
+                      "text": "$t:user.footer_copy",
+                      "props": {
+                        "className": "jw-footer-copy"
+                      }
+                    }
+                  ],
+                  "props": {
+                    "className": "jw-footer-brand"
+                  }
+                },
+                {
+                  "type": "basic",
+                  "name": "Nav",
+                  "id": "jw-footer-navigation",
+                  "props": {
+                    "aria-label": "$t:user.footer",
+                    "className": "jw-footer-navigation"
+                  },
+                  "children": [
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.navigation_items.company",
+                      "props": {
+                        "href": "/page/company",
+                        "className": "jw-navigation-link"
+                      }
+                    },
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.navigation_items.resources",
+                      "props": {
+                        "href": "/board/resources",
+                        "className": "jw-navigation-link"
+                      }
+                    },
+                    {
+                      "type": "basic",
+                      "name": "A",
+                      "text": "$t:user.navigation_items.contact",
+                      "props": {
+                        "href": "/page/contact",
+                        "className": "jw-navigation-link"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "props": {
+                "className": "jw-container jw-footer-inner"
+              }
+            }
+          ],
+          "props": {
+            "className": "jw-site-footer"
+          }
+        }
+      ],
+      "props": {
+        "className": "jw-site"
+      }
+    }
+  ]
+}

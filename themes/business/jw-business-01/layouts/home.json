@@ -1,0 +1,822 @@
+{
+  "version": "1.0.0",
+  "layout_name": "home",
+  "extends": "_user_base",
+  "meta": {
+    "title": "$t:user.homepage.seo.title",
+    "description": "$t:user.homepage.seo.description",
+    "seo": {
+      "enabled": true,
+      "priority": 1.0,
+      "changefreq": "weekly",
+      "og": {
+        "type": "website",
+        "title": "$t:user.homepage.seo.title",
+        "description": "$t:user.homepage.seo.description",
+        "image": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fhero-corporate-collaboration.webp&v=0.1.0"
+      },
+      "structured_data": {
+        "@type": "Organization",
+        "name": "NOVA WORKS",
+        "description": "$t:user.homepage.seo.description"
+      }
+    }
+  },
+  "data_sources": [],
+  "slots": {
+    "content": [
+      {
+        "type": "basic",
+        "name": "HeroSection",
+        "children": [
+          {
+            "type": "basic",
+            "name": "Img",
+            "props": {
+              "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fhero-corporate-collaboration.webp&v=0.1.0",
+              "alt": "$t:user.homepage.hero.image_alt",
+              "width": 1904,
+              "height": 826,
+              "className": "jw-hero__image"
+            }
+          },
+          {
+            "type": "basic",
+            "name": "Div",
+            "props": {
+              "className": "jw-hero__veil"
+            }
+          },
+          {
+            "type": "basic",
+            "name": "Div",
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.homepage.hero.eyebrow",
+                    "props": {
+                      "className": "jw-eyebrow"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "H1",
+                    "text": "$t:user.homepage.hero.title",
+                    "props": {
+                      "className": "jw-display-title jw-hero__title"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.homepage.hero.copy",
+                    "props": {
+                      "className": "jw-body-copy jw-hero__copy"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "A",
+                        "text": "$t:user.homepage.hero.primary_action",
+                        "props": {
+                          "href": "/page/services",
+                          "className": "jw-button jw-button--primary"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "A",
+                        "text": "$t:user.homepage.hero.secondary_action",
+                        "props": {
+                          "href": "/page/contact",
+                          "className": "jw-button jw-button--secondary"
+                        }
+                      }
+                    ],
+                    "props": {
+                      "className": "jw-hero__actions"
+                    }
+                  }
+                ],
+                "props": {
+                  "className": "jw-hero__content"
+                }
+              }
+            ],
+            "props": {
+              "className": "jw-container jw-hero__inner"
+            }
+          }
+        ],
+        "props": {
+          "className": "jw-hero jw-hero--cover"
+        }
+      },
+      {
+        "type": "basic",
+        "name": "Div",
+        "id": "jw-company-profile",
+        "children": [
+          {
+            "type": "basic",
+            "name": "Section",
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.homepage.company.eyebrow",
+                        "props": {
+                          "className": "jw-eyebrow"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "H2",
+                        "text": "$t:user.homepage.company.title",
+                        "props": {
+                          "className": "jw-section-title"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.homepage.company.copy",
+                        "props": {
+                          "className": "jw-body-copy"
+                        }
+                      }
+                    ],
+                    "props": {
+                      "className": "jw-section__header"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "01",
+                            "props": {
+                              "className": "jw-capability__index"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.company.items.strategy.title",
+                            "props": {
+                              "className": "jw-capability__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.company.items.strategy.copy",
+                            "props": {
+                              "className": "jw-capability__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-capability"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "02",
+                            "props": {
+                              "className": "jw-capability__index"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.company.items.execute.title",
+                            "props": {
+                              "className": "jw-capability__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.company.items.execute.copy",
+                            "props": {
+                              "className": "jw-capability__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-capability"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "Span",
+                            "text": "03",
+                            "props": {
+                              "className": "jw-capability__index"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.company.items.operate.title",
+                            "props": {
+                              "className": "jw-capability__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.company.items.operate.copy",
+                            "props": {
+                              "className": "jw-capability__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-capability"
+                        }
+                      }
+                    ],
+                    "props": {
+                      "className": "jw-capability-list"
+                    }
+                  }
+                ],
+                "props": {
+                  "className": "jw-container jw-company__layout"
+                }
+              }
+            ],
+            "props": {
+              "className": "jw-section jw-company"
+            }
+          }
+        ],
+        "props": {
+          "className": "jw-layout-data-slot jw-layout-data-slot--company"
+        }
+      },
+      {
+        "type": "basic",
+        "name": "Div",
+        "id": "jw-home-services",
+        "children": [
+          {
+            "type": "basic",
+            "name": "Section",
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "Div",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.services.eyebrow",
+                            "props": {
+                              "className": "jw-eyebrow"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H2",
+                            "text": "$t:user.homepage.services.title",
+                            "props": {
+                              "className": "jw-section-title"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-section__header"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "A",
+                        "text": "$t:user.homepage.services.action",
+                        "props": {
+                          "href": "/page/services",
+                          "className": "jw-text-link"
+                        }
+                      }
+                    ],
+                    "props": {
+                      "className": "jw-section-heading-row"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "A",
+                            "props": {
+                              "href": "/page/services",
+                              "className": "jw-service__media-link"
+                            },
+                            "children": [
+                              {
+                                "type": "basic",
+                                "name": "Img",
+                                "props": {
+                                  "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fservice-strategy.webp&v=0.1.0",
+                                  "alt": "$t:user.homepage.services.items.strategy.image_alt",
+                                  "loading": "lazy",
+                                  "width": 1448,
+                                  "height": 1086,
+                                  "className": "jw-media jw-service__image"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.services.items.strategy.category",
+                            "props": {
+                              "className": "jw-service__category"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.services.items.strategy.title",
+                            "props": {
+                              "className": "jw-service__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.services.items.strategy.copy",
+                            "props": {
+                              "className": "jw-service__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-service-card"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "A",
+                            "props": {
+                              "href": "/page/services",
+                              "className": "jw-service__media-link"
+                            },
+                            "children": [
+                              {
+                                "type": "basic",
+                                "name": "Img",
+                                "props": {
+                                  "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fservice-digital.webp&v=0.1.0",
+                                  "alt": "$t:user.homepage.services.items.digital.image_alt",
+                                  "loading": "lazy",
+                                  "width": 1448,
+                                  "height": 1086,
+                                  "className": "jw-media jw-service__image"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.services.items.digital.category",
+                            "props": {
+                              "className": "jw-service__category"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.services.items.digital.title",
+                            "props": {
+                              "className": "jw-service__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.services.items.digital.copy",
+                            "props": {
+                              "className": "jw-service__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-service-card"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "basic",
+                            "name": "A",
+                            "props": {
+                              "href": "/page/services",
+                              "className": "jw-service__media-link"
+                            },
+                            "children": [
+                              {
+                                "type": "basic",
+                                "name": "Img",
+                                "props": {
+                                  "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fservice-operations.webp&v=0.1.0",
+                                  "alt": "$t:user.homepage.services.items.operations.image_alt",
+                                  "loading": "lazy",
+                                  "width": 1448,
+                                  "height": 1086,
+                                  "className": "jw-media jw-service__image"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.services.items.operations.category",
+                            "props": {
+                              "className": "jw-service__category"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.services.items.operations.title",
+                            "props": {
+                              "className": "jw-service__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.services.items.operations.copy",
+                            "props": {
+                              "className": "jw-service__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-service-card"
+                        }
+                      }
+                    ],
+                    "props": {
+                      "className": "jw-service-grid"
+                    }
+                  }
+                ],
+                "props": {
+                  "className": "jw-container"
+                }
+              }
+            ],
+            "props": {
+              "className": "jw-section jw-services"
+            }
+          }
+        ],
+        "props": {
+          "className": "jw-layout-data-slot jw-layout-data-slot--products"
+        }
+      },
+      {
+        "type": "basic",
+        "name": "Div",
+        "id": "jw-home-cases",
+        "children": [
+          {
+            "type": "basic",
+            "name": "Section",
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "Img",
+                        "props": {
+                          "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fcase-workflow-unification.webp&v=0.1.0",
+                          "alt": "$t:user.homepage.case.image_alt",
+                          "loading": "lazy",
+                          "width": 1672,
+                          "height": 941,
+                          "className": "jw-media jw-case-feature__image"
+                        }
+                      }
+                    ],
+                    "props": {
+                      "className": "jw-case-feature__media"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "Div",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.homepage.case.eyebrow",
+                        "props": {
+                          "className": "jw-eyebrow"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "H2",
+                        "text": "$t:user.homepage.case.title",
+                        "props": {
+                          "className": "jw-section-title"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "P",
+                        "text": "$t:user.homepage.case.copy",
+                        "props": {
+                          "className": "jw-body-copy"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "A",
+                        "text": "$t:user.homepage.case.action",
+                        "props": {
+                          "href": "/board/cases",
+                          "className": "jw-text-link"
+                        }
+                      }
+                    ],
+                    "props": {
+                      "className": "jw-case-feature__content"
+                    }
+                  }
+                ],
+                "props": {
+                  "className": "jw-container jw-case-feature"
+                }
+              }
+            ],
+            "props": {
+              "className": "jw-section jw-cases"
+            }
+          }
+        ],
+        "props": {
+          "className": "jw-layout-data-slot jw-layout-data-slot--cases"
+        }
+      },
+      {
+        "type": "basic",
+        "name": "Section",
+        "children": [
+          {
+            "type": "basic",
+            "name": "Div",
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.homepage.resources.eyebrow",
+                    "props": {
+                      "className": "jw-eyebrow"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "H2",
+                    "text": "$t:user.homepage.resources.title",
+                    "props": {
+                      "className": "jw-section-title"
+                    }
+                  }
+                ],
+                "props": {
+                  "className": "jw-section__header"
+                }
+              },
+              {
+                "type": "basic",
+                "name": "Div",
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "A",
+                    "props": {
+                      "href": "/board/resources",
+                      "className": "jw-resource-link"
+                    },
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "Span",
+                        "text": "$t:user.homepage.resources.items.checklist.label",
+                        "props": {
+                          "className": "jw-resource-link__label"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Span",
+                        "text": "$t:user.homepage.resources.items.checklist.title",
+                        "props": {
+                          "className": "jw-resource-link__title"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "name": "A",
+                    "props": {
+                      "href": "/board/resources",
+                      "className": "jw-resource-link"
+                    },
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "Span",
+                        "text": "$t:user.homepage.resources.items.guide.label",
+                        "props": {
+                          "className": "jw-resource-link__label"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Span",
+                        "text": "$t:user.homepage.resources.items.guide.title",
+                        "props": {
+                          "className": "jw-resource-link__title"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "name": "A",
+                    "props": {
+                      "href": "/board/resources",
+                      "className": "jw-resource-link"
+                    },
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "Span",
+                        "text": "$t:user.homepage.resources.items.maintenance.label",
+                        "props": {
+                          "className": "jw-resource-link__label"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Span",
+                        "text": "$t:user.homepage.resources.items.maintenance.title",
+                        "props": {
+                          "className": "jw-resource-link__title"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "props": {
+                  "className": "jw-resource-list"
+                }
+              }
+            ],
+            "props": {
+              "className": "jw-container jw-resources__layout"
+            }
+          }
+        ],
+        "props": {
+          "className": "jw-section jw-resources"
+        }
+      },
+      {
+        "type": "basic",
+        "name": "Section",
+        "id": "jw-contact",
+        "children": [
+          {
+            "type": "basic",
+            "name": "Div",
+            "children": [
+              {
+                "type": "basic",
+                "name": "Div",
+                "children": [
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.homepage.contact.eyebrow",
+                    "props": {
+                      "className": "jw-eyebrow"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "H2",
+                    "text": "$t:user.homepage.contact.title",
+                    "props": {
+                      "className": "jw-section-title"
+                    }
+                  },
+                  {
+                    "type": "basic",
+                    "name": "P",
+                    "text": "$t:user.homepage.contact.copy",
+                    "props": {
+                      "className": "jw-body-copy"
+                    }
+                  }
+                ],
+                "props": {
+                  "className": "jw-section__header"
+                }
+              },
+              {
+                "type": "basic",
+                "name": "A",
+                "text": "$t:user.homepage.contact.action",
+                "props": {
+                  "href": "/page/contact",
+                  "className": "jw-button jw-button--primary"
+                }
+              }
+            ],
+            "props": {
+              "className": "jw-container jw-contact__inner"
+            }
+          }
+        ],
+        "props": {
+          "className": "jw-section jw-contact"
+        }
+      }
+    ]
+  }
+}

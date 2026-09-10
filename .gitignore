@@ -12,6 +12,7 @@ output/
 coverage/
 playwright-report/
 test-results/
+.playwright-cli/
 *.log
 
 # 판매용 패키지와 개발용 산출물은 별도 릴리스에서 관리합니다.

@@ -1,0 +1,50 @@
+{
+  "packages": [
+    {
+      "name": "embla-carousel",
+      "version": "8.6.0",
+      "license": "MIT",
+      "author": "David Jerleke",
+      "rootLicenseFiles": []
+    },
+    {
+      "name": "embla-carousel-react",
+      "version": "8.6.0",
+      "license": "MIT",
+      "author": "David Jerleke",
+      "rootLicenseFiles": []
+    },
+    {
+      "name": "embla-carousel-reactive-utils",
+      "version": "8.6.0",
+      "license": "MIT",
+      "author": "David Jerleke",
+      "rootLicenseFiles": []
+    },
+    {
+      "name": "embla-carousel-autoplay",
+      "version": "8.6.0",
+      "license": "MIT",
+      "author": "David Jerleke",
+      "rootLicenseFiles": []
+    },
+    {
+      "name": "embla-carousel-fade",
+      "version": "8.6.0",
+      "license": "MIT",
+      "author": "David Jerleke",
+      "rootLicenseFiles": []
+    },
+    {
+      "name": "swiper",
+      "version": "14.2.0",
+      "license": "MIT",
+      "author": "Vladimir Kharlampidi",
+      "rootLicenseFiles": [
+        "LICENSE"
+      ]
+    }
+  ],
+  "emblaLicenseSource": "https://raw.githubusercontent.com/davidjerleke/embla-carousel/v8.6.0/LICENSE",
+  "emblaLicenseSha256": "992490064b90ec94c302fe5f29dcc14cb44145857064e46f9ffe6c8f511c1093"
+}

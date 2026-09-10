@@ -1,0 +1,288 @@
+{
+  "templateId": "jwsoft-business01",
+  "version": "0.1.0",
+  "components": {
+    "basic": [
+      {
+        "name": "Div",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "A",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "H1",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "H2",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "H3",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "P",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Span",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Img",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Nav",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Main",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Footer",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Header",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Section",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Article",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "SiteHeader",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "HeroSection",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "PrimaryNavigation",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "Button",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {"className": {"type": "string", "required": false}}
+      },
+      {
+        "name": "Form",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {"className": {"type": "string", "required": false}}
+      },
+      {
+        "name": "Label",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {"className": {"type": "string", "required": false}}
+      },
+      {
+        "name": "Li",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {"className": {"type": "string", "required": false}}
+      },
+      {
+        "name": "Ul",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {"className": {"type": "string", "required": false}}
+      },
+      {
+        "name": "Input",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "bindingType": "checkable",
+        "props": {"className": {"type": "string", "required": false}}
+      },
+      {
+        "name": "Textarea",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {"className": {"type": "string", "required": false}}
+      },
+      {
+        "name": "Select",
+        "type": "basic",
+        "path": "src/basic.ts",
+        "props": {
+          "className": {"type": "string", "required": false},
+          "options": {"type": "array", "required": false}
+        }
+      }
+    ],
+    "composite": [
+      {
+        "name": "HtmlContent",
+        "type": "composite",
+        "path": "src/html-content.ts",
+        "props": {
+          "content": {
+            "type": "string",
+            "required": false
+          },
+          "isHtml": {
+            "type": "boolean",
+            "required": false
+          }
+        }
+      },
+      {
+        "name": "MobileMenuButton",
+        "type": "composite",
+        "path": "src/mobile-menu-button.ts",
+        "props": {
+          "targetId": {
+            "type": "string",
+            "required": true
+          },
+          "label": {
+            "type": "string",
+            "required": false
+          },
+          "closeLabel": {
+            "type": "string",
+            "required": false
+          },
+          "className": {
+            "type": "string",
+            "required": false
+          }
+        }
+      }
+    ],
+    "layout": []
+  }
+}

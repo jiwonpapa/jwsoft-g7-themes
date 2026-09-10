@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-09-09",
+  "generator": "OpenAI image_gen",
+  "reference_images_used": false,
+  "assets": [
+    {
+      "file": "a-industrial-monograph.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "19232979aba1c693a915fec07effa5e6b24cd82a696aaf8a64cf147862700676"
+    },
+    {
+      "file": "b-object-system.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "f306ac5c067ad0d3d6bd1d22f12454e499e3e1a5bde564910020805b3206feec"
+    },
+    {
+      "file": "c-people-field.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "7bece597b854d412030507171bace10cd09d384cf97f584cf121a81d7fc54582"
+    }
+  ]
+}
