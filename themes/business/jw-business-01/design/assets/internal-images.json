@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-09-10",
+  "generator": "OpenAI built-in imagegen",
+  "profile": "general-b2b-internal-pages",
+  "derivatives": {
+    "format": "webp",
+    "quality": 82,
+    "dimensions": "1536x864",
+    "crop": "centered 16:9"
+  },
+  "assets": [
+    {
+      "id": "internal-company-hero",
+      "roles": ["company", "values", "history", "team"],
+      "runtimePath": "dist/images/internal/company-hero.webp",
+      "sourcePath": "assets/public/images/internal/company-hero.webp",
+      "generatorOutput": "exec-4924da27-5bac-4340-9ab1-ee25812086e8.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide internal-page hero background for a premium Korean general B2B company website. Primary request: Create an original editorial photograph representing a credible modern company and its people at work. Scene/backdrop: bright contemporary Korean office with architectural glass, white walls, pale stone and restrained navy details. Subject: a small diverse Korean business team walking through the space while discussing work naturally; candid, professional, no posing. Style/medium: high-end natural corporate photography with realistic skin, materials and daylight. Composition/framing: very wide 16:9 landscape, subjects concentrated in the right half, calm architectural negative space on the left for page title, medium-wide camera distance, clean horizontal lines. Lighting/mood: soft daylight, confident, calm and premium. Color palette: white, cool gray, ink navy, very restrained blue. Constraints: no visible logos, no readable text, no signage, no watermark, no handshake, no staged smiles, no fake awards or statistics, no gradients, no colored graphical overlays."
+    },
+    {
+      "id": "internal-services-hero",
+      "roles": ["services", "process"],
+      "runtimePath": "dist/images/internal/services-hero.webp",
+      "sourcePath": "assets/public/images/internal/services-hero.webp",
+      "generatorOutput": "exec-1570d40c-b9ea-422e-9d86-550a31136898.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide internal-page hero background for the services page of a premium Korean general B2B company website. Primary request: Create an original editorial photograph showing how business strategy becomes a clear working plan. Scene/backdrop: refined bright project studio with a large neutral wall, modular table and minimal work materials. Subject: three Korean consultants reviewing a physical service blueprint and simple diagram cards; hands and materials are visible, faces natural, active collaboration. Style/medium: high-end realistic corporate editorial photography, tactile paper and material detail. Composition/framing: very wide 16:9 landscape, activity placed mainly on the right half and lower-right, clean pale wall and soft negative space on the left for a large page title; clearly different from a walking office scene. Lighting/mood: soft directional daylight, analytical, focused and premium. Color palette: white, soft gray, ink navy and a tiny restrained blue accent in unmarked materials. Constraints: no readable writing, no logos, no screens with UI, no watermark, no handshake, no staged smiles, no fake charts or statistics, no gradients or graphical overlays."
+    },
+    {
+      "id": "internal-projects-hero",
+      "roles": ["cases"],
+      "runtimePath": "dist/images/internal/projects-hero.webp",
+      "sourcePath": "assets/public/images/internal/projects-hero.webp",
+      "generatorOutput": "exec-c64471ae-48e4-481a-b7b5-fb3258990ebf.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide internal-page hero background for a project case-study listing on a premium Korean general B2B company website. Primary request: Create an original editorial photograph of a completed digital transformation project being reviewed with confidence. Scene/backdrop: contemporary boardroom with a large wall display showing only abstract, unreadable workflow shapes. Subject: Korean project lead standing near the display while several client participants sit in foreground silhouette; credible final-review moment, restrained gestures. Style/medium: cinematic but natural high-end corporate photography, realistic people, glass and screen reflections. Composition/framing: very wide 16:9 landscape, presenter and display concentrated on the right half, left half darker and calm enough for light page title text; strong diagonal depth and clearly different from office walking or tabletop planning scenes. Lighting/mood: controlled daylight with subtle screen light, accomplished and precise rather than celebratory. Color palette: deep ink navy, charcoal, white and restrained cobalt blue. Constraints: no readable UI text, no logos, no watermark, no handshake, no cheering, no fake data or statistics, no neon, no gradients or graphical overlays."
+    },
+    {
+      "id": "internal-insights-hero",
+      "roles": ["faq", "privacy", "resources", "notices"],
+      "runtimePath": "dist/images/internal/insights-hero.webp",
+      "sourcePath": "assets/public/images/internal/insights-hero.webp",
+      "generatorOutput": "exec-20ff9d22-7e95-4c00-8597-f4402ad98627.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide internal-page hero background for an insights and resources page on a premium Korean general B2B company website. Primary request: Create an original editorial still life suggesting thoughtful business research and practical knowledge. Scene/backdrop: refined bright library-like studio desk beside a large window, white architectural surfaces and soft city view. Subject: open unmarked notebook, neatly stacked reports with blank covers, a tablet showing only abstract shapes, one hand placing a page; no visible faces. Style/medium: premium editorial photography with realistic paper, glass and soft shadows; calm magazine quality. Composition/framing: very wide 16:9 landscape, objects grouped on the right third and lower-right, generous quiet white negative space on the left for page title; top-down and oblique perspective mix, clearly different from people meeting images. Lighting/mood: gentle morning daylight, intelligent, clear and calm. Color palette: white, warm-neutral paper, graphite, ink navy and restrained blue. Constraints: no readable text, no letters or numbers, no logos, no watermark, no charts with data, no coffee-shop stock-photo look, no gradients or graphical overlays."
+    },
+    {
+      "id": "internal-contact-hero",
+      "roles": ["location", "contact", "inquiries"],
+      "runtimePath": "dist/images/internal/contact-hero.webp",
+      "sourcePath": "assets/public/images/internal/contact-hero.webp",
+      "generatorOutput": "exec-9dcab965-4016-4057-9dbe-75640c9433de.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide internal-page hero background for a contact and inquiry page on a premium Korean general B2B company website. Primary request: Create an original welcoming but restrained business consultation scene. Scene/backdrop: bright minimal meeting lounge near large windows, white table, architectural glass and a soft city background. Subject: two Korean professionals arriving at a small meeting table, one placing a closed unbranded folder while the other draws out a chair; natural pre-meeting moment, no handshake. Style/medium: high-end realistic corporate editorial photography with clean materials and believable body language. Composition/framing: very wide 16:9 landscape, people and table positioned on the right half, calm white negative space on the left for dark page title; clearly different from walking corridor, project presentation and research desk scenes. Lighting/mood: open daylight, trustworthy, attentive and premium. Color palette: white, pale gray, ink navy and restrained blue. Constraints: no readable text, no logos, no phones highlighted, no watermark, no handshake, no staged smiles, no call-center imagery, no fake awards, no gradients or graphical overlays."
+    }
+  ]
+}

@@ -59,8 +59,61 @@
           {
             "type": "basic",
             "name": "Section",
-            "props": {"className": "jw-subpage-hero jw-board-hero"},
+            "props": {
+              "className": "{{route.slug === 'cases' ? 'jw-subpage-hero jw-board-hero jw-subpage-hero--media jw-subpage-hero--dark' : route.slug === 'resources' || route.slug === 'notices' || route.slug === 'inquiries' ? 'jw-subpage-hero jw-board-hero jw-subpage-hero--media' : 'jw-subpage-hero jw-board-hero'}}"
+            },
             "children": [
+              {
+                "type": "composite",
+                "name": "ParallaxMedia",
+                "if": "{{route.slug === 'cases'}}",
+                "props": {
+                  "src": "/api/templates/assets/jwsoft-business01?file=images/internal/projects-hero.webp",
+                  "alt": "",
+                  "width": 1536,
+                  "height": 864,
+                  "loading": "eager",
+                  "wrapperClassName": "jw-subpage-hero__media",
+                  "className": "jw-subpage-hero__image jw-subpage-hero__image--projects",
+                  "strength": 24
+                }
+              },
+              {
+                "type": "composite",
+                "name": "ParallaxMedia",
+                "if": "{{route.slug === 'resources' || route.slug === 'notices'}}",
+                "props": {
+                  "src": "/api/templates/assets/jwsoft-business01?file=images/internal/insights-hero.webp",
+                  "alt": "",
+                  "width": 1536,
+                  "height": 864,
+                  "loading": "eager",
+                  "wrapperClassName": "jw-subpage-hero__media",
+                  "className": "jw-subpage-hero__image jw-subpage-hero__image--insights",
+                  "strength": 24
+                }
+              },
+              {
+                "type": "composite",
+                "name": "ParallaxMedia",
+                "if": "{{route.slug === 'inquiries'}}",
+                "props": {
+                  "src": "/api/templates/assets/jwsoft-business01?file=images/internal/contact-hero.webp",
+                  "alt": "",
+                  "width": 1536,
+                  "height": 864,
+                  "loading": "eager",
+                  "wrapperClassName": "jw-subpage-hero__media",
+                  "className": "jw-subpage-hero__image jw-subpage-hero__image--contact",
+                  "strength": 24
+                }
+              },
+              {
+                "type": "basic",
+                "name": "Div",
+                "if": "{{route.slug === 'cases'}}",
+                "props": {"className": "jw-subpage-hero__veil"}
+              },
               {
                 "type": "composite",
                 "name": "Reveal",

@@ -664,6 +664,57 @@
     pointer-events: none;
   }
 
+  .jw-subpage-hero--media::after {
+    content: none;
+  }
+
+  .jw-subpage-hero__media,
+  .jw-subpage-hero__veil {
+    position: absolute;
+    inset: 0;
+  }
+
+  .jw-subpage-hero__media {
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  #jw-site .jw-subpage-hero__image {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #jw-site .jw-subpage-hero__image--company,
+  #jw-site .jw-subpage-hero__image--services,
+  #jw-site .jw-subpage-hero__image--insights,
+  #jw-site .jw-subpage-hero__image--contact {
+    object-position: center 48%;
+  }
+
+  .jw-subpage-hero__veil {
+    z-index: 1;
+    background: rgba(7, 16, 29, 0.42);
+    pointer-events: none;
+  }
+
+  .jw-subpage-hero--dark {
+    color: #ffffff;
+    background: var(--jw-color-ink);
+  }
+
+  .jw-subpage-hero--dark .jw-breadcrumb,
+  .jw-subpage-hero--dark .jw-subpage-lead,
+  .jw-subpage-hero--dark .jw-post-hero__meta {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .jw-subpage-hero--dark .jw-eyebrow {
+    color: #9dccff;
+  }
+
   .jw-subpage-hero__inner {
     @apply jw:relative jw:z-10 jw:flex jw:flex-col jw:items-start;
     min-height: clamp(22rem, 42vw, 34rem);
@@ -1678,6 +1729,15 @@
     background: var(--jw-color-ink);
   }
 
+  #jw-site:has(.jw-site-header--overlay) .jw-subpage-hero--media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(7, 16, 29, 0.4);
+    pointer-events: none;
+  }
+
   #jw-site:has(.jw-site-header--overlay) .jw-subpage-lead,
   #jw-site:has(.jw-site-header--overlay) .jw-breadcrumb {
     color: rgba(255, 255, 255, 0.76);
@@ -1965,6 +2025,43 @@
   .jw-subpage-hero__inner {
     min-height: 24rem;
     padding-block: 2rem 3.5rem;
+  }
+
+  .jw-subpage-hero--media {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #jw-site:has(.jw-site-header--overlay) .jw-subpage-hero--media {
+    padding-top: 0;
+  }
+
+  .jw-subpage-hero--media .jw-subpage-hero__media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 15rem;
+    flex: 0 0 15rem;
+  }
+
+  .jw-subpage-hero--media .jw-subpage-hero__veil,
+  #jw-site:has(.jw-site-header--overlay) .jw-subpage-hero--media::before {
+    height: 15rem;
+    bottom: auto;
+  }
+
+  .jw-subpage-hero--media .jw-subpage-hero__inner {
+    min-height: 0;
+    padding-block: 2rem 3.5rem;
+  }
+
+  .jw-subpage-hero--media .jw-breadcrumb {
+    margin-bottom: 3.5rem;
+  }
+
+  .jw-subpage-hero.jw-subpage-hero--media .jw-eyebrow,
+  .jw-subpage-hero--media .jw-post-hero__meta {
+    margin-top: 0;
   }
 
   .jw-subpage-hero .jw-eyebrow,

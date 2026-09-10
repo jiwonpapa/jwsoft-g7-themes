@@ -218,6 +218,42 @@ describe('layout data binding contract', () => {
     if (!object(harness) || !Array.isArray(harness['features'])) throw new Error('Invalid theme harness');
     expect(harness['features']).toEqual(expect.arrayContaining(['icons', 'motion']));
   });
+  it('covers every declared internal page and board with reviewed generated hero media', () => {
+    const structure = read('contracts/site-structure.json');
+    const ledger = read('design/assets/internal-images.json');
+    if (!object(structure) || !object(ledger) || !Array.isArray(ledger['assets'])) throw new Error('Invalid internal image ledger');
+
+    const assets = ledger['assets'].filter(object);
+    expect(assets).toHaveLength(5);
+    const roles = assets.flatMap(asset => Array.isArray(asset['roles']) ? asset['roles'] : []);
+    const pageSlugs = Array.isArray(structure['pages'])
+      ? structure['pages'].filter(object).map(page => page['slug'])
+      : [];
+    const boardSlugs = Array.isArray(structure['boards'])
+      ? structure['boards'].filter(object).map(board => board['slug'])
+      : [];
+    expect(new Set(roles)).toEqual(new Set([...pageSlugs, ...boardSlugs]));
+
+    for (const asset of assets) {
+      expect(asset['generatorOutput']).toMatch(/^exec-[a-f0-9-]+\.png$/);
+      expect(asset['sourcePath']).toMatch(/^assets\/public\/images\/internal\/[a-z-]+\.webp$/);
+      expect(existsSync(String(asset['sourcePath']))).toBe(true);
+      expect(asset['runtimePath']).toBe(String(asset['sourcePath']).replace('assets/public/', 'dist/'));
+    }
+
+    const internalLayouts = [
+      read('layouts/page/show.json'),
+      read('layouts/board/index.json'),
+      read('layouts/board/show.json'),
+      read('layouts/board/form.json'),
+    ];
+    const referencedMedia = new Set(internalLayouts.flatMap(objects)
+      .filter(node => node['name'] === 'ParallaxMedia' && object(node['props']))
+      .map(node => new URL(String((node['props'] as Record<string, unknown>)['src']), 'https://local.test').searchParams.get('file')));
+    for (const asset of assets) {
+      expect(referencedMedia).toContain(String(asset['runtimePath']).replace('dist/', ''));
+    }
+  });
   it('keeps internal page motion and action icons consistent with the home theme', () => {
     const internalLayouts = [
       read('layouts/page/show.json'),

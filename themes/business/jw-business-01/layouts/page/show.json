@@ -51,8 +51,70 @@
           {
             "type": "basic",
             "name": "Section",
-            "props": {"className": "jw-subpage-hero"},
+            "props": {
+              "className": "{{route.slug === 'company' || route.slug === 'values' || route.slug === 'history' || route.slug === 'team' || route.slug === 'services' || route.slug === 'process' || route.slug === 'faq' || route.slug === 'privacy' || route.slug === 'location' || route.slug === 'contact' ? 'jw-subpage-hero jw-subpage-hero--media' : 'jw-subpage-hero'}}"
+            },
             "children": [
+              {
+                "type": "composite",
+                "name": "ParallaxMedia",
+                "if": "{{route.slug === 'company' || route.slug === 'values' || route.slug === 'history' || route.slug === 'team'}}",
+                "props": {
+                  "src": "/api/templates/assets/jwsoft-business01?file=images/internal/company-hero.webp",
+                  "alt": "",
+                  "width": 1536,
+                  "height": 864,
+                  "loading": "eager",
+                  "wrapperClassName": "jw-subpage-hero__media",
+                  "className": "jw-subpage-hero__image jw-subpage-hero__image--company",
+                  "strength": 24
+                }
+              },
+              {
+                "type": "composite",
+                "name": "ParallaxMedia",
+                "if": "{{route.slug === 'services' || route.slug === 'process'}}",
+                "props": {
+                  "src": "/api/templates/assets/jwsoft-business01?file=images/internal/services-hero.webp",
+                  "alt": "",
+                  "width": 1536,
+                  "height": 864,
+                  "loading": "eager",
+                  "wrapperClassName": "jw-subpage-hero__media",
+                  "className": "jw-subpage-hero__image jw-subpage-hero__image--services",
+                  "strength": 24
+                }
+              },
+              {
+                "type": "composite",
+                "name": "ParallaxMedia",
+                "if": "{{route.slug === 'faq' || route.slug === 'privacy'}}",
+                "props": {
+                  "src": "/api/templates/assets/jwsoft-business01?file=images/internal/insights-hero.webp",
+                  "alt": "",
+                  "width": 1536,
+                  "height": 864,
+                  "loading": "eager",
+                  "wrapperClassName": "jw-subpage-hero__media",
+                  "className": "jw-subpage-hero__image jw-subpage-hero__image--insights",
+                  "strength": 24
+                }
+              },
+              {
+                "type": "composite",
+                "name": "ParallaxMedia",
+                "if": "{{route.slug === 'location' || route.slug === 'contact'}}",
+                "props": {
+                  "src": "/api/templates/assets/jwsoft-business01?file=images/internal/contact-hero.webp",
+                  "alt": "",
+                  "width": 1536,
+                  "height": 864,
+                  "loading": "eager",
+                  "wrapperClassName": "jw-subpage-hero__media",
+                  "className": "jw-subpage-hero__image jw-subpage-hero__image--contact",
+                  "strength": 24
+                }
+              },
               {
                 "type": "composite",
                 "name": "Reveal",
