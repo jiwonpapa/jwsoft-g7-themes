@@ -68,9 +68,9 @@
             "props": {"className": "jw-subpage-hero jw-post-hero"},
             "children": [
               {
-                "type": "basic",
-                "name": "Div",
-                "props": {"className": "jw-container jw-subpage-hero__inner"},
+                "type": "composite",
+                "name": "Reveal",
+                "props": {"className": "jw-container jw-subpage-hero__inner", "direction": "up"},
                 "children": [
                   {
                     "type": "basic",
@@ -135,9 +135,9 @@
             "props": {"className": "jw-section jw-post-body"},
             "children": [
               {
-                "type": "basic",
-                "name": "Div",
-                "props": {"className": "jw-container jw-post-body__inner"},
+                "type": "composite",
+                "name": "Reveal",
+                "props": {"className": "jw-container jw-post-body__inner", "direction": "up"},
                 "children": [
                   {
                     "type": "basic",
@@ -261,7 +261,10 @@
                           {
                             "type": "basic",
                             "name": "A",
-                            "text": "$t:user.board.back_to_list",
+                            "children": [
+                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
+                              {"type": "basic", "name": "Span", "text": "$t:user.board.back_to_list", "props": {"className": "jw-action-label"}}
+                            ],
                             "props": {
                               "href": "/board/{{route.slug}}",
                               "className": "jw-button jw-button--secondary"
@@ -270,7 +273,10 @@
                           {
                             "type": "basic",
                             "name": "Button",
-                            "text": "$t:user.board.secret.action",
+                            "children": [
+                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "lock-keyhole", "className": "jw-icon jw-icon--compact"}},
+                              {"type": "basic", "name": "Span", "text": "$t:user.board.secret.action", "props": {"className": "jw-action-label"}}
+                            ],
                             "props": {
                               "type": "submit",
                               "disabled": "{{_local.isVerifyingSecret || !_local.secretPasswordForm?.password}}",
@@ -345,7 +351,10 @@
                       {
                         "type": "basic",
                         "name": "A",
-                        "text": "$t:user.board.back_to_list",
+                        "children": [
+                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
+                          {"type": "basic", "name": "Span", "text": "$t:user.board.back_to_list", "props": {"className": "jw-action-label"}}
+                        ],
                         "props": {
                           "href": "/board/{{route.slug}}",
                           "className": "jw-button jw-button--secondary"
@@ -362,7 +371,10 @@
                       {
                         "type": "basic",
                         "name": "A",
-                        "text": "$t:user.board.back_to_list",
+                        "children": [
+                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
+                          {"type": "basic", "name": "Span", "text": "$t:user.board.back_to_list", "props": {"className": "jw-action-label"}}
+                        ],
                         "props": {
                           "href": "/board/{{route.slug}}",
                           "className": "jw-button jw-button--secondary"
@@ -371,7 +383,10 @@
                       {
                         "type": "basic",
                         "name": "A",
-                        "text": "$t:user.board.edit",
+                        "children": [
+                          {"type": "basic", "name": "Span", "text": "$t:user.board.edit", "props": {"className": "jw-action-label"}},
+                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "pencil-ruler", "className": "jw-icon jw-icon--compact"}}
+                        ],
                         "if": "{{!post?.data?.deleted_at && post?.data?.abilities?.can_write && (post?.data?.is_author || post?.data?.is_guest_post || post?.data?.abilities?.can_manage)}}",
                         "props": {
                           "href": "/board/{{route.slug}}/{{route.id}}/edit",
@@ -386,7 +401,10 @@
                           {
                             "type": "basic",
                             "name": "A",
-                            "text": "$t:user.board.previous_post",
+                            "children": [
+                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
+                              {"type": "basic", "name": "Span", "text": "$t:user.board.previous_post", "props": {"className": "jw-action-label"}}
+                            ],
                             "if": "{{navigation?.data?.prev?.id}}",
                             "props": {
                               "href": "/board/{{route.slug}}/{{navigation.data.prev.id}}",
@@ -396,7 +414,10 @@
                           {
                             "type": "basic",
                             "name": "A",
-                            "text": "$t:user.board.next_post",
+                            "children": [
+                              {"type": "basic", "name": "Span", "text": "$t:user.board.next_post", "props": {"className": "jw-action-label"}},
+                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--compact jw-icon--action"}}
+                            ],
                             "if": "{{navigation?.data?.next?.id}}",
                             "props": {
                               "href": "/board/{{route.slug}}/{{navigation.data.next.id}}",
@@ -439,7 +460,10 @@
               {
                 "type": "basic",
                 "name": "A",
-                "text": "$t:user.page.back_home",
+                "children": [
+                  {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
+                  {"type": "basic", "name": "Span", "text": "$t:user.page.back_home", "props": {"className": "jw-action-label"}}
+                ],
                 "props": {"href": "/./", "className": "jw-button jw-button--primary"}
               }
             ]

@@ -1,10 +1,12 @@
 import { createElement, type SVGProps } from 'react';
 import {
   ArrowDownToLine,
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   ChartNoAxesCombined,
   ChevronRight,
+  LockKeyhole,
   Mail,
   MapPin,
   MessageSquareText,
@@ -13,16 +15,19 @@ import {
   Phone,
   Rocket,
   Search,
+  Send,
   Workflow,
   type LucideIcon,
 } from 'lucide-react';
 
 const icons = {
+  'arrow-left': ArrowLeft,
   'arrow-down': ArrowDownToLine,
   'arrow-right': ArrowRight,
   'arrow-up-right': ArrowUpRight,
   chart: ChartNoAxesCombined,
   'chevron-right': ChevronRight,
+  'lock-keyhole': LockKeyhole,
   mail: Mail,
   'map-pin': MapPin,
   message: MessageSquareText,
@@ -31,6 +36,7 @@ const icons = {
   phone: Phone,
   rocket: Rocket,
   search: Search,
+  send: Send,
   workflow: Workflow,
 } satisfies Record<string, LucideIcon>;
 

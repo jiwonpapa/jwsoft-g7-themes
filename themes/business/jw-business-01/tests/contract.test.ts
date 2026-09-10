@@ -160,6 +160,39 @@ describe('layout data binding contract', () => {
     if (!object(harness) || !Array.isArray(harness['features'])) throw new Error('Invalid theme harness');
     expect(harness['features']).toEqual(expect.arrayContaining(['icons', 'motion']));
   });
+  it('keeps internal page motion and action icons consistent with the home theme', () => {
+    const internalLayouts = [
+      read('layouts/page/show.json'),
+      read('layouts/board/index.json'),
+      read('layouts/board/show.json'),
+      read('layouts/board/form.json'),
+    ];
+    const internalNodes = internalLayouts.flatMap(objects);
+    expect(internalNodes.filter(node => node['name'] === 'Reveal')).toHaveLength(8);
+
+    const controls = internalNodes.filter(node =>
+      (node['name'] === 'A' || node['name'] === 'Button') && Array.isArray(node['children'])
+    );
+    for (const token of [
+      '$t:user.board.write',
+      '$t:user.board.previous',
+      '$t:user.board.next',
+      '$t:user.board.back_to_list',
+      '$t:user.board.secret.action',
+      '$t:user.board.edit',
+      '$t:user.board.previous_post',
+      '$t:user.board.next_post',
+      '$t:user.board.form.cancel',
+      '$t:user.board.form.password_action',
+      '$t:user.page.back_home',
+    ]) {
+      expect(controls.some(control => {
+        const children = control['children'] as unknown[];
+        return children.some(child => object(child) && child['text'] === token)
+          && children.some(child => object(child) && child['name'] === 'ThemeIcon');
+      }), token).toBe(true);
+    }
+  });
   it('resolves every shipped layout translation token in both locales', () => {
     const source = JSON.stringify(jsonFiles('layouts').map(read));
     const keys = [...source.matchAll(/\$t:([a-zA-Z0-9_.-]+)/g)].map(match => match[1]!);

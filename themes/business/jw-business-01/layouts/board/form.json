@@ -82,9 +82,9 @@
             "props": {"className": "jw-subpage-hero jw-board-form-hero"},
             "children": [
               {
-                "type": "basic",
-                "name": "Div",
-                "props": {"className": "jw-container jw-subpage-hero__inner"},
+                "type": "composite",
+                "name": "Reveal",
+                "props": {"className": "jw-container jw-subpage-hero__inner", "direction": "up"},
                 "children": [
                   {
                     "type": "basic",
@@ -141,9 +141,9 @@
             "props": {"className": "jw-section jw-board-form-body"},
             "children": [
               {
-                "type": "basic",
-                "name": "Div",
-                "props": {"className": "jw-container jw-board-form-layout"},
+                "type": "composite",
+                "name": "Reveal",
+                "props": {"className": "jw-container jw-board-form-layout", "direction": "up"},
                 "children": [
                   {
                     "type": "basic",
@@ -227,7 +227,10 @@
                           {
                             "type": "basic",
                             "name": "Button",
-                            "text": "$t:user.board.form.cancel",
+                            "children": [
+                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
+                              {"type": "basic", "name": "Span", "text": "$t:user.board.form.cancel", "props": {"className": "jw-action-label"}}
+                            ],
                             "props": {"type": "button", "className": "jw-button jw-button--secondary"},
                             "actions": [
                               {
@@ -240,7 +243,10 @@
                           {
                             "type": "basic",
                             "name": "Button",
-                            "text": "$t:user.board.form.password_action",
+                            "children": [
+                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "lock-keyhole", "className": "jw-icon jw-icon--compact"}},
+                              {"type": "basic", "name": "Span", "text": "$t:user.board.form.password_action", "props": {"className": "jw-action-label"}}
+                            ],
                             "props": {
                               "type": "button",
                               "disabled": "{{_local.isVerifying || !_local.verifyPassword}}",
@@ -567,7 +573,10 @@
                           {
                             "type": "basic",
                             "name": "Button",
-                            "text": "$t:user.board.form.cancel",
+                            "children": [
+                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-left", "className": "jw-icon jw-icon--compact jw-icon--back"}},
+                              {"type": "basic", "name": "Span", "text": "$t:user.board.form.cancel", "props": {"className": "jw-action-label"}}
+                            ],
                             "props": {"type": "button", "className": "jw-button jw-button--secondary"},
                             "actions": [
                               {
@@ -580,7 +589,10 @@
                           {
                             "type": "basic",
                             "name": "Button",
-                            "text": "{{_local.isSaving ? '$t:user.board.form.saving' : (route.id ? '$t:user.board.form.save' : '$t:user.board.form.submit')}}",
+                            "children": [
+                              {"type": "basic", "name": "Span", "text": "{{_local.isSaving ? '$t:user.board.form.saving' : (route.id ? '$t:user.board.form.save' : '$t:user.board.form.submit')}}", "props": {"className": "jw-action-label"}},
+                              {"type": "composite", "name": "ThemeIcon", "props": {"name": "send", "className": "jw-icon jw-icon--compact jw-icon--action"}}
+                            ],
                             "props": {
                               "type": "button",
                               "disabled": "{{_local.isSaving}}",
