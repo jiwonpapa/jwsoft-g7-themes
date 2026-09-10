@@ -82,8 +82,26 @@ describe('layout data binding contract', () => {
     const validate = new Ajv2020().compile(schema);
     const link = { id: 'jwld-company', type: 'basic', name: 'A', text: '회사소개', props: { href: '/page/company' } };
     const image = { id: 'jwld-service-image', type: 'basic', name: 'Img', props: { className: 'jw-media jw-service__image', src: '/storage/layout-data/service.webp', alt: '서비스 소개 이미지', loading: 'lazy', width: 1200, height: 900 } };
+    const menuBranch = {
+      id: 'jwld-company-menu',
+      type: 'basic',
+      name: 'Div',
+      children: [
+        link,
+        {
+          id: 'jwld-company-submenu',
+          type: 'basic',
+          name: 'Div',
+          children: [
+            { id: 'jwld-company-history', type: 'basic', name: 'A', text: '연혁', props: { href: '/page/history' } },
+            { id: 'jwld-company-team', type: 'basic', name: 'A', text: '팀', props: { href: '/page/team' } },
+          ],
+        },
+      ],
+    };
     expect(validate([link])).toBe(true);
     expect(validate([image])).toBe(true);
+    expect(validate([menuBranch])).toBe(true);
     expect(validate([{ ...link, name: 'Script' }])).toBe(false);
     expect(validate([{ ...link, text: '{{window.location}}' }])).toBe(false);
     expect(validate([{ ...link, props: { href: '//external.test' } }])).toBe(false);
