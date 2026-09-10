@@ -24,10 +24,10 @@
     {"key": "privacy", "slug": "privacy", "archetype": "privacy", "label": {"ko": "개인정보 안내", "en": "Privacy"}}
   ],
   "boards": [
-    {"key": "cases", "slug": "cases", "role": "project", "label": {"ko": "프로젝트", "en": "Projects"}, "minimumDemoPosts": 6, "allowGuestWrite": false, "secretByDefault": false},
-    {"key": "resources", "slug": "resources", "role": "insight", "label": {"ko": "인사이트", "en": "Insights"}, "minimumDemoPosts": 6, "allowGuestWrite": false, "secretByDefault": false},
-    {"key": "notices", "slug": "notices", "role": "notice", "label": {"ko": "공지사항", "en": "Notices"}, "minimumDemoPosts": 6, "allowGuestWrite": false, "secretByDefault": false},
-    {"key": "inquiries", "slug": "inquiries", "role": "inquiry", "label": {"ko": "문의하기", "en": "Inquiry"}, "minimumDemoPosts": 6, "allowGuestWrite": true, "secretByDefault": true}
+    {"key": "cases", "slug": "cases", "role": "project", "label": {"ko": "프로젝트", "en": "Projects"}, "minimumDemoPosts": 6, "settings": {"per_page": 5, "per_page_mobile": 5, "order_by": "created_at", "order_direction": "DESC"}, "allowGuestWrite": false, "secretByDefault": false},
+    {"key": "resources", "slug": "resources", "role": "insight", "label": {"ko": "인사이트", "en": "Insights"}, "minimumDemoPosts": 6, "settings": {"per_page": 5, "per_page_mobile": 5, "order_by": "created_at", "order_direction": "DESC"}, "allowGuestWrite": false, "secretByDefault": false},
+    {"key": "notices", "slug": "notices", "role": "notice", "label": {"ko": "공지사항", "en": "Notices"}, "minimumDemoPosts": 6, "settings": {"per_page": 5, "per_page_mobile": 5, "order_by": "created_at", "order_direction": "DESC"}, "allowGuestWrite": false, "secretByDefault": false},
+    {"key": "inquiries", "slug": "inquiries", "role": "inquiry", "label": {"ko": "문의하기", "en": "Inquiry"}, "minimumDemoPosts": 6, "settings": {"per_page": 5, "per_page_mobile": 5, "order_by": "created_at", "order_direction": "DESC"}, "allowGuestWrite": true, "secretByDefault": true}
   ],
   "navigation": [
     {

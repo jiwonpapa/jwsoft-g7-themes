@@ -15,7 +15,8 @@ SIR 판매 근거를 따라 일반 기업 홈페이지의 공통 페이지와 �
 - 게시판 작성·수정·비밀글 열람은 `sirsoft-board` 공개 방문자 API와 권한 계약을 사용합니다. 관리자 API나 테마 전용 저장소를 사용하지 않습니다.
 - SEO가 활성화된 모든 레이아웃은 `seo-config.json`으로 header/nav/main/article/form 등 시멘틱 HTML을 출력합니다.
 - `layout-data.json`의 5개 슬롯은 raw node ID와 `children` 필드로 지정합니다. 슬롯은 설치 전에도 보이는 범용 기업 기본값을 가지며, 설치 모듈이 기존 값을 보존한 뒤 팩 콘텐츠로 교체합니다.
-- `contracts/site-structure.json`은 설치 모듈이 생성할 10개 일반 페이지·4개 게시판·PC/모바일 공용 2단 메뉴·푸터 메뉴와 쇼핑 비포함 범위를 기계 판독 가능한 계약으로 제공합니다. 계약은 검토된 고정 데이터 팩만 허용하고 랜덤 생성을 금지합니다.
+- `contracts/site-structure.json`은 설치 모듈이 생성할 10개 일반 페이지·4개 게시판·PC/모바일 공용 2단 메뉴·푸터 메뉴와 쇼핑 비포함 범위를 기계 판독 가능한 계약으로 제공합니다. 게시판은 PC·모바일 모두 페이지당 5건과 최소 6건을 선언해 실제 2페이지를 보장합니다. 계약은 검토된 고정 데이터 팩만 허용하고 랜덤 생성을 금지합니다.
+- `contracts/layout-data.schema.json`은 슬롯·공개 라우트·설치 후 화면 검사·제거 시 고객 수정 보존 조건을 검증합니다.
 - `editor-spec.json`은 `header-standard|overlay|directory`, `hero-cover|split|editorial`, `mobile-panel|drawer|fullscreen`만 구조 프리셋으로 허용합니다. 클래스는 모두 `jw-` 시멘틱 토큰입니다.
 - `contracts/slot-nodes.schema.json`은 허용 노드/필드·내부 링크·표현식 미포함 텍스트로 입력을 제한합니다. 임의 React 코드나 레이아웃 전체 삽입을 허용하지 않습니다.
 - 공개 URL은 테마 `routes.json`이 소유합니다. 실제 G7 page/board/post API가 콘텐츠와 권한을 소유합니다. 이 테마는 쇼핑몰을 포함하지 않습니다.

@@ -38,6 +38,33 @@ function expectSemanticClassName(value: string): void {
 }
 
 describe('layout data binding contract', () => {
+  it('validates the machine-readable installer and verification manifest', () => {
+    const manifest = read('layout-data.json');
+    if (!object(manifest) || typeof manifest['contract_schema'] !== 'string') throw new Error('Missing layout data schema');
+    const schema = read(manifest['contract_schema']);
+    if (!object(schema)) throw new Error('Invalid layout data schema');
+    const validate = new Ajv2020({allErrors: true}).compile(schema);
+    expect(validate(manifest), JSON.stringify(validate.errors, null, 2)).toBe(true);
+
+    for (const key of ['site_structure_contract', 'page_content_contract']) {
+      expect(manifest[key]).toBeTypeOf('string');
+      expect(existsSync(String(manifest[key]))).toBe(true);
+    }
+
+    const routes = object(manifest['public_routes']) ? manifest['public_routes'] : {};
+    const verification = object(manifest['verification']) ? manifest['verification'] : {};
+    const targets = Array.isArray(verification['targets']) ? verification['targets'].filter(object) : [];
+    expect(targets.map(target => target['key'])).toEqual(['home', 'pages', 'boards', 'inquiry_write']);
+    for (const target of targets.filter(target => typeof target['public_route'] === 'string')) {
+      expect(routes).toHaveProperty(String(target['public_route']));
+    }
+    expect(verification['install_assertions']).toContain('page_content_contract_applied');
+    expect(verification['remove_assertions']).toEqual(expect.arrayContaining([
+      'customer_modified_slots_preserved',
+      'customer_modified_objects_preserved',
+      'unmodified_owned_slots_restored',
+    ]));
+  });
   it('declares each runtime component once in the matching manifest group', () => {
     const manifest = read('components.json');
     if (!object(manifest) || !object(manifest['components'])) throw new Error('Invalid component manifest');
@@ -86,6 +113,16 @@ describe('layout data binding contract', () => {
     expect(pages).toHaveLength(10);
     expect(boards).toHaveLength(4);
     expect(boards.map(board => board['role'])).toEqual(['project', 'insight', 'notice', 'inquiry']);
+    for (const board of boards) {
+      if (!object(board['settings'])) throw new Error(`Missing board settings: ${String(board['key'])}`);
+      const minimum = Number(board['minimumDemoPosts']);
+      const desktopPageSize = Number(board['settings']['per_page']);
+      const mobilePageSize = Number(board['settings']['per_page_mobile']);
+      expect(desktopPageSize).toBeGreaterThanOrEqual(5);
+      expect(mobilePageSize).toBeGreaterThanOrEqual(5);
+      expect(Math.ceil(minimum / desktopPageSize)).toBeGreaterThanOrEqual(2);
+      expect(Math.ceil(minimum / mobilePageSize)).toBeGreaterThanOrEqual(2);
+    }
 
     const pageArchetypes = read(manifest['page_content_contract']);
     if (!object(pageArchetypes) || !object(pageArchetypes['archetypes'])) throw new Error('Invalid page archetypes');

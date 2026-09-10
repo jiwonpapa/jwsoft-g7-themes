@@ -2,6 +2,7 @@
   "contract_version": "1.0.0",
   "template_identifier": "jwsoft-business01",
   "supported_versions": ">=0.1.0 <0.2.0",
+  "contract_schema": "contracts/layout-data.schema.json",
   "site_structure_contract": "contracts/site-structure.json",
   "page_content_contract": "contracts/page-content.json",
   "slots": [
@@ -132,7 +133,43 @@
     }
   },
   "verification": {
-    "home": "/",
-    "required": "rendered_owned_content_and_navigation"
+    "targets": [
+      {
+        "key": "home",
+        "source": "static",
+        "path": "/",
+        "assertions": ["http_200", "owned_slots_rendered", "navigation_resolved"]
+      },
+      {
+        "key": "pages",
+        "source": "site_structure.pages",
+        "public_route": "page",
+        "assertions": ["http_200", "non_empty_content", "no_unresolved_reference"]
+      },
+      {
+        "key": "boards",
+        "source": "site_structure.boards",
+        "public_route": "board",
+        "assertions": ["http_200", "minimum_demo_posts", "second_page_has_content"]
+      },
+      {
+        "key": "inquiry_write",
+        "source": "site_structure.boards[role=inquiry]",
+        "public_route": "board_write",
+        "assertions": ["http_200", "guest_write_available", "secret_default_applied"]
+      }
+    ],
+    "install_assertions": [
+      "logical_keys_resolve_to_g7_objects",
+      "navigation_depth_at_most_two",
+      "all_slot_references_resolve",
+      "page_content_contract_applied",
+      "applied_slot_snapshot_recorded"
+    ],
+    "remove_assertions": [
+      "customer_modified_slots_preserved",
+      "customer_modified_objects_preserved",
+      "unmodified_owned_slots_restored"
+    ]
   }
 }

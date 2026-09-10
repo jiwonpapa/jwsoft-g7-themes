@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jwsoft.example/schemas/jw-business-01/layout-data.schema.json",
+  "title": "JW BUSINESS 01 layout data integration contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "template_identifier",
+    "supported_versions",
+    "contract_schema",
+    "site_structure_contract",
+    "page_content_contract",
+    "slots",
+    "write_mode",
+    "baseline_mode",
+    "concurrency_capability",
+    "restore_mode",
+    "public_routes",
+    "verification"
+  ],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "template_identifier": {"const": "jwsoft-business01"},
+    "supported_versions": {"type": "string", "minLength": 1},
+    "contract_schema": {"const": "contracts/layout-data.schema.json"},
+    "site_structure_contract": {"const": "contracts/site-structure.json"},
+    "page_content_contract": {"const": "contracts/page-content.json"},
+    "slots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/slot"}
+    },
+    "write_mode": {"const": "immediate"},
+    "baseline_mode": {"const": "replace_children_preserve_previous"},
+    "concurrency_capability": {"const": "g7.layout.content.row-lock.v1"},
+    "restore_mode": {"const": "compare_applied_slot_then_restore_previous"},
+    "public_routes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["page", "post", "board", "board_write", "board_edit"],
+      "properties": {
+        "page": {"$ref": "#/$defs/publicRoute"},
+        "post": {"$ref": "#/$defs/publicRoute"},
+        "board": {"$ref": "#/$defs/publicRoute"},
+        "board_write": {"$ref": "#/$defs/publicRoute"},
+        "board_edit": {"$ref": "#/$defs/publicRoute"}
+      }
+    },
+    "verification": {"$ref": "#/$defs/verification"}
+  },
+  "$defs": {
+    "slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "layout_name", "selector", "allowed_fields", "reference_types", "schema", "dependencies", "render_targets"],
+      "properties": {
+        "key": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "layout_name": {"type": "string", "pattern": "^[a-z_][a-z0-9_/-]*$"},
+        "selector": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["node_id", "field"],
+          "properties": {
+            "node_id": {"type": "string", "pattern": "^jw-[a-z0-9-]+$"},
+            "field": {"const": "children"}
+          }
+        },
+        "allowed_fields": {"const": ["children"]},
+        "reference_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["menu", "page", "post", "board"]}
+        },
+        "schema": {"const": "contracts/slot-nodes.schema.json"},
+        "dependencies": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "render_targets": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["desktop", "mobile", "footer", "home"]}
+        }
+      }
+    },
+    "publicRoute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "layout_name"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^/"},
+        "layout_name": {"type": "string", "pattern": "^[a-z][a-z0-9_/-]*$"}
+      }
+    },
+    "verificationTarget": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["key", "source", "path", "assertions"],
+          "properties": {
+            "key": {"const": "home"},
+            "source": {"const": "static"},
+            "path": {"const": "/"},
+            "assertions": {"$ref": "#/$defs/routeAssertions"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["key", "source", "public_route", "assertions"],
+          "properties": {
+            "key": {"enum": ["pages", "boards", "inquiry_write"]},
+            "source": {"enum": ["site_structure.pages", "site_structure.boards", "site_structure.boards[role=inquiry]"]},
+            "public_route": {"enum": ["page", "board", "board_write"]},
+            "assertions": {"$ref": "#/$defs/routeAssertions"}
+          }
+        }
+      ]
+    },
+    "routeAssertions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "http_200",
+          "owned_slots_rendered",
+          "navigation_resolved",
+          "non_empty_content",
+          "no_unresolved_reference",
+          "minimum_demo_posts",
+          "second_page_has_content",
+          "guest_write_available",
+          "secret_default_applied"
+        ]
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targets", "install_assertions", "remove_assertions"],
+      "properties": {
+        "targets": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/verificationTarget"}
+        },
+        "install_assertions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "logical_keys_resolve_to_g7_objects",
+              "navigation_depth_at_most_two",
+              "all_slot_references_resolve",
+              "page_content_contract_applied",
+              "applied_slot_snapshot_recorded"
+            ]
+          }
+        },
+        "remove_assertions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "customer_modified_slots_preserved",
+              "customer_modified_objects_preserved",
+              "unmodified_owned_slots_restored"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

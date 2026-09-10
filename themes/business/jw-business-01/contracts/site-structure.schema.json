@@ -93,13 +93,24 @@
     "board": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["key", "slug", "role", "label", "minimumDemoPosts", "allowGuestWrite", "secretByDefault"],
+      "required": ["key", "slug", "role", "label", "minimumDemoPosts", "settings", "allowGuestWrite", "secretByDefault"],
       "properties": {
         "key": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
         "slug": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
         "role": {"enum": ["project", "insight", "notice", "inquiry"]},
         "label": {"$ref": "#/$defs/label"},
         "minimumDemoPosts": {"type": "integer", "minimum": 0},
+        "settings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["per_page", "per_page_mobile", "order_by", "order_direction"],
+          "properties": {
+            "per_page": {"type": "integer", "minimum": 5, "maximum": 100},
+            "per_page_mobile": {"type": "integer", "minimum": 5, "maximum": 100},
+            "order_by": {"enum": ["created_at", "updated_at", "title", "view_count"]},
+            "order_direction": {"enum": ["ASC", "DESC"]}
+          }
+        },
         "allowGuestWrite": {"type": "boolean"},
         "secretByDefault": {"type": "boolean"}
       }
