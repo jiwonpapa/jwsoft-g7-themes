@@ -67,6 +67,64 @@ describe('layout data binding contract', () => {
       expect(slot['allowed_fields']).toEqual(['children']);
     }
   });
+  it('publishes the complete site structure consumed by the layout-data installer', () => {
+    const manifest = read('layout-data.json');
+    if (!object(manifest) || typeof manifest['site_structure_contract'] !== 'string') throw new Error('Missing site structure contract');
+    expect(manifest['site_structure_contract']).toBe('contracts/site-structure.json');
+
+    const schema = read('contracts/site-structure.schema.json');
+    const structure = read(manifest['site_structure_contract']);
+    if (!object(schema) || !object(structure)) throw new Error('Invalid site structure contract');
+    expect(new Ajv2020().compile(schema)(structure)).toBe(true);
+    expect(structure['templateIdentifier']).toBe('jwsoft-business01');
+    expect(structure['features']).toEqual({shopping: false, reservation: false});
+    expect(structure['dataPolicy']).toEqual({mode: 'reviewed-static-pack', randomGenerationAllowed: false});
+
+    const pages = Array.isArray(structure['pages']) ? structure['pages'].filter(object) : [];
+    const boards = Array.isArray(structure['boards']) ? structure['boards'].filter(object) : [];
+    expect(pages).toHaveLength(10);
+    expect(boards).toHaveLength(4);
+    expect(boards.map(board => board['role'])).toEqual(['project', 'insight', 'notice', 'inquiry']);
+
+    const pageArchetypes = read('contracts/page-content.json');
+    if (!object(pageArchetypes) || !object(pageArchetypes['archetypes'])) throw new Error('Invalid page archetypes');
+    for (const page of pages) expect(pageArchetypes['archetypes']).toHaveProperty(String(page['archetype']));
+
+    const pageByKey = new Map(pages.map(page => [page['key'], page]));
+    const boardByKey = new Map(boards.map(board => [board['key'], board]));
+    const flattenNavigation = (value: unknown): Record<string, unknown>[] => {
+      if (!Array.isArray(value)) return [];
+      return value.filter(object).flatMap(node => [node, ...flattenNavigation(node['children'])]);
+    };
+    const navigation = Array.isArray(structure['navigation']) ? structure['navigation'].filter(object) : [];
+    const footer = Array.isArray(structure['footerNavigation']) ? structure['footerNavigation'].filter(object) : [];
+    expect(navigation).toHaveLength(5);
+    for (const node of navigation) {
+      const children = Array.isArray(node['children']) ? node['children'].filter(object) : [];
+      expect(children.every(child => !Array.isArray(child['children']) || child['children'].length === 0)).toBe(true);
+    }
+    expect(new Set(flattenNavigation([...navigation, ...footer]).map(node => node['key'])).size)
+      .toBe(flattenNavigation([...navigation, ...footer]).length);
+
+    const destinationPath = (destination: unknown): string => {
+      if (!object(destination) || typeof destination['kind'] !== 'string') throw new Error('Invalid destination');
+      const collection = destination['kind'] === 'page' ? pageByKey : boardByKey;
+      const target = collection.get(destination['ref']);
+      if (!target || typeof target['slug'] !== 'string') throw new Error(`Unresolved destination: ${String(destination['ref'])}`);
+      if (destination['kind'] === 'page') return `/page/${target['slug']}`;
+      if (destination['kind'] === 'board_write') return `/board/${target['slug']}/write`;
+      return `/board/${target['slug']}`;
+    };
+    for (const node of flattenNavigation([...navigation, ...footer])) expect(destinationPath(node['destination'])).toMatch(/^\/(page|board)\//);
+
+    const base = read('layouts/_user_base.json');
+    const primary = nodes(base, 'jw-primary-navigation')[0];
+    const footerNode = nodes(base, 'jw-footer-navigation')[0];
+    if (!object(primary) || !object(footerNode) || !Array.isArray(primary['children']) || !Array.isArray(footerNode['children'])) throw new Error('Invalid baseline navigation');
+    const baselinePaths = (items: unknown[]): unknown[] => items.filter(object).map(item => object(item['props']) ? item['props']['href'] : undefined);
+    expect(baselinePaths(primary['children'])).toEqual(navigation.map(node => destinationPath(node['destination'])));
+    expect(baselinePaths(footerNode['children'])).toEqual(footer.map(node => destinationPath(node['destination'])));
+  });
   it('declares only public routes actually shipped in the native route table', () => {
     const manifest = read('layout-data.json');
     const routes = read('routes.json');

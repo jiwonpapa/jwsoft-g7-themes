@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "business.b2b-default",
+  "templateIdentifier": "jwsoft-business01",
+  "supportedTemplateVersions": ">=0.1.0 <0.2.0",
+  "features": {
+    "shopping": false,
+    "reservation": false
+  },
+  "dataPolicy": {
+    "mode": "reviewed-static-pack",
+    "randomGenerationAllowed": false
+  },
+  "pages": [
+    {"key": "company", "slug": "company", "archetype": "company", "label": {"ko": "회사소개", "en": "Company"}},
+    {"key": "values", "slug": "values", "archetype": "values", "label": {"ko": "비전과 가치", "en": "Vision & Values"}},
+    {"key": "history", "slug": "history", "archetype": "history", "label": {"ko": "연혁", "en": "History"}},
+    {"key": "team", "slug": "team", "archetype": "team", "label": {"ko": "팀", "en": "Team"}},
+    {"key": "location", "slug": "location", "archetype": "contact", "label": {"ko": "오시는 길", "en": "Location"}},
+    {"key": "services", "slug": "services", "archetype": "services", "label": {"ko": "서비스", "en": "Services"}},
+    {"key": "process", "slug": "process", "archetype": "process", "label": {"ko": "진행 과정", "en": "Process"}},
+    {"key": "faq", "slug": "faq", "archetype": "faq", "label": {"ko": "자주 묻는 질문", "en": "FAQ"}},
+    {"key": "contact", "slug": "contact", "archetype": "contact", "label": {"ko": "문의 안내", "en": "Contact"}},
+    {"key": "privacy", "slug": "privacy", "archetype": "privacy", "label": {"ko": "개인정보 안내", "en": "Privacy"}}
+  ],
+  "boards": [
+    {"key": "cases", "slug": "cases", "role": "project", "label": {"ko": "프로젝트", "en": "Projects"}, "minimumDemoPosts": 6, "allowGuestWrite": false, "secretByDefault": false},
+    {"key": "resources", "slug": "resources", "role": "insight", "label": {"ko": "인사이트", "en": "Insights"}, "minimumDemoPosts": 6, "allowGuestWrite": false, "secretByDefault": false},
+    {"key": "notices", "slug": "notices", "role": "notice", "label": {"ko": "공지사항", "en": "Notices"}, "minimumDemoPosts": 6, "allowGuestWrite": false, "secretByDefault": false},
+    {"key": "inquiries", "slug": "inquiries", "role": "inquiry", "label": {"ko": "문의하기", "en": "Inquiry"}, "minimumDemoPosts": 6, "allowGuestWrite": true, "secretByDefault": true}
+  ],
+  "navigation": [
+    {
+      "key": "company-menu",
+      "label": {"ko": "회사소개", "en": "Company"},
+      "destination": {"kind": "page", "ref": "company"},
+      "children": [
+        {"key": "company-overview", "label": {"ko": "회사소개", "en": "Overview"}, "destination": {"kind": "page", "ref": "company"}},
+        {"key": "company-values", "label": {"ko": "비전과 가치", "en": "Vision & Values"}, "destination": {"kind": "page", "ref": "values"}},
+        {"key": "company-history", "label": {"ko": "연혁", "en": "History"}, "destination": {"kind": "page", "ref": "history"}},
+        {"key": "company-team", "label": {"ko": "팀", "en": "Team"}, "destination": {"kind": "page", "ref": "team"}},
+        {"key": "company-location", "label": {"ko": "오시는 길", "en": "Location"}, "destination": {"kind": "page", "ref": "location"}}
+      ]
+    },
+    {
+      "key": "services-menu",
+      "label": {"ko": "사업분야", "en": "Services"},
+      "destination": {"kind": "page", "ref": "services"},
+      "children": [
+        {"key": "services-overview", "label": {"ko": "서비스", "en": "Services"}, "destination": {"kind": "page", "ref": "services"}},
+        {"key": "services-process", "label": {"ko": "진행 과정", "en": "Process"}, "destination": {"kind": "page", "ref": "process"}}
+      ]
+    },
+    {"key": "projects-menu", "label": {"ko": "프로젝트", "en": "Projects"}, "destination": {"kind": "board", "ref": "cases"}},
+    {
+      "key": "insights-menu",
+      "label": {"ko": "인사이트", "en": "Insights"},
+      "destination": {"kind": "board", "ref": "resources"},
+      "children": [
+        {"key": "insights-resources", "label": {"ko": "인사이트", "en": "Insights"}, "destination": {"kind": "board", "ref": "resources"}},
+        {"key": "insights-notices", "label": {"ko": "공지사항", "en": "Notices"}, "destination": {"kind": "board", "ref": "notices"}},
+        {"key": "insights-faq", "label": {"ko": "자주 묻는 질문", "en": "FAQ"}, "destination": {"kind": "page", "ref": "faq"}}
+      ]
+    },
+    {
+      "key": "contact-menu",
+      "label": {"ko": "문의하기", "en": "Contact"},
+      "destination": {"kind": "page", "ref": "contact"},
+      "children": [
+        {"key": "contact-guide", "label": {"ko": "문의 안내", "en": "Contact"}, "destination": {"kind": "page", "ref": "contact"}},
+        {"key": "contact-write", "label": {"ko": "문의 작성", "en": "Write Inquiry"}, "destination": {"kind": "board_write", "ref": "inquiries"}},
+        {"key": "contact-privacy", "label": {"ko": "개인정보 안내", "en": "Privacy"}, "destination": {"kind": "page", "ref": "privacy"}}
+      ]
+    }
+  ],
+  "footerNavigation": [
+    {"key": "footer-company", "label": {"ko": "회사소개", "en": "Company"}, "destination": {"kind": "page", "ref": "company"}},
+    {"key": "footer-insights", "label": {"ko": "인사이트", "en": "Insights"}, "destination": {"kind": "board", "ref": "resources"}},
+    {"key": "footer-contact", "label": {"ko": "문의하기", "en": "Contact"}, "destination": {"kind": "page", "ref": "contact"}}
+  ]
+}

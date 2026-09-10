@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jwsoft.example/schemas/jw-business-01/site-structure.schema.json",
+  "title": "JW BUSINESS 01 site structure contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "profileId",
+    "templateIdentifier",
+    "supportedTemplateVersions",
+    "features",
+    "dataPolicy",
+    "pages",
+    "boards",
+    "navigation",
+    "footerNavigation"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "profileId": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]+$"},
+    "templateIdentifier": {"const": "jwsoft-business01"},
+    "supportedTemplateVersions": {"type": "string", "minLength": 1},
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shopping", "reservation"],
+      "properties": {
+        "shopping": {"const": false},
+        "reservation": {"const": false}
+      }
+    },
+    "dataPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "randomGenerationAllowed"],
+      "properties": {
+        "mode": {"const": "reviewed-static-pack"},
+        "randomGenerationAllowed": {"const": false}
+      }
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/page"}
+    },
+    "boards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/board"}
+    },
+    "navigation": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/navigationNode"}
+    },
+    "footerNavigation": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/navigationNode"}
+    }
+  },
+  "$defs": {
+    "label": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ko", "en"],
+      "properties": {
+        "ko": {"type": "string", "minLength": 1},
+        "en": {"type": "string", "minLength": 1}
+      }
+    },
+    "destination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "ref"],
+      "properties": {
+        "kind": {"enum": ["page", "board", "board_write"]},
+        "ref": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"}
+      }
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "slug", "archetype", "label"],
+      "properties": {
+        "key": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+        "slug": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+        "archetype": {"enum": ["company", "values", "history", "team", "services", "process", "faq", "contact", "privacy"]},
+        "label": {"$ref": "#/$defs/label"}
+      }
+    },
+    "board": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "slug", "role", "label", "minimumDemoPosts", "allowGuestWrite", "secretByDefault"],
+      "properties": {
+        "key": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+        "slug": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+        "role": {"enum": ["project", "insight", "notice", "inquiry"]},
+        "label": {"$ref": "#/$defs/label"},
+        "minimumDemoPosts": {"type": "integer", "minimum": 0},
+        "allowGuestWrite": {"type": "boolean"},
+        "secretByDefault": {"type": "boolean"}
+      }
+    },
+    "navigationNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "label", "destination"],
+      "properties": {
+        "key": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+        "label": {"$ref": "#/$defs/label"},
+        "destination": {"$ref": "#/$defs/destination"},
+        "children": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/navigationNode"}
+        }
+      }
+    }
+  }
+}
