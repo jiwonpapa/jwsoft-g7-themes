@@ -1,0 +1,68 @@
+name: JW BUSINESS 01
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/jw-business-01.yml"
+      - "theme-stack.json"
+      - "templates/theme-scaffold/**"
+      - "tools/theme_harness/**"
+      - "themes/business/jw-business-01/**"
+  pull_request:
+    paths:
+      - ".github/workflows/jw-business-01.yml"
+      - "theme-stack.json"
+      - "templates/theme-scaffold/**"
+      - "tools/theme_harness/**"
+      - "themes/business/jw-business-01/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    name: Check and package theme
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22.12.0"
+          cache: npm
+          cache-dependency-path: themes/business/jw-business-01/package-lock.json
+
+      - name: Install pinned npm
+        run: npm install --global npm@11.19.0
+
+      - name: Install theme dependencies
+        working-directory: themes/business/jw-business-01
+        run: npm ci
+
+      - name: Check harness
+        run: python3 -m unittest tools.theme_harness.tests.test_harness
+
+      - name: Build verified installation ZIP
+        run: python3 -m tools.theme_harness package themes/business/jw-business-01 --output-dir output/releases
+
+      - name: Upload installation ZIP
+        uses: actions/upload-artifact@v7
+        with:
+          name: jwsoft-business01-${{ github.sha }}
+          path: output/releases/jwsoft-business01-0.1.0.zip
+          if-no-files-found: error
+          retention-days: 14
