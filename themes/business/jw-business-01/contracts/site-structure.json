@@ -65,7 +65,7 @@
     {
       "key": "contact-menu",
       "label": {"ko": "문의하기", "en": "Contact"},
-      "destination": {"kind": "page", "ref": "contact"},
+      "destination": {"kind": "board_write", "ref": "inquiries"},
       "children": [
         {"key": "contact-guide", "label": {"ko": "문의 안내", "en": "Contact"}, "destination": {"kind": "page", "ref": "contact"}},
         {"key": "contact-write", "label": {"ko": "문의 작성", "en": "Write Inquiry"}, "destination": {"kind": "board_write", "ref": "inquiries"}},
@@ -76,6 +76,6 @@
   "footerNavigation": [
     {"key": "footer-company", "label": {"ko": "회사소개", "en": "Company"}, "destination": {"kind": "page", "ref": "company"}},
     {"key": "footer-insights", "label": {"ko": "인사이트", "en": "Insights"}, "destination": {"kind": "board", "ref": "resources"}},
-    {"key": "footer-contact", "label": {"ko": "문의하기", "en": "Contact"}, "destination": {"kind": "page", "ref": "contact"}}
+    {"key": "footer-contact", "label": {"ko": "문의하기", "en": "Contact"}, "destination": {"kind": "board_write", "ref": "inquiries"}}
   ]
 }

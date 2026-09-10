@@ -351,7 +351,7 @@
                   {
                     "type": "basic",
                     "name": "A",
-                    "props": {"href": "/page/contact", "className": "jw-button jw-button--primary"},
+                    "props": {"href": "/board/inquiries/write", "className": "jw-button jw-button--primary"},
                     "children": [
                       {"type": "basic", "name": "Span", "text": "$t:user.page.cta_action"},
                       {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}

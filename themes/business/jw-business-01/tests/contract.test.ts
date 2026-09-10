@@ -336,6 +336,23 @@ describe('layout data binding contract', () => {
       }
     }
   });
+  it('uses Korean editorial labels in the default Korean locale', () => {
+    const korean = JSON.stringify(read('lang/ko.json'));
+    for (const englishLabel of [
+      'SCROLL TO EXPLORE',
+      'HOW WE WORK',
+      'WHAT WE DO',
+      'FEATURED PROJECT',
+      'START A PROJECT',
+      'PRIVATE INQUIRY',
+      'CONTACT & WRITE',
+    ]) {
+      expect(korean).not.toContain(englishLabel);
+    }
+    expect(korean).toContain('아래로 살펴보기');
+    expect(korean).toContain('프로젝트 문의');
+    expect(korean).toContain('비공개 문의');
+  });
   it('enables semantic SEO output for the public home', () => {
     const home = read('layouts/home.json');
     if (!object(home) || !object(home['meta']) || !object(home['meta']['seo'])) throw new Error('Invalid home SEO contract');

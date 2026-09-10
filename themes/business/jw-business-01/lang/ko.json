@@ -25,11 +25,11 @@
         "copy": "사업 전략부터 디지털 서비스 구축과 운영 개선까지, 조직이 실제로 실행할 수 있는 변화를 함께 만듭니다.",
         "primary_action": "사업분야 보기",
         "secondary_action": "프로젝트 문의",
-        "scroll_cue": "SCROLL TO EXPLORE",
+        "scroll_cue": "아래로 살펴보기",
         "image_alt": "밝은 사무실에서 업무 과제를 함께 검토하는 기업 프로젝트 팀"
       },
       "company": {
-        "eyebrow": "HOW WE WORK",
+        "eyebrow": "일하는 방식",
         "title": "해답을 제시하기 전에, 문제를 정확히 정의합니다",
         "copy": "현장의 목표와 제약을 함께 확인하고 전략, 구축, 운영이 끊기지 않는 실행 계획을 설계합니다.",
         "items": {
@@ -48,24 +48,24 @@
         }
       },
       "services": {
-        "eyebrow": "WHAT WE DO",
+        "eyebrow": "사업 영역",
         "title": "전략과 실행을 잇는 세 가지 사업 영역",
         "action": "전체 사업분야 보기",
         "items": {
           "strategy": {
-            "category": "BUSINESS STRATEGY",
+            "category": "사업 전략",
             "title": "사업 전략과 서비스 기획",
             "copy": "시장과 고객, 내부 운영을 함께 살펴 실행 가능한 서비스 방향과 로드맵을 설계합니다.",
             "image_alt": "사업 계획 자료를 두고 실행 전략을 논의하는 프로젝트 팀"
           },
           "digital": {
-            "category": "DIGITAL EXPERIENCE",
+            "category": "디지털 경험",
             "title": "디지털 서비스 구축",
             "copy": "고객과 구성원이 실제로 쓰는 웹·업무 서비스를 일관된 경험과 운영 구조로 만듭니다.",
             "image_alt": "대형 화면의 디지털 서비스 화면을 함께 검토하는 제품 팀"
           },
           "operations": {
-            "category": "OPERATIONS DESIGN",
+            "category": "운영 설계",
             "title": "업무 프로세스 개선",
             "copy": "흩어진 절차와 도구를 정리해 책임과 정보가 자연스럽게 이어지는 업무 흐름을 설계합니다.",
             "image_alt": "업무 흐름 카드를 배치하며 운영 절차를 개선하는 팀"
@@ -73,7 +73,7 @@
         }
       },
       "case": {
-        "eyebrow": "FEATURED PROJECT",
+        "eyebrow": "대표 프로젝트",
         "title": "흩어진 고객 업무를 하나의 운영 흐름으로 연결했습니다",
         "copy": "접수, 담당자 배정, 진행 공유와 결과 보고가 분리되어 있던 업무를 하나의 협업 흐름으로 재설계한 프로젝트입니다.",
         "action": "프로젝트 보기",
@@ -94,25 +94,25 @@
         }
       },
       "resources": {
-        "eyebrow": "INSIGHTS",
+        "eyebrow": "인사이트",
         "title": "변화를 시작할 때 필요한 실무 인사이트",
         "items": {
           "checklist": {
-            "label": "CHECKLIST",
+            "label": "체크리스트",
             "title": "프로젝트 시작 전에 확인할 7가지"
           },
           "guide": {
-            "label": "GUIDE",
+            "label": "가이드",
             "title": "디지털 서비스 범위를 정하는 기준"
           },
           "maintenance": {
-            "label": "OPERATIONS",
+            "label": "운영",
             "title": "도입 이후 운영 지표를 설계하는 방법"
           }
         }
       },
       "contact": {
-        "eyebrow": "START A PROJECT",
+        "eyebrow": "프로젝트 문의",
         "title": "지금 해결해야 할 과제를 들려주세요",
         "copy": "현재 상황과 목표를 남겨주시면 필요한 검토 범위와 시작 방법을 정리해 안내합니다.",
         "action": "프로젝트 문의하기"
@@ -121,10 +121,10 @@
     "page": {
       "title_fallback": "회사 안내",
       "eyebrows": {
-        "company": "COMPANY",
-        "services": "SERVICES",
-        "information": "INFORMATION",
-        "contact": "CONTACT"
+        "company": "회사소개",
+        "services": "사업분야",
+        "information": "이용 안내",
+        "contact": "문의 안내"
       },
       "contexts": {
         "company": "회사의 방향과 일하는 방식을 소개합니다.",
@@ -133,7 +133,7 @@
         "contact": "연락 방법과 방문 정보를 안내합니다."
       },
       "attachments": "첨부자료",
-      "cta_eyebrow": "START A PROJECT",
+      "cta_eyebrow": "프로젝트 문의",
       "cta_title": "지금 해결해야 할 과제를 함께 살펴보겠습니다",
       "cta_action": "프로젝트 문의하기",
       "not_found_title": "페이지를 찾을 수 없습니다",
@@ -141,7 +141,7 @@
       "back_home": "홈으로 돌아가기"
     },
     "board": {
-      "eyebrow": "NOVA WORKS JOURNAL",
+      "eyebrow": "NOVA WORKS 인사이트",
       "list_label": "전체 콘텐츠",
       "items": "건",
       "empty_title": "등록된 콘텐츠가 없습니다",
@@ -160,7 +160,7 @@
       "post_not_found_title": "게시글을 찾을 수 없습니다",
       "post_not_found_copy": "삭제되었거나 공개되지 않은 게시글입니다.",
       "secret": {
-        "eyebrow": "PRIVATE INQUIRY",
+        "eyebrow": "비공개 문의",
         "title": "작성 비밀번호를 입력해 주세요",
         "copy": "등록할 때 설정한 비밀번호를 확인하면 문의 내용을 볼 수 있습니다.",
         "password_label": "작성 비밀번호",
@@ -173,7 +173,7 @@
         "data_label": "작성 데이터",
         "meta_label": "게시판 작성 설정",
         "board_fallback": "문의 게시판",
-        "eyebrow": "CONTACT & WRITE",
+        "eyebrow": "문의 작성",
         "write_title": "내용을 남겨주세요",
         "edit_title": "내용을 수정합니다",
         "description": "확인에 필요한 내용을 작성해 주시면 담당자가 검토할 수 있습니다.",

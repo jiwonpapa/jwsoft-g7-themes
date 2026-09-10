@@ -88,7 +88,7 @@
                       "name": "A",
                       "text": "$t:user.navigation_items.contact",
                       "props": {
-                        "href": "/page/contact",
+                        "href": "/board/inquiries/write",
                         "className": "jw-navigation-link jw-navigation-link--action"
                       }
                     }
@@ -191,7 +191,7 @@
                       "name": "A",
                       "text": "$t:user.navigation_items.contact",
                       "props": {
-                        "href": "/page/contact",
+                        "href": "/board/inquiries/write",
                         "className": "jw-navigation-link"
                       }
                     }

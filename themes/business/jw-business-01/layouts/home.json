@@ -101,7 +101,7 @@
                         "type": "basic",
                         "name": "A",
                         "props": {
-                          "href": "/page/contact",
+                          "href": "/board/inquiries/write",
                           "className": "jw-button jw-button--secondary"
                         },
                         "children": [
@@ -998,7 +998,7 @@
                 "type": "basic",
                 "name": "A",
                 "props": {
-                  "href": "/page/contact",
+                  "href": "/board/inquiries/write",
                   "className": "jw-button jw-button--primary"
                 },
                 "children": [
