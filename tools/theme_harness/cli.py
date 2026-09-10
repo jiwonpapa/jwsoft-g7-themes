@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .build import build_theme
 from .checks import check_theme
+from .data_pack import verify_data_pack
 from .errors import HarnessError
 from .model import load_context, repository_root
 from .package import package_theme
@@ -34,6 +35,11 @@ def _parser() -> argparse.ArgumentParser:
             item.add_argument("--release", action="store_true")
         if command == "package":
             item.add_argument("--output-dir", type=Path)
+    data_pack = subparsers.add_parser(
+        "verify-data-pack", help="테마 사이트 구조 계약과 레이아웃 데이터 팩을 대조합니다."
+    )
+    data_pack.add_argument("theme")
+    data_pack.add_argument("pack", type=Path)
     return parser
 
 
@@ -67,6 +73,13 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "package":
             destination = package_theme(context, args.output_dir)
             print(f"패키지 완료: {destination}")
+        elif args.command == "verify-data-pack":
+            report = verify_data_pack(context, args.pack)
+            print(
+                f"레이아웃 데이터 팩 연결 검사 통과: {report.pack_id} "
+                f"(페이지 {report.pages}, 게시판 {report.boards}, 게시물 {report.posts}, "
+                f"이미지 {report.media}, 메뉴 {report.menus})"
+            )
         return 0
     except (HarnessError, ValueError) as exc:
         print(str(exc), file=sys.stderr)

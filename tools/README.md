@@ -8,8 +8,11 @@ python3 -m tools.theme_harness setup themes/industrial/sample
 python3 -m tools.theme_harness check themes/industrial/sample
 python3 -m tools.theme_harness build themes/industrial/sample
 python3 -m tools.theme_harness package themes/industrial/sample
+python3 -m tools.theme_harness verify-data-pack themes/industrial/sample /path/to/layout-data-pack
 ```
 
 명령·설정·강제 규칙은 [테마 하네스](../docs/theme-harness.md), 변경 범위 선택 원칙은 [검증 정책](../docs/verification-policy.md)을 따릅니다.
+
+`verify-data-pack`은 팩 디렉터리 또는 배포 ZIP을 받아 테마의 사이트 구조·슬롯 계약과 실제 페이지·게시판·게시물·메뉴·이미지·manifest를 대조합니다. 이 검사를 통과한 팩만 실제 G7 설치 인수 대상으로 사용합니다.
 
 하네스 업무 로직을 `.sh`·`.bash`·`.zsh`에 작성하지 않습니다. 셸 파일이 꼭 필요하면 단일 `exec` 명령만 전달할 수 있고, 하네스 검사가 저장소 전체에서 이를 강제합니다.

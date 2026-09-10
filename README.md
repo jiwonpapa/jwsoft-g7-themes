@@ -28,6 +28,7 @@
 | [디자인 시스템](docs/design-system.md) | 색상·타이포·간격·섹션·상태 규약 초안 |
 | [구조와 패키징](docs/architecture-and-packaging.md) | 공통 기반과 테마별 독립 배포 |
 | [테마 하네스](docs/theme-harness.md) | 중앙 스택·새 테마 생성·검사·빌드·독립 ZIP 명령 |
+| [데이터 팩 호환성 게이트](docs/data-pack-compatibility-gate.md) | 테마 사이트 구조와 팩의 페이지·게시판·메뉴·이미지·manifest 대조 |
 | [검증 정책](docs/verification-policy.md) | 변경 범위별 필수 검사와 반복 실행 방지 |
 | [벤치마크 근거](docs/benchmark-references.md) | 외부 상품·공식 가이드와 G7 조사 근거 |
 | [5차 로드맵](docs/roadmap.md) | 단계별 산출물과 현재 상태 |

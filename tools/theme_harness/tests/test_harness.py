@@ -9,6 +9,7 @@ import zipfile
 from pathlib import Path
 
 from tools.theme_harness.checks import _check_seo_config, _check_shell_policy
+from tools.theme_harness.data_pack import verify_data_pack
 from tools.theme_harness.errors import HarnessError
 from tools.theme_harness.io import read_json, write_json
 from tools.theme_harness.model import load_context
@@ -116,6 +117,129 @@ class HarnessTest(unittest.TestCase):
         self.assertIn("dist/js/components.iife.js", names)
         self.assertNotIn("src/index.ts", names)
         self.assertNotIn("package.json", names)
+
+    def test_data_pack_verifier_matches_theme_structure_and_pack_manifest(self) -> None:
+        theme = self.create_theme()
+        write_json(
+            theme / "layout-data.json",
+            {
+                "site_structure_contract": "contracts/site-structure.json",
+                "slots": [
+                    {
+                        "key": "primary_navigation",
+                        "reference_types": ["menu"],
+                    }
+                ],
+            },
+        )
+        write_json(
+            theme / "contracts" / "site-structure.json",
+            {
+                "features": {"shopping": False},
+                "pages": [{"key": "company", "slug": "company"}],
+                "boards": [
+                    {
+                        "key": "cases",
+                        "slug": "cases",
+                        "minimumDemoPosts": 1,
+                        "settings": {"per_page": 5, "per_page_mobile": 5},
+                    }
+                ],
+                "navigation": [
+                    {
+                        "label": {"ko": "회사소개"},
+                        "destination": {"kind": "page", "ref": "company"},
+                    }
+                ],
+                "footerNavigation": [
+                    {
+                        "label": {"ko": "회사소개"},
+                        "destination": {"kind": "page", "ref": "company"},
+                    }
+                ],
+            },
+        )
+        pack = self.repository / "data-pack"
+        pack.mkdir()
+
+        def write_value(name: str, value: object) -> None:
+            (pack / name).write_text(
+                json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            )
+
+        values = {
+            "site.json": {"name": "Example"},
+            "profile.json": {
+                "key": "example",
+                "theme_identifier": "jwsoft-example01",
+                "slots": {"primary_navigation": ["menu:company"]},
+            },
+            "menus.json": [
+                {
+                    "key": "menu:company",
+                    "label": "회사소개",
+                    "parent_key": None,
+                    "target": {"kind": "entity", "key": "page:company"},
+                    "placements": ["desktop", "mobile", "footer"],
+                }
+            ],
+            "pages.json": [{"key": "page:company", "slug": "company"}],
+            "boards.json": [
+                {
+                    "key": "board:cases",
+                    "slug": "cases",
+                    "settings": {"per_page": 5, "per_page_mobile": 5},
+                }
+            ],
+            "posts.json": [{"key": "post:case", "board_key": "board:cases"}],
+            "categories.json": [],
+            "products.json": [],
+            "media.json": [],
+        }
+        for name, value in values.items():
+            write_value(name, value)
+        (pack / "LICENSE-CONTENT.md").write_text("# Content license\n", encoding="utf-8")
+
+        files = []
+        for name in [*values, "LICENSE-CONTENT.md"]:
+            payload = (pack / name).read_bytes()
+            files.append(
+                {
+                    "path": name,
+                    "bytes": len(payload),
+                    "sha256": hashlib.sha256(payload).hexdigest(),
+                }
+            )
+        write_value(
+            "manifest.json",
+            {
+                "pack_id": "example",
+                "files": files,
+                "counts": {
+                    "menus": 1,
+                    "pages": 1,
+                    "boards": 1,
+                    "posts": 1,
+                    "categories": 0,
+                    "products": 0,
+                    "media": 0,
+                },
+            },
+        )
+        context = load_context(theme, repository=self.repository)
+        report = verify_data_pack(context, pack)
+        self.assertEqual((report.pages, report.boards, report.posts, report.menus), (1, 1, 1, 1))
+
+        archive_path = self.repository / "data-pack.zip"
+        with zipfile.ZipFile(archive_path, "w") as archive:
+            for path in sorted(pack.iterdir()):
+                archive.write(path, path.name)
+        archive_report = verify_data_pack(context, archive_path)
+        self.assertEqual(archive_report.pack_id, "example")
+
+        write_value("pages.json", [])
+        with self.assertRaisesRegex(HarnessError, "테마 필수 페이지 누락"):
+            verify_data_pack(context, pack)
 
 
 if __name__ == "__main__":

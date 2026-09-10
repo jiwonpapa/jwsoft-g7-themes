@@ -27,11 +27,14 @@ python3 -m tools.theme_harness setup themes/business/jw-sample-01
 python3 -m tools.theme_harness check themes/business/jw-sample-01
 python3 -m tools.theme_harness build themes/business/jw-sample-01
 python3 -m tools.theme_harness package themes/business/jw-sample-01
+python3 -m tools.theme_harness verify-data-pack themes/business/jw-sample-01 /path/to/layout-data-pack.zip
 ```
 
 `init`는 비어 있는 새 경로만 생성하고 기본적으로 npm 설치까지 실행합니다. 네트워크 설치를 미룰 때만 `--skip-install`을 사용합니다. `setup`은 `package.json`을 중앙 값으로 맞추고 lockfile·라이선스 원문·제3자 고지를 갱신합니다.
 
 `build`는 일반 검사 후 TypeScript, 테마 단위 시험, Vite 빌드를 차례로 실행하고 소스·중앙 스택·산출물 해시를 기록합니다. `package`는 이 빌드를 다시 확인한 뒤 `releases/<identifier>-<version>.zip`을 만듭니다. 다른 위치가 필요하면 `--output-dir`을 지정합니다.
+
+`verify-data-pack`은 테마 `layout-data.json`과 `site_structure_contract`를 팩 디렉터리 또는 ZIP에 직접 대조합니다. 필수 페이지·slug, 게시판 설정·최소 게시물 수, PC/모바일 2단 메뉴·푸터 메뉴, 슬롯 참조 유형, 본문 논리 참조, 이미지 파일·해시, manifest 파일 목록·해시·counts, 쇼핑 포함 여부를 검사합니다. 팩 자체 schema 검사와 실제 G7 삽입은 레이아웃 데이터 모듈이 담당하고, 이 명령은 두 프로젝트 사이의 계약 누락을 설치 전에 차단합니다.
 
 ## 현재 강제 항목
 
@@ -47,9 +50,10 @@ python3 -m tools.theme_harness package themes/business/jw-sample-01
 - 최신 중앙 스택·소스로 생성한 빌드인지와 배포 자산 해시 확인
 - ZIP에는 G7 런타임 manifest·layout·언어·계약·빌드 자산·선택 라이선스만 포함
 - ZIP 내부 `JW-THEME-MANIFEST.json`에 각 파일 SHA-256 기록
+- 테마와 함께 인수할 레이아웃 데이터 팩의 사이트 구조·슬롯·참조·manifest 일치 확인
 
 패키지는 파일 순서와 ZIP 시간을 고정해 같은 입력에서 같은 결과가 나오도록 생성합니다. `src`, `tests`, `node_modules`, npm 설정, 하네스 설정, 원본 CSS와 내부 빌드 상태는 설치 ZIP에 넣지 않습니다.
 
 ## 현재 경계
 
-이 하네스는 테마 제작·정적 계약·빌드·패키징을 담당합니다. 실제 G7 설치·활성화, 편집·저장·Undo, 브라우저 조작, 레이아웃 데이터 설치 모듈은 각 프로젝트의 별도 통합 검사 대상입니다. 이 1차 구현에는 CI와 G7 브라우저 자동화가 포함되지 않았습니다.
+이 하네스는 테마 제작·정적 계약·빌드·패키징과 데이터 팩의 사전 호환성 대조를 담당합니다. 실제 G7 설치·활성화, 편집·저장·Undo, 브라우저 조작, 레이아웃 데이터 설치·제거 수명주기는 각 프로젝트의 통합 검사 대상입니다. 테마 CI는 하네스 단위 시험과 설치 ZIP 생성을 실행하지만 다른 비공개 저장소의 데이터 팩을 자동으로 가져오지 않습니다.
