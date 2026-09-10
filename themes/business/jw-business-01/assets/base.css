@@ -400,6 +400,18 @@
     padding-top: 0.5rem;
   }
 
+  .jw-hero__scroll-cue {
+    @apply jw:absolute jw:z-10 jw:flex jw:items-center jw:gap-3 jw:text-xs jw:font-semibold jw:no-underline;
+    right: max(var(--jw-page-gutter), calc((100vw - var(--jw-content-width)) / 2 + var(--jw-page-gutter)));
+    bottom: 2rem;
+    color: var(--jw-color-ink);
+    letter-spacing: 0.14em;
+  }
+
+  .jw-hero__scroll-icon {
+    animation: jw-scroll-cue 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
   .jw-hero--split {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -560,6 +572,107 @@
   .jw-cases {
     border-top: 1px solid var(--jw-color-border);
     border-bottom: 1px solid var(--jw-color-border);
+  }
+
+  .jw-case-scene {
+    @apply jw:relative jw:flex jw:overflow-hidden;
+    min-height: clamp(44rem, 72vw, 56rem);
+    color: #ffffff;
+    isolation: isolate;
+  }
+
+  .jw-parallax-media--case-scene,
+  .jw-case-scene__veil {
+    @apply jw:absolute jw:inset-0;
+  }
+
+  .jw-parallax-media--case-scene {
+    z-index: 0;
+    height: 100%;
+  }
+
+  #jw-site .jw-case-scene__image {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .jw-case-scene__veil {
+    z-index: 1;
+    background:
+      linear-gradient(90deg, rgba(7, 16, 29, 0.88) 0%, rgba(7, 16, 29, 0.7) 46%, rgba(7, 16, 29, 0.2) 100%),
+      linear-gradient(0deg, rgba(7, 16, 29, 0.55) 0%, rgba(7, 16, 29, 0) 48%);
+    pointer-events: none;
+  }
+
+  .jw-case-scene__inner {
+    @apply jw:relative jw:z-10 jw:grid jw:items-end;
+    grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 0.72fr);
+    gap: clamp(4rem, 9vw, 9rem);
+    padding-block: clamp(6rem, 12vw, 10rem);
+  }
+
+  .jw-case-scene__content {
+    @apply jw:flex jw:flex-col jw:items-start jw:gap-6;
+  }
+
+  .jw-case-scene .jw-eyebrow,
+  .jw-case-outcome__icon {
+    color: #9dccff;
+  }
+
+  .jw-case-scene__title {
+    max-width: 39rem;
+    color: #ffffff;
+    font-size: clamp(2.6rem, 5.6vw, 5rem);
+  }
+
+  .jw-case-scene__copy {
+    max-width: 35rem;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: clamp(1rem, 1.6vw, 1.125rem);
+  }
+
+  .jw-case-scene__link {
+    margin-top: 0.5rem;
+    color: #ffffff;
+  }
+
+  .jw-case-scene__outcomes {
+    border-top: 1px solid rgba(255, 255, 255, 0.72);
+  }
+
+  .jw-case-outcome {
+    @apply jw:grid jw:gap-x-5;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    padding-block: 1.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  }
+
+  .jw-case-outcome__icon {
+    grid-row: 1 / span 2;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.15rem;
+  }
+
+  .jw-case-outcome__title,
+  .jw-case-outcome__copy {
+    @apply jw:m-0;
+  }
+
+  .jw-case-outcome__title {
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+  }
+
+  .jw-case-outcome__copy {
+    margin-top: 0.35rem;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 0.875rem;
+    line-height: 1.65;
   }
 
   .jw-case-feature {
@@ -1883,6 +1996,15 @@
   }
 }
 
+@keyframes jw-scroll-cue {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.4rem);
+  }
+}
+
 @media (max-width: 64rem) {
   .jw-header-inner {
     min-height: 4.5rem;
@@ -2023,6 +2145,7 @@
 
   .jw-company__layout,
   .jw-case-feature,
+  .jw-case-scene__inner,
   .jw-resources__layout,
   .jw-page-body__layout,
   .jw-board-form-layout {
@@ -2041,6 +2164,10 @@
 
   .jw-case-feature {
     gap: 2.5rem;
+  }
+
+  .jw-case-scene__inner {
+    gap: 4rem;
   }
 }
 
@@ -2086,6 +2213,10 @@
     width: 100%;
   }
 
+  .jw-hero__scroll-cue {
+    display: none;
+  }
+
   .jw-hero--split,
   .jw-hero--editorial {
     display: grid;
@@ -2121,6 +2252,23 @@
   .jw-company__layout,
   .jw-resources__layout {
     gap: 2.5rem;
+  }
+
+  .jw-case-scene {
+    min-height: 48rem;
+  }
+
+  .jw-case-scene__veil {
+    background: linear-gradient(0deg, rgba(7, 16, 29, 0.94) 0%, rgba(7, 16, 29, 0.72) 58%, rgba(7, 16, 29, 0.22) 100%);
+  }
+
+  .jw-case-scene__inner {
+    gap: 3rem;
+    padding-block: 5rem;
+  }
+
+  .jw-case-scene__title {
+    font-size: clamp(2.35rem, 12vw, 3.7rem);
   }
 
   .jw-capability {

@@ -123,6 +123,29 @@
             "props": {
               "className": "jw-container jw-hero__inner"
             }
+          },
+          {
+            "type": "basic",
+            "name": "A",
+            "props": {
+              "href": "#jw-company-profile",
+              "className": "jw-hero__scroll-cue"
+            },
+            "children": [
+              {
+                "type": "basic",
+                "name": "Span",
+                "text": "$t:user.homepage.hero.scroll_cue"
+              },
+              {
+                "type": "composite",
+                "name": "ThemeIcon",
+                "props": {
+                  "name": "arrow-down",
+                  "className": "jw-icon jw-hero__scroll-icon"
+                }
+              }
+            ]
           }
         ],
         "props": {
@@ -588,32 +611,30 @@
             "name": "Section",
             "children": [
               {
+                "type": "composite",
+                "name": "ParallaxMedia",
+                "props": {
+                  "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fcase-workflow-unification.webp&v=0.1.0",
+                  "alt": "$t:user.homepage.case.image_alt",
+                  "loading": "lazy",
+                  "width": 1672,
+                  "height": 941,
+                  "className": "jw-media jw-case-scene__image",
+                  "wrapperClassName": "jw-parallax-media jw-parallax-media--case-scene",
+                  "strength": 48
+                }
+              },
+              {
+                "type": "basic",
+                "name": "Div",
+                "props": {
+                  "className": "jw-case-scene__veil"
+                }
+              },
+              {
                 "type": "basic",
                 "name": "Div",
                 "children": [
-                  {
-                    "type": "basic",
-                    "name": "Div",
-                    "children": [
-                      {
-                        "type": "composite",
-                        "name": "ParallaxMedia",
-                        "props": {
-                          "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fcase-workflow-unification.webp&v=0.1.0",
-                          "alt": "$t:user.homepage.case.image_alt",
-                          "loading": "lazy",
-                          "width": 1672,
-                          "height": 941,
-                          "className": "jw-media jw-case-feature__image",
-                          "wrapperClassName": "jw-parallax-media jw-parallax-media--case",
-                          "strength": 38
-                        }
-                      }
-                    ],
-                    "props": {
-                      "className": "jw-case-feature__media"
-                    }
-                  },
                   {
                     "type": "composite",
                     "name": "Reveal",
@@ -631,7 +652,7 @@
                         "name": "H2",
                         "text": "$t:user.homepage.case.title",
                         "props": {
-                          "className": "jw-section-title"
+                          "className": "jw-section-title jw-case-scene__title"
                         }
                       },
                       {
@@ -639,7 +660,7 @@
                         "name": "P",
                         "text": "$t:user.homepage.case.copy",
                         "props": {
-                          "className": "jw-body-copy"
+                          "className": "jw-body-copy jw-case-scene__copy"
                         }
                       },
                       {
@@ -647,7 +668,7 @@
                         "name": "A",
                         "props": {
                           "href": "/board/cases",
-                          "className": "jw-text-link"
+                          "className": "jw-text-link jw-case-scene__link"
                         },
                         "children": [
                           {"type": "basic", "name": "Span", "text": "$t:user.homepage.case.action"},
@@ -656,19 +677,128 @@
                       }
                     ],
                     "props": {
-                      "className": "jw-case-feature__content",
+                      "className": "jw-case-scene__content",
+                      "direction": "left"
+                    }
+                  },
+                  {
+                    "type": "composite",
+                    "name": "Reveal",
+                    "children": [
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "workflow",
+                              "className": "jw-icon jw-case-outcome__icon"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.case.outcomes.intake.title",
+                            "props": {
+                              "className": "jw-case-outcome__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.case.outcomes.intake.copy",
+                            "props": {
+                              "className": "jw-case-outcome__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-case-outcome"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "pencil-ruler",
+                              "className": "jw-icon jw-case-outcome__icon"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.case.outcomes.ownership.title",
+                            "props": {
+                              "className": "jw-case-outcome__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.case.outcomes.ownership.copy",
+                            "props": {
+                              "className": "jw-case-outcome__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-case-outcome"
+                        }
+                      },
+                      {
+                        "type": "basic",
+                        "name": "Article",
+                        "children": [
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {
+                              "name": "chart",
+                              "className": "jw-icon jw-case-outcome__icon"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "H3",
+                            "text": "$t:user.homepage.case.outcomes.measure.title",
+                            "props": {
+                              "className": "jw-case-outcome__title"
+                            }
+                          },
+                          {
+                            "type": "basic",
+                            "name": "P",
+                            "text": "$t:user.homepage.case.outcomes.measure.copy",
+                            "props": {
+                              "className": "jw-case-outcome__copy"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "className": "jw-case-outcome"
+                        }
+                      }
+                    ],
+                    "props": {
+                      "className": "jw-case-scene__outcomes",
                       "direction": "right",
-                      "delay": 0.08
+                      "delay": 0.12
                     }
                   }
                 ],
                 "props": {
-                  "className": "jw-container jw-case-feature"
+                  "className": "jw-container jw-case-scene__inner"
                 }
               }
             ],
             "props": {
-              "className": "jw-section jw-cases"
+              "className": "jw-cases jw-case-scene"
             }
           }
         ],

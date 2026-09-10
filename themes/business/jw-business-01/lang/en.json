@@ -25,6 +25,7 @@
         "copy": "From business strategy and digital delivery to operational improvement, we build changes that teams can put into practice.",
         "primary_action": "Explore services",
         "secondary_action": "Start a project",
+        "scroll_cue": "SCROLL TO EXPLORE",
         "image_alt": "A corporate project team reviewing business challenges in a bright office"
       },
       "company": {
@@ -76,7 +77,21 @@
         "title": "One connected flow\nfor fragmented customer work",
         "copy": "A project redesigning intake, assignment, progress sharing, and reporting as one collaborative workflow.",
         "action": "View projects",
-        "image_alt": "A project presentation explaining a unified workflow to client stakeholders"
+        "image_alt": "A project presentation explaining a unified workflow to client stakeholders",
+        "outcomes": {
+          "intake": {
+            "title": "One intake channel",
+            "copy": "Requests from calls, email, and chat arrive in one place."
+          },
+          "ownership": {
+            "title": "Clear ownership",
+            "copy": "Responsibility and next actions stay visible from intake to completion."
+          },
+          "measure": {
+            "title": "Connected metrics",
+            "copy": "Teams can review progress and bottlenecks in the same flow."
+          }
+        }
       },
       "resources": {
         "eyebrow": "INSIGHTS",
