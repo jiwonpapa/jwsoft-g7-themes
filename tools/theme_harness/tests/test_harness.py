@@ -105,6 +105,14 @@ class HarnessTest(unittest.TestCase):
         (theme / "dist" / "js" / "components.iife.js").write_text("(()=>{})();\n")
         (theme / "dist" / "css" / "components.css").write_text("#jw-site{}\n")
         (theme / "THIRD-PARTY-NOTICES.md").write_text("# 제3자 고지\n")
+        (theme / "preview").mkdir()
+        (theme / "preview" / "home.webp").write_bytes(b"RIFF-preview")
+        template = read_json(theme / "template.json")
+        template["preview"] = {
+            "thumbnail": "preview/home.webp",
+            "screenshots": ["preview/home.webp"],
+        }
+        write_json(theme / "template.json", template)
         context = load_context(theme, repository=self.repository)
         output = self.repository / "output"
         first = write_package(context, output)
@@ -115,6 +123,7 @@ class HarnessTest(unittest.TestCase):
             names = set(archive.namelist())
         self.assertIn("JW-THEME-MANIFEST.json", names)
         self.assertIn("dist/js/components.iife.js", names)
+        self.assertIn("preview/home.webp", names)
         self.assertNotIn("src/index.ts", names)
         self.assertNotIn("package.json", names)
 

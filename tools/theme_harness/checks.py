@@ -109,6 +109,33 @@ def _check_manifests(context: Context, issues: list[str], *, release: bool) -> N
     if template.get("externals") not in (None, []):
         issues.append("template.json externals는 비어 있어야 합니다.")
 
+    preview = template.get("preview")
+    if preview is not None:
+        if not isinstance(preview, dict):
+            issues.append("template.json preview가 올바르지 않습니다.")
+        else:
+            thumbnail = preview.get("thumbnail")
+            screenshots = preview.get("screenshots")
+            if not isinstance(thumbnail, str) or not thumbnail:
+                issues.append("template.json preview.thumbnail이 비어 있습니다.")
+            if not isinstance(screenshots, list) or not screenshots:
+                issues.append("template.json preview.screenshots가 비어 있습니다.")
+            declared = ([thumbnail] if isinstance(thumbnail, str) else []) + (
+                screenshots if isinstance(screenshots, list) else []
+            )
+            for value in declared:
+                if not isinstance(value, str):
+                    issues.append("template.json preview 경로는 문자열이어야 합니다.")
+                    continue
+                relative = Path(value)
+                if relative.is_absolute() or ".." in relative.parts or relative.suffix.lower() not in {
+                    ".jpg", ".jpeg", ".png", ".webp",
+                }:
+                    issues.append(f"올바르지 않은 preview 경로입니다: {value}")
+                    continue
+                if not (context.theme / relative).is_file():
+                    issues.append(f"선언된 preview 이미지가 없습니다: {value}")
+
     assets = template.get("assets")
     if not isinstance(assets, dict):
         issues.append("template.json assets가 올바르지 않습니다.")

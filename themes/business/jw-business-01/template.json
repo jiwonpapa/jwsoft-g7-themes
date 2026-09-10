@@ -68,6 +68,13 @@
     ],
     "layout": []
   },
+  "preview": {
+    "thumbnail": "preview/home-desktop.webp",
+    "screenshots": [
+      "preview/home-desktop.webp",
+      "preview/home-mobile.webp"
+    ]
+  },
   "error_config": {
     "layouts": {
       "401": "errors/401",
