@@ -69,8 +69,9 @@ describe('layout data binding contract', () => {
   });
   it('publishes the complete site structure consumed by the layout-data installer', () => {
     const manifest = read('layout-data.json');
-    if (!object(manifest) || typeof manifest['site_structure_contract'] !== 'string') throw new Error('Missing site structure contract');
+    if (!object(manifest) || typeof manifest['site_structure_contract'] !== 'string' || typeof manifest['page_content_contract'] !== 'string') throw new Error('Missing site structure contract');
     expect(manifest['site_structure_contract']).toBe('contracts/site-structure.json');
+    expect(manifest['page_content_contract']).toBe('contracts/page-content.json');
 
     const schema = read('contracts/site-structure.schema.json');
     const structure = read(manifest['site_structure_contract']);
@@ -86,7 +87,7 @@ describe('layout data binding contract', () => {
     expect(boards).toHaveLength(4);
     expect(boards.map(board => board['role'])).toEqual(['project', 'insight', 'notice', 'inquiry']);
 
-    const pageArchetypes = read('contracts/page-content.json');
+    const pageArchetypes = read(manifest['page_content_contract']);
     if (!object(pageArchetypes) || !object(pageArchetypes['archetypes'])) throw new Error('Invalid page archetypes');
     for (const page of pages) expect(pageArchetypes['archetypes']).toHaveProperty(String(page['archetype']));
 

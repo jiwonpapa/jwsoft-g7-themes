@@ -3,6 +3,7 @@
   "template_identifier": "jwsoft-business01",
   "supported_versions": ">=0.1.0 <0.2.0",
   "site_structure_contract": "contracts/site-structure.json",
+  "page_content_contract": "contracts/page-content.json",
   "slots": [
     {
       "key": "primary_navigation",

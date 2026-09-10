@@ -25,7 +25,7 @@ describe('published native content rendering', () => {
   });
   it('preserves the declared page archetypes and native FAQ disclosure', () => {
     const rendered = renderToStaticMarkup(createElement(HtmlContent, {
-      content: '<section class="jw-content-intro"><details class="jw-content-faq__item" open><summary>도입 기간은 얼마나 걸리나요?</summary><div class="jw-content-faq__answer"><p>범위 확인 후 일정을 안내합니다.</p></div></details><time class="jw-content-timeline__item" datetime="2026-09">2026</time></section>',
+      content: '<section class="jw-content-intro"><details class="jw-content-faq__item" open><summary>도입 기간은 얼마나 걸리나요?</summary><div class="jw-content-faq__answer"><p>범위 확인 후 일정을 안내합니다.</p></div></details><time class="jw-content-timeline__item" datetime="2026-09">2026</time><dl class="jw-content-specs"><div class="jw-content-spec"><dt>제공 범위</dt><dd>기획과 구축</dd></div></dl><img class="jw-content-certificate__image" src="/certificate.webp" alt="품질경영 인증서"></section>',
     }));
 
     expect(rendered).toContain('class="jw-content-intro"');
@@ -33,6 +33,9 @@ describe('published native content rendering', () => {
     expect(rendered).toContain('<details class="jw-content-faq__item" open="">');
     expect(rendered).toContain('<summary>도입 기간은 얼마나 걸리나요?</summary>');
     expect(rendered).toContain('datetime="2026-09"');
+    expect(rendered).toContain('class="jw-content-specs"');
+    expect(rendered).toContain('<dt>제공 범위</dt>');
+    expect(rendered).toContain('alt="품질경영 인증서"');
   });
 });
 

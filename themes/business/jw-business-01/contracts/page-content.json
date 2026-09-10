@@ -6,6 +6,8 @@
     "Page data remains owned by G7 sirsoft-page.",
     "The theme guarantees presentation only for the classes declared here.",
     "Interactive content uses native details and summary elements without custom scripts.",
+    "Certificate and partner images require meaningful alt text and publisher-owned usage rights.",
+    "Catalog blocks describe products or services and do not imply cart, order, payment or inventory support.",
     "Forms, executable markup, inline styles, iframes and embedded objects are removed by HtmlContent."
   ],
   "archetypes": {
@@ -17,7 +19,13 @@
       "jw-content-fact",
       "jw-content-media",
       "jw-content-media__visual",
-      "jw-content-media__body"
+      "jw-content-media__body",
+      "jw-content-trust",
+      "jw-content-certificates",
+      "jw-content-certificate",
+      "jw-content-certificate__image",
+      "jw-content-partners",
+      "jw-content-partner"
     ],
     "values": [
       "jw-content-values",
@@ -35,7 +43,13 @@
     ],
     "services": [
       "jw-content-services",
-      "jw-content-service"
+      "jw-content-service",
+      "jw-content-catalog",
+      "jw-content-product",
+      "jw-content-product__media",
+      "jw-content-product__body",
+      "jw-content-specs",
+      "jw-content-spec"
     ],
     "process": [
       "jw-content-process",
