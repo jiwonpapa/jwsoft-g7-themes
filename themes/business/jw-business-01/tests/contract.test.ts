@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import Ajv2020 from 'ajv/dist/2020';
+import { THEME_ICON_NAMES } from '../src/theme-icon';
 
 function read(path: string): unknown { return JSON.parse(readFileSync(path, 'utf8')); }
 function object(value: unknown): value is Record<string, unknown> { return typeof value === 'object' && value !== null && !Array.isArray(value); }
@@ -127,6 +128,37 @@ describe('layout data binding contract', () => {
     expect(css).toContain('.jw-primary-navigation > div > div {');
     expect(css).toContain('.jw-primary-navigation > div:focus-within > div');
     expect(css).toContain('.jw-footer-navigation a {');
+  });
+  it('styles every public native-page content class declared by the theme', () => {
+    const contract = read('contracts/page-content.json');
+    if (!object(contract) || !object(contract['archetypes'])) throw new Error('Invalid page content contract');
+    const css = readFileSync('assets/base.css', 'utf8');
+    const classNames = Object.values(contract['archetypes']).flatMap(value => Array.isArray(value) ? value : []);
+    expect(new Set(classNames).size).toBe(classNames.length);
+    for (const className of classNames) {
+      expect(className).toBeTypeOf('string');
+      expect(className).toMatch(/^jw-content-/);
+      expect(css, String(className)).toContain(`.${className}`);
+    }
+  });
+  it('uses only the bundled line-icon registry and ships motion as progressive enhancement', () => {
+    const layouts = jsonFiles('layouts').map(read);
+    const layoutNodes = layouts.flatMap(objects);
+    const icons = layoutNodes.filter(node => node['name'] === 'ThemeIcon');
+    const reveals = layoutNodes.filter(node => node['name'] === 'Reveal');
+    const parallaxMedia = layoutNodes.filter(node => node['name'] === 'ParallaxMedia');
+    expect(icons.length).toBeGreaterThanOrEqual(12);
+    expect(reveals.length).toBeGreaterThanOrEqual(5);
+    expect(parallaxMedia.length).toBeGreaterThanOrEqual(2);
+    for (const icon of icons) {
+      expect(object(icon['props']) && THEME_ICON_NAMES.includes(String(icon['props']['name']))).toBe(true);
+    }
+
+    const runtimeUI = JSON.stringify(layouts) + readFileSync('assets/base.css', 'utf8');
+    expect(runtimeUI).not.toMatch(/[→←↗↘↓↑›‹★✓✔]/);
+    const harness = read('theme.harness.json');
+    if (!object(harness) || !Array.isArray(harness['features'])) throw new Error('Invalid theme harness');
+    expect(harness['features']).toEqual(expect.arrayContaining(['icons', 'motion']));
   });
   it('resolves every shipped layout translation token in both locales', () => {
     const source = JSON.stringify(jsonFiles('layouts').map(read));

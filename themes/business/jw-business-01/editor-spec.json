@@ -263,6 +263,21 @@
     "MobileMenuButton": {
       "label": "$t:user.editor.components.mobile_menu_button",
       "coreProps": ["id"]
+    },
+    "ThemeIcon": {
+      "label": "$t:user.editor.components.icon"
+    },
+    "Reveal": {
+      "label": "$t:user.editor.components.reveal",
+      "coreProps": ["id"],
+      "nodeEditor": {
+        "kind": "children",
+        "params": { "childComponent": "Div" }
+      }
+    },
+    "ParallaxMedia": {
+      "label": "$t:user.editor.components.parallax_media",
+      "propControls": ["imgSrc", "imgAlt"]
     }
   },
   "componentPalette": {
@@ -372,18 +387,22 @@
       "A",
       "Img",
       "HtmlContent",
-      "MobileMenuButton"
+      "MobileMenuButton",
+      "ThemeIcon",
+      "Reveal",
+      "ParallaxMedia"
     ],
     "containers": {
       "SiteHeader": { "accepts": ["Div", "PrimaryNavigation", "A", "MobileMenuButton"] },
-      "HeroSection": { "accepts": ["Div", "H1", "H2", "H3", "P", "Span", "A", "Img"] },
-      "PrimaryNavigation": { "accepts": ["A", "Div", "Span"] },
-      "Section": { "accepts": ["Div", "Article", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent"] },
-      "Article": { "accepts": ["Div", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent"] },
-      "Div": { "accepts": ["Div", "Section", "Article", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent"] },
+      "HeroSection": { "accepts": ["Div", "H1", "H2", "H3", "P", "Span", "A", "Img", "Reveal", "ParallaxMedia"] },
+      "PrimaryNavigation": { "accepts": ["A", "Div", "Span", "ThemeIcon"] },
+      "Section": { "accepts": ["Div", "Article", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent", "Reveal", "ParallaxMedia"] },
+      "Article": { "accepts": ["Div", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent", "Reveal", "ParallaxMedia", "ThemeIcon"] },
+      "Div": { "accepts": ["Div", "Section", "Article", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent", "Reveal", "ParallaxMedia", "ThemeIcon"] },
+      "Reveal": { "accepts": ["Div", "Section", "Article", "H1", "H2", "H3", "P", "Span", "A", "Img", "HtmlContent", "ParallaxMedia", "ThemeIcon"] },
       "P": { "accepts": ["Span", "A"] },
       "Span": { "accepts": ["Span", "A"] },
-      "A": { "accepts": ["Span", "Img"] }
+      "A": { "accepts": ["Span", "Img", "ThemeIcon", "ParallaxMedia"] }
     }
   }
 }

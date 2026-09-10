@@ -256,6 +256,10 @@
           "isHtml": {
             "type": "boolean",
             "required": false
+          },
+          "className": {
+            "type": "string",
+            "required": false
           }
         }
       },
@@ -280,6 +284,40 @@
             "type": "string",
             "required": false
           }
+        }
+      },
+      {
+        "name": "ThemeIcon",
+        "type": "composite",
+        "path": "src/theme-icon.ts",
+        "props": {
+          "name": {"type": "string", "required": false},
+          "className": {"type": "string", "required": false}
+        }
+      },
+      {
+        "name": "Reveal",
+        "type": "composite",
+        "path": "src/reveal.ts",
+        "props": {
+          "className": {"type": "string", "required": false},
+          "direction": {"type": "string", "required": false},
+          "delay": {"type": "number", "required": false}
+        }
+      },
+      {
+        "name": "ParallaxMedia",
+        "type": "composite",
+        "path": "src/parallax-media.ts",
+        "props": {
+          "src": {"type": "string", "required": false},
+          "alt": {"type": "string", "required": false},
+          "width": {"type": "number", "required": false},
+          "height": {"type": "number", "required": false},
+          "loading": {"type": "string", "required": false},
+          "className": {"type": "string", "required": false},
+          "wrapperClassName": {"type": "string", "required": false},
+          "strength": {"type": "number", "required": false}
         }
       }
     ],

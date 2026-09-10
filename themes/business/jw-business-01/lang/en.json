@@ -235,7 +235,10 @@
         "link": "Link",
         "image": "Image",
         "published_content": "Published content",
-        "mobile_menu_button": "Mobile menu button"
+        "mobile_menu_button": "Mobile menu button",
+        "icon": "Line icon",
+        "reveal": "Scroll reveal region",
+        "parallax_media": "Parallax media"
       },
       "palette": {
         "content": "JW content"

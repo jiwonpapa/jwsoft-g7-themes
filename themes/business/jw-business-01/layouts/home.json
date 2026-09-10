@@ -30,14 +30,16 @@
         "name": "HeroSection",
         "children": [
           {
-            "type": "basic",
-            "name": "Img",
+            "type": "composite",
+            "name": "ParallaxMedia",
             "props": {
               "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fhero-corporate-collaboration.webp&v=0.1.0",
               "alt": "$t:user.homepage.hero.image_alt",
               "width": 1904,
               "height": 826,
-              "className": "jw-hero__image"
+              "className": "jw-hero__image",
+              "wrapperClassName": "jw-parallax-media jw-parallax-media--hero",
+              "strength": 26
             }
           },
           {
@@ -52,8 +54,8 @@
             "name": "Div",
             "children": [
               {
-                "type": "basic",
-                "name": "Div",
+                "type": "composite",
+                "name": "Reveal",
                 "children": [
                   {
                     "type": "basic",
@@ -86,20 +88,26 @@
                       {
                         "type": "basic",
                         "name": "A",
-                        "text": "$t:user.homepage.hero.primary_action",
                         "props": {
                           "href": "/page/services",
                           "className": "jw-button jw-button--primary"
-                        }
+                        },
+                        "children": [
+                          {"type": "basic", "name": "Span", "text": "$t:user.homepage.hero.primary_action"},
+                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}
+                        ]
                       },
                       {
                         "type": "basic",
                         "name": "A",
-                        "text": "$t:user.homepage.hero.secondary_action",
                         "props": {
                           "href": "/page/contact",
                           "className": "jw-button jw-button--secondary"
-                        }
+                        },
+                        "children": [
+                          {"type": "basic", "name": "Span", "text": "$t:user.homepage.hero.secondary_action"},
+                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "message", "className": "jw-icon jw-icon--action"}}
+                        ]
                       }
                     ],
                     "props": {
@@ -131,8 +139,8 @@
             "name": "Section",
             "children": [
               {
-                "type": "basic",
-                "name": "Div",
+                "type": "composite",
+                "name": "Reveal",
                 "children": [
                   {
                     "type": "basic",
@@ -184,6 +192,11 @@
                             }
                           },
                           {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {"name": "search", "className": "jw-icon jw-capability__icon"}
+                          },
+                          {
                             "type": "basic",
                             "name": "H3",
                             "text": "$t:user.homepage.company.items.strategy.title",
@@ -215,6 +228,11 @@
                             "props": {
                               "className": "jw-capability__index"
                             }
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {"name": "pencil-ruler", "className": "jw-icon jw-capability__icon"}
                           },
                           {
                             "type": "basic",
@@ -250,6 +268,11 @@
                             }
                           },
                           {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {"name": "rocket", "className": "jw-icon jw-capability__icon"}
+                          },
+                          {
                             "type": "basic",
                             "name": "H3",
                             "text": "$t:user.homepage.company.items.operate.title",
@@ -277,7 +300,8 @@
                   }
                 ],
                 "props": {
-                  "className": "jw-container jw-company__layout"
+                  "className": "jw-container jw-company__layout",
+                  "direction": "up"
                 }
               }
             ],
@@ -300,8 +324,8 @@
             "name": "Section",
             "children": [
               {
-                "type": "basic",
-                "name": "Div",
+                "type": "composite",
+                "name": "Reveal",
                 "children": [
                   {
                     "type": "basic",
@@ -335,11 +359,14 @@
                       {
                         "type": "basic",
                         "name": "A",
-                        "text": "$t:user.homepage.services.action",
                         "props": {
                           "href": "/page/services",
                           "className": "jw-text-link"
-                        }
+                        },
+                        "children": [
+                          {"type": "basic", "name": "Span", "text": "$t:user.homepage.services.action"},
+                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}
+                        ]
                       }
                     ],
                     "props": {
@@ -375,6 +402,11 @@
                                 }
                               }
                             ]
+                          },
+                          {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {"name": "chart", "className": "jw-icon jw-service__icon"}
                           },
                           {
                             "type": "basic",
@@ -432,6 +464,11 @@
                             ]
                           },
                           {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {"name": "panels", "className": "jw-icon jw-service__icon"}
+                          },
+                          {
                             "type": "basic",
                             "name": "P",
                             "text": "$t:user.homepage.services.items.digital.category",
@@ -487,6 +524,11 @@
                             ]
                           },
                           {
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {"name": "workflow", "className": "jw-icon jw-service__icon"}
+                          },
+                          {
                             "type": "basic",
                             "name": "P",
                             "text": "$t:user.homepage.services.items.operations.category",
@@ -522,7 +564,8 @@
                   }
                 ],
                 "props": {
-                  "className": "jw-container"
+                  "className": "jw-container",
+                  "direction": "up"
                 }
               }
             ],
@@ -553,15 +596,17 @@
                     "name": "Div",
                     "children": [
                       {
-                        "type": "basic",
-                        "name": "Img",
+                        "type": "composite",
+                        "name": "ParallaxMedia",
                         "props": {
                           "src": "/api/templates/assets/jwsoft-business01?file=images%2Fhome%2Fcase-workflow-unification.webp&v=0.1.0",
                           "alt": "$t:user.homepage.case.image_alt",
                           "loading": "lazy",
                           "width": 1672,
                           "height": 941,
-                          "className": "jw-media jw-case-feature__image"
+                          "className": "jw-media jw-case-feature__image",
+                          "wrapperClassName": "jw-parallax-media jw-parallax-media--case",
+                          "strength": 38
                         }
                       }
                     ],
@@ -570,8 +615,8 @@
                     }
                   },
                   {
-                    "type": "basic",
-                    "name": "Div",
+                    "type": "composite",
+                    "name": "Reveal",
                     "children": [
                       {
                         "type": "basic",
@@ -600,15 +645,20 @@
                       {
                         "type": "basic",
                         "name": "A",
-                        "text": "$t:user.homepage.case.action",
                         "props": {
                           "href": "/board/cases",
                           "className": "jw-text-link"
-                        }
+                        },
+                        "children": [
+                          {"type": "basic", "name": "Span", "text": "$t:user.homepage.case.action"},
+                          {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}
+                        ]
                       }
                     ],
                     "props": {
-                      "className": "jw-case-feature__content"
+                      "className": "jw-case-feature__content",
+                      "direction": "right",
+                      "delay": 0.08
                     }
                   }
                 ],
@@ -631,8 +681,8 @@
         "name": "Section",
         "children": [
           {
-            "type": "basic",
-            "name": "Div",
+            "type": "composite",
+            "name": "Reveal",
             "children": [
               {
                 "type": "basic",
@@ -686,6 +736,11 @@
                         "props": {
                           "className": "jw-resource-link__title"
                         }
+                      },
+                      {
+                        "type": "composite",
+                        "name": "ThemeIcon",
+                        "props": {"name": "arrow-up-right", "className": "jw-icon jw-resource-link__icon"}
                       }
                     ]
                   },
@@ -712,6 +767,11 @@
                         "props": {
                           "className": "jw-resource-link__title"
                         }
+                      },
+                      {
+                        "type": "composite",
+                        "name": "ThemeIcon",
+                        "props": {"name": "arrow-up-right", "className": "jw-icon jw-resource-link__icon"}
                       }
                     ]
                   },
@@ -738,6 +798,11 @@
                         "props": {
                           "className": "jw-resource-link__title"
                         }
+                      },
+                      {
+                        "type": "composite",
+                        "name": "ThemeIcon",
+                        "props": {"name": "arrow-up-right", "className": "jw-icon jw-resource-link__icon"}
                       }
                     ]
                   }
@@ -748,7 +813,8 @@
               }
             ],
             "props": {
-              "className": "jw-container jw-resources__layout"
+              "className": "jw-container jw-resources__layout",
+              "direction": "left"
             }
           }
         ],
@@ -762,8 +828,8 @@
         "id": "jw-contact",
         "children": [
           {
-            "type": "basic",
-            "name": "Div",
+            "type": "composite",
+            "name": "Reveal",
             "children": [
               {
                 "type": "basic",
@@ -801,15 +867,19 @@
               {
                 "type": "basic",
                 "name": "A",
-                "text": "$t:user.homepage.contact.action",
                 "props": {
                   "href": "/page/contact",
                   "className": "jw-button jw-button--primary"
-                }
+                },
+                "children": [
+                  {"type": "basic", "name": "Span", "text": "$t:user.homepage.contact.action"},
+                  {"type": "composite", "name": "ThemeIcon", "props": {"name": "arrow-right", "className": "jw-icon jw-icon--action"}}
+                ]
               }
             ],
             "props": {
-              "className": "jw-container jw-contact__inner"
+              "className": "jw-container jw-contact__inner",
+              "direction": "up"
             }
           }
         ],

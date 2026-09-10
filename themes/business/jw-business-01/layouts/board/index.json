@@ -78,10 +78,9 @@
                         "props": {"href": "/./", "className": "jw-breadcrumb__link"}
                       },
                       {
-                        "type": "basic",
-                        "name": "Span",
-                        "text": "›",
-                        "props": {"className": "jw-breadcrumb__separator"}
+                        "type": "composite",
+                        "name": "ThemeIcon",
+                        "props": {"name": "chevron-right", "className": "jw-icon jw-breadcrumb__separator"}
                       },
                       {
                         "type": "basic",
@@ -245,10 +244,9 @@
                             ]
                           },
                           {
-                            "type": "basic",
-                            "name": "Span",
-                            "text": "↗",
-                            "props": {"className": "jw-post-row__arrow"}
+                            "type": "composite",
+                            "name": "ThemeIcon",
+                            "props": {"name": "arrow-up-right", "className": "jw-icon jw-post-row__arrow"}
                           }
                         ]
                       }

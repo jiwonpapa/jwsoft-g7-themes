@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "rootClass": "jw-rich-content",
+  "purpose": "G7 native page HTML classes supported by JW BUSINESS 01",
+  "rules": [
+    "Page data remains owned by G7 sirsoft-page.",
+    "The theme guarantees presentation only for the classes declared here.",
+    "Interactive content uses native details and summary elements without custom scripts.",
+    "Forms, executable markup, inline styles, iframes and embedded objects are removed by HtmlContent."
+  ],
+  "archetypes": {
+    "company": [
+      "jw-content-intro",
+      "jw-content-kicker",
+      "jw-content-lead",
+      "jw-content-facts",
+      "jw-content-fact",
+      "jw-content-media",
+      "jw-content-media__visual",
+      "jw-content-media__body"
+    ],
+    "values": [
+      "jw-content-values",
+      "jw-content-value"
+    ],
+    "history": [
+      "jw-content-timeline",
+      "jw-content-timeline__item"
+    ],
+    "team": [
+      "jw-content-team",
+      "jw-content-person",
+      "jw-content-person__photo",
+      "jw-content-person__role"
+    ],
+    "services": [
+      "jw-content-services",
+      "jw-content-service"
+    ],
+    "process": [
+      "jw-content-process",
+      "jw-content-process__step"
+    ],
+    "faq": [
+      "jw-content-faq",
+      "jw-content-faq__item",
+      "jw-content-faq__answer"
+    ],
+    "contact": [
+      "jw-content-contact",
+      "jw-content-contact__item",
+      "jw-content-map"
+    ],
+    "privacy": [
+      "jw-content-legal"
+    ]
+  }
+}

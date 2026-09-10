@@ -6,6 +6,8 @@
   "features": [
     "tailwind",
     "sanitize-html",
-    "contract-tests"
+    "contract-tests",
+    "icons",
+    "motion"
   ]
 }

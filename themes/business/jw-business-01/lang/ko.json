@@ -235,7 +235,10 @@
         "link": "링크",
         "image": "이미지",
         "published_content": "발행 본문",
-        "mobile_menu_button": "모바일 메뉴 버튼"
+        "mobile_menu_button": "모바일 메뉴 버튼",
+        "icon": "선형 아이콘",
+        "reveal": "스크롤 등장 영역",
+        "parallax_media": "스크롤 깊이 이미지"
       },
       "palette": {
         "content": "JW 콘텐츠"

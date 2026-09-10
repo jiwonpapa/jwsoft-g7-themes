@@ -11,7 +11,8 @@
 - 시각 명제: 큰 사진과 절제된 선, 넓은 여백으로 신뢰와 전문성을 보여주는 현대적인 기업 브랜드.
 - 공통 콘텐츠 순서: 핵심 약속 → 역량·사업 → 서비스/제품 → 사례 → 정보·자료 → 문의.
 - 기본 데모 적용: 기업 과제 → 전략·디지털·운영 역량 → 대표 서비스 → 프로젝트 → 인사이트 → 문의.
-- 상호작용 명제: 히어로 진입, 서비스 이미지의 짧은 확대, 모바일 메뉴 전환만 사용하며 `prefers-reduced-motion`을 존중합니다.
+- 상호작용 명제: 히어로·대표 사례 이미지에 낮은 강도의 스크롤 깊이를 주고, 핵심 섹션은 위·좌·우에서 짧게 등장하며, 서비스 이미지는 hover에서만 작게 확대합니다. 모든 효과는 `prefers-reduced-motion`을 존중하고 JavaScript 없이도 본문과 이미지가 그대로 보입니다.
+- 아이콘 명제: Lucide의 단색 선형 SVG만 사용합니다. 버튼·서비스·업무 단계·자료 링크처럼 탐색을 빠르게 하는 위치에 한정하고, 컬러 아이콘·이모지·유니코드 화살표를 UI에 사용하지 않습니다.
 
 ## 초기 토큰
 
@@ -36,6 +37,8 @@
 - TypeScript/React: 반복 상호작용, 접근성 동작, 공개 컴포넌트.
 - CSS: 테마 토큰과 `jw-` 시멘틱 클래스.
 - Tailwind CSS: `@apply`에서 반복 스타일을 조합하는 유틸리티 원본.
+- Motion: DOM/WAAPI 경량 경로로 스크롤 등장과 이미지 깊이 효과를 제공합니다.
+- Lucide: 필요한 아이콘만 번들에 포함하는 단색 SVG 레지스트리입니다.
 
 첫 기반 클래스는 `jw-container`, `jw-section`, `jw-section__header`, `jw-eyebrow`, `jw-display-title`, `jw-body-copy`, `jw-button`, `jw-button--primary`, `jw-button--secondary`, `jw-text-link`, `jw-media`입니다. 구조 선택은 `editor-spec.json`의 고정 `jw-` 클래스 토큰만 사용합니다.
 

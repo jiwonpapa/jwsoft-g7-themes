@@ -9,7 +9,9 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "dompurify": "3.4.15"
+    "dompurify": "3.4.15",
+    "lucide-react": "1.43.0",
+    "motion": "13.2.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.16",
