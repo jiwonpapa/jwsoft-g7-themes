@@ -31,7 +31,8 @@
       "dist/js/components.iife.js"
     ],
     "css": [
-      "dist/css/components.css"
+      "dist/css/components.css",
+      "dist/css/mobile-header.css"
     ]
   },
   "components": {

@@ -1,0 +1,6 @@
+/* Account destinations remain available in the mobile navigation quick links. */
+@media (max-width: 767px) {
+  #jw-site .jw-business-header__tools > a.jw-business-header__account {
+    display: none;
+  }
+}
